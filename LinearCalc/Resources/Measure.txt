@@ -1,0 +1,75 @@
+int s
+int axis
+int time
+int startpos,endpos,interv
+
+axis=0
+time=6000
+startpos=10
+endpos=200
+interv=10
+
+
+Global REAL Gl_Axis,Gl_StartPos,Gl_INTERVAL
+Global REAL ErrorCompDataX1(61)
+Int CollectRunFlag
+CollectRunFlag=0
+Gl_StartPos=startpos
+Gl_INTERVAL=interv
+Gl_Axis=axis
+
+IF CollectRunFlag=0
+   MFLAGS(Gl_Axis).#DEFCON=1
+END
+
+!-----------------------!
+!ErrorDataList
+!-----------------------!
+
+IF CollectRunFlag=1
+    MFLAGS(Gl_Axis).#DEFCON=0
+    CONNECT RPOS(Gl_Axis)=APOS(Gl_Axis)+MAP(APOS(Gl_Axis),ErrorCompDataX1,Gl_StartPos,Gl_INTERVAL)
+    DEPENDS Gl_Axis,Gl_Axis
+END
+
+
+VEL(axis)=50
+ACC(axis)=500
+DEC(axis)=500
+KDEC(axis)=1000
+JERK(axis)=2000
+
+s=startpos
+WHILE(s<=endpos)
+PTP axis,s
+TILL ^MST(axis).#MOVE
+WAIT time
+s=s+interv
+END
+
+s=endpos
+WHILE(s>=startpos)
+PTP axis,s
+TILL ^MST(axis).#MOVE
+WAIT time
+s=s-interv
+END
+
+
+s=startpos
+WHILE(s<=endpos)
+PTP axis,s
+TILL ^MST(axis).#MOVE
+WAIT time
+s=s+interv
+END
+
+s=endpos
+WHILE(s>=startpos)
+PTP axis,s
+TILL ^MST(axis).#MOVE
+WAIT time
+s=s-interv
+END
+
+STOP

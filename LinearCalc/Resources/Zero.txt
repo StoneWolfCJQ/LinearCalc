@@ -1,0 +1,174 @@
+!---------------------Home Script
+real dfSpeed
+int nAxis
+real safepos
+int onLimit
+
+!---------------------Custom Functions Here
+
+!---------------------Homing Process
+!!---------------Some Encoders Are Absolute
+!!---------------Don't Go Home After First Home
+!!---------------                  !<----------
+Main:
+!!---------------Axis Description
+!!!--------Linear Axis:
+!!!--------Z Adjust:
+
+!--------------Axis Set And Process
+!----Axis Home No Index
+nAxis=0
+dfSpeed=10
+call AxisSet
+call LeaveLimit
+call AxisHome
+call GosafePos!Optional
+
+!----Axis Home No Index Reverse
+nAxis=1
+dfSpeed=10
+call AxisSet
+call LeaveLimit
+call AxisHomeN
+call GosafePos!Optional
+
+!----Axis Home Index
+nAxis=2
+dfSpeed=30
+safepos=10
+call AxisSet
+call LeaveLimit
+call AxisHomeIndex
+call GosafePos!Optional
+
+!----Axis Home Index Reverse
+nAxis=3
+dfSpeed=20
+safepos=-10
+call AxisSet
+call LeaveLimit
+call AxisHomeIndexN
+call GosafePos!Optional
+
+!---------------------Offset Compensate
+OffsetComp:
+start 1,1
+stop
+
+!---------------------Home Functions
+!--------Parameter Setting
+AxisSet:
+enable nAxis
+MFLAGS(nAxis).17=1
+VEL(nAxis)=dfSpeed
+ACC(nAxis)=dfSpeed*10
+DEC(nAxis)=dfSpeed*10
+KDEC(nAxis)=dfSpeed*30
+JERK(nAxis)=dfSpeed*150
+ret
+
+!--------Away from Limit
+LeaveLimit:
+if (FAULT(nAxis).#LL = 1)
+	jog/v nAxis,dfSpeed/2
+	till ^FAULT(nAxis).#LL
+	wait 200
+	halt nAxis
+	till ^MST(nAxis).#MOVE
+	wait 100
+end
+if (FAULT(nAxis).#RL = 1)
+	jog/v nAxis,-dfSpeed/2
+	till ^FAULT(nAxis).#RL
+	wait 200
+	halt nAxis
+	till ^MST(nAxis).#MOVE
+	wait 100
+end
+ret
+
+!--------No Index Home
+AxisHome:
+jog/v nAxis,-dfSpeed
+till FAULT(nAxis).#LL&^MST(nAxis).#MOVE
+wait 200
+ptp/er nAxis,2
+wait 200
+set FPOS(nAxis)=0
+wait 100
+ret
+
+!--------No Index Home Reverse
+AxisHomeN:
+jog/v nAxis,dfSpeed
+till FAULT(nAxis).#RL&^MST(nAxis).#MOVE
+wait 200
+ptp/er nAxis,-2
+wait 200
+set FPOS(nAxis)=0
+wait 100
+ret
+
+!--------Index Home
+AxisHomeIndex:
+jog/v nAxis,-dfSpeed
+till FAULT(nAxis).#LL&^MST(nAxis).#MOVE
+wait 200
+
+IST(nAxis).#IND=0
+wait 50
+jog/v nAxis,dfSpeed/2
+till IST(nAxis).#IND=1
+halt nAxis
+
+CALL CheckIfOnLimit
+if onLimit=1
+  ptp/r nAxis,20
+  IST(nAxis).#IND=0
+  wait 50
+  jog/v nAxis,dfSpeed/2
+  till IST(nAxis).#IND=1
+  halt nAxis
+end
+wait 100
+set FPOS(nAxis)=FPOS(nAxis)-IND(nAxis)
+ret
+
+!--------Index Home Reverse
+AxisHomeIndexN:
+jog/v nAxis,dfSpeed
+till FAULT(nAxis).#RL&^MST(nAxis).#MOVE
+halt nAxis
+wait 200
+
+IST(nAxis).#IND=0
+wait 50
+jog/v nAxis,-dfSpeed/2
+till IST(nAxis).#IND=1
+halt nAxis
+
+CALL CheckIfOnLimit
+if onLimit=1
+  ptp/r nAxis,-20
+  IST(nAxis).#IND=0
+  wait 50
+  jog/v nAxis,-dfSpeed/2
+  till IST(nAxis).#IND=1
+  halt nAxis
+end
+wait 100
+set FPOS(nAxis)=FPOS(nAxis)-IND(nAxis)
+ret
+
+!--------Check If Index Near Limit
+CheckIfOnLimit:
+onLimit=0
+if FAULT(nAxis).#LL|FAULT(nAxis).#RL
+   onLimit=1
+end
+ret
+
+!--------SafePos
+GosafePos:
+ptp/e nAxis,safepos
+ret

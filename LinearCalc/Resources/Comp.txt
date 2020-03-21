@@ -1,0 +1,20 @@
+!---------------------Compensating Script
+!!---------------Some Definitions
+GLOBAL INT compStartPos, compStep
+
+!!---------------WorkPanel X
+compStartPos = 10                  !<----------
+compStep = 25                      !<----------
+MFLAGS(0).#DEFCON=1
+!Need to change
+GLOBAL REAL ErrorCompDataX(61)     !<----------
+!Need to change
+!!!--------Data Here
+ErrorCompDataX(0)=0.0              !<----------
+!!!.....                                       |
+ErrorCompDataX(60)=0.0             !<----------
+!!!--------END
+MFLAGS(0).#DEFCON = 0
+CONNECT RPOS(0) = APOS(0) + MAP(APOS(0),ErrorCompDataX, compStartPos, compStep)
+!Be sure to change this
+DEPENDS 0,0                        !<----------

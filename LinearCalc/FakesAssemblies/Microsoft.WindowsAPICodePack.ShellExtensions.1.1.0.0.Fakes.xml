@@ -1,0 +1,1301 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.WindowsAPICodePack.ShellExtensions.1.1.0.0.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.QualityTools.Testing.Fakes.Delegates.MicrosoftWindowsAPICodePackShellExtensionsDelegates">
+            <summary>Contains custom delegates used for the stubs and shims of Microsoft.WindowsAPICodePack.ShellExtensions</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler">
+            <summary>Shim type of Microsoft.WindowsAPICodePack.ShellExtensions.PreviewHandler</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.#ctor(Microsoft.WindowsAPICodePack.ShellExtensions.PreviewHandler)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.Initialize">
+            <summary>Sets the shim of PreviewHandler.Initialize()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.IsPreviewShowingGet">
+            <summary>Sets the shim of PreviewHandler.get_IsPreviewShowing()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIInitializeWithFileInitializeStringAccessModes">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IInitializeWithFile.Initialize(String filePath, AccessModes fileMode)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIInitializeWithStreamInitializeIStreamAccessModes">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IInitializeWithStream.Initialize(IStream stream, AccessModes fileMode)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIObjectWithSiteGetSiteGuidRefObjectOut">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IObjectWithSite.GetSite(Guid&amp; riid, Object&amp; ppvSite)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIObjectWithSiteSetSiteObject">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IObjectWithSite.SetSite(Object pUnkSite)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIOleWindowContextSensitiveHelpBoolean">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IOleWindow.ContextSensitiveHelp(Boolean fEnterMode)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIOleWindowGetWindowIntPtrOut">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IOleWindow.GetWindow(IntPtr&amp; phwnd)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerDoPreview">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.DoPreview()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerQueryFocusIntPtrOut">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.QueryFocus(IntPtr&amp; phwnd)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerSetFocus">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerSetRectNativeRectRef">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.SetRect(NativeRect&amp; rect)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerSetWindowIntPtrNativeRectRef">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.SetWindow(IntPtr hwnd, NativeRect&amp; rect)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerTranslateAcceleratorMessageRef">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.TranslateAccelerator(Message&amp; pmsg)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerUnload">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.Unload()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerVisualsSetFontLogFontRef">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandlerVisuals.SetFont(LogFont&amp; plf)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.SystemRuntimeInteropServicesICustomQueryInterfaceGetInterfaceGuidRefIntPtrOut">
+            <summary>Sets the shim of PreviewHandler.System.Runtime.InteropServices.ICustomQueryInterface.GetInterface(Guid&amp; iid, IntPtr&amp; ppv)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.AllInstances.Uninitialize">
+            <summary>Sets the shim of PreviewHandler.Uninitialize()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.Constructor">
+            <summary>Sets the shim of PreviewHandler.PreviewHandler()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.Initialize">
+            <summary>Sets the shim of PreviewHandler.Initialize()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.IsPreviewShowingGet">
+            <summary>Sets the shim of PreviewHandler.get_IsPreviewShowing()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIInitializeWithFileInitializeStringAccessModes">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IInitializeWithFile.Initialize(String filePath, AccessModes fileMode)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIInitializeWithStreamInitializeIStreamAccessModes">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IInitializeWithStream.Initialize(IStream stream, AccessModes fileMode)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIObjectWithSiteSetSiteObject">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IObjectWithSite.SetSite(Object pUnkSite)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIOleWindowContextSensitiveHelpBoolean">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IOleWindow.ContextSensitiveHelp(Boolean fEnterMode)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIOleWindowGetWindowIntPtrOut">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IOleWindow.GetWindow(IntPtr&amp; phwnd)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerDoPreview">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.DoPreview()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerQueryFocusIntPtrOut">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.QueryFocus(IntPtr&amp; phwnd)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerSetFocus">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerSetRectNativeRectRef">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.SetRect(NativeRect&amp; rect)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerSetWindowIntPtrNativeRectRef">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.SetWindow(IntPtr hwnd, NativeRect&amp; rect)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerTranslateAcceleratorMessageRef">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.TranslateAccelerator(Message&amp; pmsg)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerUnload">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandler.Unload()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.MicrosoftWindowsAPICodePackShellExtensionsInteropIPreviewHandlerVisualsSetFontLogFontRef">
+            <summary>Sets the shim of PreviewHandler.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IPreviewHandlerVisuals.SetFont(LogFont&amp; plf)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.RegisterPreviewHandlerGuidPreviewHandlerAttribute">
+            <summary>Sets the shim of PreviewHandler.RegisterPreviewHandler(Guid previewerGuid, PreviewHandlerAttribute attribute)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.RegisterType">
+            <summary>Sets the shim of PreviewHandler.Register(Type registerType)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.ThrowIfNotValidType">
+            <summary>Sets the shim of PreviewHandler.ThrowIfNotValid(Type type)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.Uninitialize">
+            <summary>Sets the shim of PreviewHandler.Uninitialize()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.UnregisterPreviewHandlerGuidPreviewHandlerAttribute">
+            <summary>Sets the shim of PreviewHandler.UnregisterPreviewHandler(Guid previewerGuid, PreviewHandlerAttribute attribute)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler.UnregisterType">
+            <summary>Sets the shim of PreviewHandler.Unregister(Type registerType)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandler._ThrowIfNotValidb__0Type">
+            <summary>Sets the shim of PreviewHandler.&lt;ThrowIfNotValid&gt;b__0(Type x)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute">
+            <summary>Shim type of Microsoft.WindowsAPICodePack.ShellExtensions.PreviewHandlerAttribute</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.#ctor(Microsoft.WindowsAPICodePack.ShellExtensions.PreviewHandlerAttribute)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AllInstances.AppIdGet">
+            <summary>Sets the shim of PreviewHandlerAttribute.get_AppId()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AllInstances.AppIdSetString">
+            <summary>Sets the shim of PreviewHandlerAttribute.set_AppId(String value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AllInstances.DisableLowILProcessIsolationGet">
+            <summary>Sets the shim of PreviewHandlerAttribute.get_DisableLowILProcessIsolation()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AllInstances.DisableLowILProcessIsolationSetBoolean">
+            <summary>Sets the shim of PreviewHandlerAttribute.set_DisableLowILProcessIsolation(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AllInstances.ExtensionsGet">
+            <summary>Sets the shim of PreviewHandlerAttribute.get_Extensions()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AllInstances.ExtensionsSetString">
+            <summary>Sets the shim of PreviewHandlerAttribute.set_Extensions(String value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AllInstances.NameGet">
+            <summary>Sets the shim of PreviewHandlerAttribute.get_Name()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AllInstances.NameSetString">
+            <summary>Sets the shim of PreviewHandlerAttribute.set_Name(String value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AppIdGet">
+            <summary>Sets the shim of PreviewHandlerAttribute.get_AppId()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.AppIdSetString">
+            <summary>Sets the shim of PreviewHandlerAttribute.set_AppId(String value)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.ConstructorStringStringString">
+            <summary>Sets the shim of PreviewHandlerAttribute.PreviewHandlerAttribute(String name, String extensions, String appId)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.DisableLowILProcessIsolationGet">
+            <summary>Sets the shim of PreviewHandlerAttribute.get_DisableLowILProcessIsolation()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.DisableLowILProcessIsolationSetBoolean">
+            <summary>Sets the shim of PreviewHandlerAttribute.set_DisableLowILProcessIsolation(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.ExtensionsGet">
+            <summary>Sets the shim of PreviewHandlerAttribute.get_Extensions()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.ExtensionsSetString">
+            <summary>Sets the shim of PreviewHandlerAttribute.set_Extensions(String value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.NameGet">
+            <summary>Sets the shim of PreviewHandlerAttribute.get_Name()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimPreviewHandlerAttribute.NameSetString">
+            <summary>Sets the shim of PreviewHandlerAttribute.set_Name(String value)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream">
+            <summary>Shim type of Microsoft.WindowsAPICodePack.ShellExtensions.StorageStream</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.#ctor(Microsoft.WindowsAPICodePack.ShellExtensions.StorageStream)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.CanReadGet">
+            <summary>Sets the shim of StorageStream.get_CanRead()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.CanSeekGet">
+            <summary>Sets the shim of StorageStream.get_CanSeek()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.CanWriteGet">
+            <summary>Sets the shim of StorageStream.get_CanWrite()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of StorageStream.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.Flush">
+            <summary>Sets the shim of StorageStream.Flush()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.LengthGet">
+            <summary>Sets the shim of StorageStream.get_Length()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.PositionGet">
+            <summary>Sets the shim of StorageStream.get_Position()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.PositionSetInt64">
+            <summary>Sets the shim of StorageStream.set_Position(Int64 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.ReadByte">
+            <summary>Sets the shim of StorageStream.ReadByte()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.ReadByteArrayInt32Int32">
+            <summary>Sets the shim of StorageStream.Read(Byte[] buffer, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.SeekInt64SeekOrigin">
+            <summary>Sets the shim of StorageStream.Seek(Int64 offset, SeekOrigin origin)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.SetLengthInt64">
+            <summary>Sets the shim of StorageStream.SetLength(Int64 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.ThrowIfDisposed">
+            <summary>Sets the shim of StorageStream.ThrowIfDisposed()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.WriteByteArrayInt32Int32">
+            <summary>Sets the shim of StorageStream.Write(Byte[] buffer, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.AllInstances.WriteByteByte">
+            <summary>Sets the shim of StorageStream.WriteByte(Byte value)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.CanReadGet">
+            <summary>Sets the shim of StorageStream.get_CanRead()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.CanSeekGet">
+            <summary>Sets the shim of StorageStream.get_CanSeek()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.CanWriteGet">
+            <summary>Sets the shim of StorageStream.get_CanWrite()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.ConstructorIStreamBoolean">
+            <summary>Sets the shim of StorageStream.StorageStream(IStream stream, Boolean readOnly)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.DisposeBoolean">
+            <summary>Sets the shim of StorageStream.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.Flush">
+            <summary>Sets the shim of StorageStream.Flush()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.LengthGet">
+            <summary>Sets the shim of StorageStream.get_Length()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.PositionGet">
+            <summary>Sets the shim of StorageStream.get_Position()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.PositionSetInt64">
+            <summary>Sets the shim of StorageStream.set_Position(Int64 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.ReadByte">
+            <summary>Sets the shim of StorageStream.ReadByte()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.ReadByteArrayInt32Int32">
+            <summary>Sets the shim of StorageStream.Read(Byte[] buffer, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.SeekInt64SeekOrigin">
+            <summary>Sets the shim of StorageStream.Seek(Int64 offset, SeekOrigin origin)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.SetLengthInt64">
+            <summary>Sets the shim of StorageStream.SetLength(Int64 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.ThrowIfDisposed">
+            <summary>Sets the shim of StorageStream.ThrowIfDisposed()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.WriteByteArrayInt32Int32">
+            <summary>Sets the shim of StorageStream.Write(Byte[] buffer, Int32 offset, Int32 count)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimStorageStream.WriteByteByte">
+            <summary>Sets the shim of StorageStream.WriteByte(Byte value)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider">
+            <summary>Shim type of Microsoft.WindowsAPICodePack.ShellExtensions.ThumbnailProvider</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.#ctor(Microsoft.WindowsAPICodePack.ShellExtensions.ThumbnailProvider)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.AllInstances.Dispose">
+            <summary>Sets the shim of ThumbnailProvider.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of ThumbnailProvider.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.AllInstances.GetBitmapInt32">
+            <summary>Sets the shim of ThumbnailProvider.GetBitmap(Int32 sideLength)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.AllInstances.GetThumbnailAlphaType">
+            <summary>Sets the shim of ThumbnailProvider.GetThumbnailAlphaType()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIInitializeWithFileInitializeStringAccessModes">
+            <summary>Sets the shim of ThumbnailProvider.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IInitializeWithFile.Initialize(String filePath, AccessModes fileMode)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIInitializeWithStreamInitializeIStreamAccessModes">
+            <summary>Sets the shim of ThumbnailProvider.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IInitializeWithStream.Initialize(IStream stream, AccessModes fileMode)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.AllInstances.MicrosoftWindowsAPICodePackShellExtensionsInteropIThumbnailProviderGetThumbnailUInt32IntPtrOutUInt32Out">
+            <summary>Sets the shim of ThumbnailProvider.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IThumbnailProvider.GetThumbnail(UInt32 sideLength, IntPtr&amp; hBitmap, UInt32&amp; alphaType)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.AllInstances.SystemRuntimeInteropServicesICustomQueryInterfaceGetInterfaceGuidRefIntPtrOut">
+            <summary>Sets the shim of ThumbnailProvider.System.Runtime.InteropServices.ICustomQueryInterface.GetInterface(Guid&amp; iid, IntPtr&amp; ppv)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.Constructor">
+            <summary>Sets the shim of ThumbnailProvider.ThumbnailProvider()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.Dispose">
+            <summary>Sets the shim of ThumbnailProvider.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.DisposeBoolean">
+            <summary>Sets the shim of ThumbnailProvider.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.GetBitmapInt32">
+            <summary>Sets the shim of ThumbnailProvider.GetBitmap(Int32 sideLength)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.GetThumbnailAlphaType">
+            <summary>Sets the shim of ThumbnailProvider.GetThumbnailAlphaType()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.MicrosoftWindowsAPICodePackShellExtensionsInteropIInitializeWithFileInitializeStringAccessModes">
+            <summary>Sets the shim of ThumbnailProvider.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IInitializeWithFile.Initialize(String filePath, AccessModes fileMode)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.MicrosoftWindowsAPICodePackShellExtensionsInteropIInitializeWithStreamInitializeIStreamAccessModes">
+            <summary>Sets the shim of ThumbnailProvider.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IInitializeWithStream.Initialize(IStream stream, AccessModes fileMode)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.MicrosoftWindowsAPICodePackShellExtensionsInteropIThumbnailProviderGetThumbnailUInt32IntPtrOutUInt32Out">
+            <summary>Sets the shim of ThumbnailProvider.Microsoft.WindowsAPICodePack.ShellExtensions.Interop.IThumbnailProvider.GetThumbnail(UInt32 sideLength, IntPtr&amp; hBitmap, UInt32&amp; alphaType)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.RegisterThumbnailHandlerStringThumbnailProviderAttribute">
+            <summary>Sets the shim of ThumbnailProvider.RegisterThumbnailHandler(String guid, ThumbnailProviderAttribute attribute)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.RegisterType">
+            <summary>Sets the shim of ThumbnailProvider.Register(Type registerType)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.ThrowIfInvalidTypeThumbnailProviderAttribute">
+            <summary>Sets the shim of ThumbnailProvider.ThrowIfInvalid(Type type, ThumbnailProviderAttribute attribute)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.UnregisterThumbnailHandlerStringThumbnailProviderAttribute">
+            <summary>Sets the shim of ThumbnailProvider.UnregisterThumbnailHandler(String guid, ThumbnailProviderAttribute attribute)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider.UnregisterType">
+            <summary>Sets the shim of ThumbnailProvider.Unregister(Type registerType)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider._ThrowIfInvalidb__0Type">
+            <summary>Sets the shim of ThumbnailProvider.&lt;ThrowIfInvalid&gt;b__0(Type x)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProvider._ThrowIfInvalidb__1Type">
+            <summary>Sets the shim of ThumbnailProvider.&lt;ThrowIfInvalid&gt;b__1(Type x)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute">
+            <summary>Shim type of Microsoft.WindowsAPICodePack.ShellExtensions.ThumbnailProviderAttribute</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.#ctor(Microsoft.WindowsAPICodePack.ShellExtensions.ThumbnailProviderAttribute)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.DisableProcessIsolationGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_DisableProcessIsolation()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.DisableProcessIsolationSetBoolean">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_DisableProcessIsolation(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.ExtensionsGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_Extensions()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.ExtensionsSetString">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_Extensions(String value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.NameGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_Name()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.NameSetString">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_Name(String value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.ThumbnailAdornmentGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_ThumbnailAdornment()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.ThumbnailAdornmentSetThumbnailAdornment">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_ThumbnailAdornment(ThumbnailAdornment value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.ThumbnailCutoffGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_ThumbnailCutoff()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.ThumbnailCutoffSetThumbnailCutoffSize">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_ThumbnailCutoff(ThumbnailCutoffSize value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.TypeOverlayGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_TypeOverlay()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.AllInstances.TypeOverlaySetString">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_TypeOverlay(String value)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.ConstructorStringString">
+            <summary>Sets the shim of ThumbnailProviderAttribute.ThumbnailProviderAttribute(String name, String extensions)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.DisableProcessIsolationGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_DisableProcessIsolation()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.DisableProcessIsolationSetBoolean">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_DisableProcessIsolation(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.ExtensionsGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_Extensions()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.ExtensionsSetString">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_Extensions(String value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.NameGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_Name()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.NameSetString">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_Name(String value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.ThumbnailAdornmentGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_ThumbnailAdornment()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.ThumbnailAdornmentSetThumbnailAdornment">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_ThumbnailAdornment(ThumbnailAdornment value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.ThumbnailCutoffGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_ThumbnailCutoff()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.ThumbnailCutoffSetThumbnailCutoffSize">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_ThumbnailCutoff(ThumbnailCutoffSize value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.TypeOverlayGet">
+            <summary>Sets the shim of ThumbnailProviderAttribute.get_TypeOverlay()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimThumbnailProviderAttribute.TypeOverlaySetString">
+            <summary>Sets the shim of ThumbnailProviderAttribute.set_TypeOverlay(String value)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler">
+            <summary>Shim type of Microsoft.WindowsAPICodePack.ShellExtensions.WinFormsPreviewHandler</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.#ctor(Microsoft.WindowsAPICodePack.ShellExtensions.WinFormsPreviewHandler)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.ControlGet">
+            <summary>Sets the shim of WinFormsPreviewHandler.get_Control()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.ControlSetUserControl">
+            <summary>Sets the shim of WinFormsPreviewHandler.set_Control(UserControl value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.Dispose">
+            <summary>Sets the shim of WinFormsPreviewHandler.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of WinFormsPreviewHandler.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.HandleGet">
+            <summary>Sets the shim of WinFormsPreviewHandler.get_Handle()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.HandleInitializeExceptionException">
+            <summary>Sets the shim of WinFormsPreviewHandler.HandleInitializeException(Exception caughtException)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.SetBackgroundInt32">
+            <summary>Sets the shim of WinFormsPreviewHandler.SetBackground(Int32 argb)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.SetFocus">
+            <summary>Sets the shim of WinFormsPreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.SetFontLogFont">
+            <summary>Sets the shim of WinFormsPreviewHandler.SetFont(LogFont font)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.SetForegroundInt32">
+            <summary>Sets the shim of WinFormsPreviewHandler.SetForeground(Int32 argb)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.SetParentHandleIntPtr">
+            <summary>Sets the shim of WinFormsPreviewHandler.SetParentHandle(IntPtr handle)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.ThrowIfNoControl">
+            <summary>Sets the shim of WinFormsPreviewHandler.ThrowIfNoControl()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.AllInstances.UpdateBoundsNativeRect">
+            <summary>Sets the shim of WinFormsPreviewHandler.UpdateBounds(NativeRect bounds)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.Constructor">
+            <summary>Sets the shim of WinFormsPreviewHandler.WinFormsPreviewHandler()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.ControlGet">
+            <summary>Sets the shim of WinFormsPreviewHandler.get_Control()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.ControlSetUserControl">
+            <summary>Sets the shim of WinFormsPreviewHandler.set_Control(UserControl value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.Dispose">
+            <summary>Sets the shim of WinFormsPreviewHandler.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.DisposeBoolean">
+            <summary>Sets the shim of WinFormsPreviewHandler.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.HandleGet">
+            <summary>Sets the shim of WinFormsPreviewHandler.get_Handle()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.HandleInitializeExceptionException">
+            <summary>Sets the shim of WinFormsPreviewHandler.HandleInitializeException(Exception caughtException)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.SetBackgroundInt32">
+            <summary>Sets the shim of WinFormsPreviewHandler.SetBackground(Int32 argb)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.SetFocus">
+            <summary>Sets the shim of WinFormsPreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.SetFontLogFont">
+            <summary>Sets the shim of WinFormsPreviewHandler.SetFont(LogFont font)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.SetForegroundInt32">
+            <summary>Sets the shim of WinFormsPreviewHandler.SetForeground(Int32 argb)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.SetParentHandleIntPtr">
+            <summary>Sets the shim of WinFormsPreviewHandler.SetParentHandle(IntPtr handle)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.ThrowIfNoControl">
+            <summary>Sets the shim of WinFormsPreviewHandler.ThrowIfNoControl()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWinFormsPreviewHandler.UpdateBoundsNativeRect">
+            <summary>Sets the shim of WinFormsPreviewHandler.UpdateBounds(NativeRect bounds)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler">
+            <summary>Shim type of Microsoft.WindowsAPICodePack.ShellExtensions.WpfPreviewHandler</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.#ctor(Microsoft.WindowsAPICodePack.ShellExtensions.WpfPreviewHandler)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.ControlGet">
+            <summary>Sets the shim of WpfPreviewHandler.get_Control()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.ControlSetUserControl">
+            <summary>Sets the shim of WpfPreviewHandler.set_Control(UserControl value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.Dispose">
+            <summary>Sets the shim of WpfPreviewHandler.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of WpfPreviewHandler.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.HandleGet">
+            <summary>Sets the shim of WpfPreviewHandler.get_Handle()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.HandleInitializeExceptionException">
+            <summary>Sets the shim of WpfPreviewHandler.HandleInitializeException(Exception caughtException)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.Initialize">
+            <summary>Sets the shim of WpfPreviewHandler.Initialize()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.SetBackgroundInt32">
+            <summary>Sets the shim of WpfPreviewHandler.SetBackground(Int32 argb)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.SetFocus">
+            <summary>Sets the shim of WpfPreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.SetFontLogFont">
+            <summary>Sets the shim of WpfPreviewHandler.SetFont(LogFont font)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.SetForegroundInt32">
+            <summary>Sets the shim of WpfPreviewHandler.SetForeground(Int32 argb)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.SetParentHandleIntPtr">
+            <summary>Sets the shim of WpfPreviewHandler.SetParentHandle(IntPtr handle)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.ThrowIfNoControl">
+            <summary>Sets the shim of WpfPreviewHandler.ThrowIfNoControl()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.UpdateBoundsNativeRect">
+            <summary>Sets the shim of WpfPreviewHandler.UpdateBounds(NativeRect bounds)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.AllInstances.UpdatePlacement">
+            <summary>Sets the shim of WpfPreviewHandler.UpdatePlacement()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.Constructor">
+            <summary>Sets the shim of WpfPreviewHandler.WpfPreviewHandler()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.ControlGet">
+            <summary>Sets the shim of WpfPreviewHandler.get_Control()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.ControlSetUserControl">
+            <summary>Sets the shim of WpfPreviewHandler.set_Control(UserControl value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.Dispose">
+            <summary>Sets the shim of WpfPreviewHandler.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.DisposeBoolean">
+            <summary>Sets the shim of WpfPreviewHandler.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.HandleGet">
+            <summary>Sets the shim of WpfPreviewHandler.get_Handle()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.HandleInitializeExceptionException">
+            <summary>Sets the shim of WpfPreviewHandler.HandleInitializeException(Exception caughtException)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.Initialize">
+            <summary>Sets the shim of WpfPreviewHandler.Initialize()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.SetBackgroundInt32">
+            <summary>Sets the shim of WpfPreviewHandler.SetBackground(Int32 argb)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.SetFocus">
+            <summary>Sets the shim of WpfPreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.SetFontLogFont">
+            <summary>Sets the shim of WpfPreviewHandler.SetFont(LogFont font)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.SetForegroundInt32">
+            <summary>Sets the shim of WpfPreviewHandler.SetForeground(Int32 argb)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.SetParentHandleIntPtr">
+            <summary>Sets the shim of WpfPreviewHandler.SetParentHandle(IntPtr handle)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.ThrowIfNoControl">
+            <summary>Sets the shim of WpfPreviewHandler.ThrowIfNoControl()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.UpdateBoundsNativeRect">
+            <summary>Sets the shim of WpfPreviewHandler.UpdateBounds(NativeRect bounds)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.ShimWpfPreviewHandler.UpdatePlacement">
+            <summary>Sets the shim of WpfPreviewHandler.UpdatePlacement()</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromFile">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.IPreviewFromFile</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromFile.#ctor">
+            <summary>Initializes a new instance of type StubIPreviewFromFile</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromFile.LoadFileInfo">
+            <summary>Sets the stub of IPreviewFromFile.Load(FileInfo info)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromFile.Microsoft#WindowsAPICodePack#ShellExtensions#IPreviewFromFile#Load(System.IO.FileInfo)">
+            <summary>Sets the stub of IPreviewFromFile.Load(FileInfo info)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromShellObject">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.IPreviewFromShellObject</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromShellObject.#ctor">
+            <summary>Initializes a new instance of type StubIPreviewFromShellObject</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromShellObject.LoadShellObject">
+            <summary>Sets the stub of IPreviewFromShellObject.Load(ShellObject shellObject)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromShellObject.Microsoft#WindowsAPICodePack#ShellExtensions#IPreviewFromShellObject#Load(Microsoft.WindowsAPICodePack.Shell.ShellObject)">
+            <summary>Sets the stub of IPreviewFromShellObject.Load(ShellObject shellObject)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromStream">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.IPreviewFromStream</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromStream.#ctor">
+            <summary>Initializes a new instance of type StubIPreviewFromStream</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromStream.LoadStream">
+            <summary>Sets the stub of IPreviewFromStream.Load(Stream stream)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIPreviewFromStream.Microsoft#WindowsAPICodePack#ShellExtensions#IPreviewFromStream#Load(System.IO.Stream)">
+            <summary>Sets the stub of IPreviewFromStream.Load(Stream stream)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromFile">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.IThumbnailFromFile</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromFile.#ctor">
+            <summary>Initializes a new instance of type StubIThumbnailFromFile</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromFile.ConstructBitmapFileInfoInt32">
+            <summary>Sets the stub of IThumbnailFromFile.ConstructBitmap(FileInfo info, Int32 sideSize)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromFile.Microsoft#WindowsAPICodePack#ShellExtensions#IThumbnailFromFile#ConstructBitmap(System.IO.FileInfo,System.Int32)">
+            <summary>Sets the stub of IThumbnailFromFile.ConstructBitmap(FileInfo info, Int32 sideSize)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromShellObject">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.IThumbnailFromShellObject</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromShellObject.#ctor">
+            <summary>Initializes a new instance of type StubIThumbnailFromShellObject</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromShellObject.ConstructBitmapShellObjectInt32">
+            <summary>Sets the stub of IThumbnailFromShellObject.ConstructBitmap(ShellObject shellObject, Int32 sideSize)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromShellObject.Microsoft#WindowsAPICodePack#ShellExtensions#IThumbnailFromShellObject#ConstructBitmap(Microsoft.WindowsAPICodePack.Shell.ShellObject,System.Int32)">
+            <summary>Sets the stub of IThumbnailFromShellObject.ConstructBitmap(ShellObject shellObject, Int32 sideSize)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromStream">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.IThumbnailFromStream</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromStream.#ctor">
+            <summary>Initializes a new instance of type StubIThumbnailFromStream</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromStream.ConstructBitmapStreamInt32">
+            <summary>Sets the stub of IThumbnailFromStream.ConstructBitmap(Stream stream, Int32 sideSize)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubIThumbnailFromStream.Microsoft#WindowsAPICodePack#ShellExtensions#IThumbnailFromStream#ConstructBitmap(System.IO.Stream,System.Int32)">
+            <summary>Sets the stub of IThumbnailFromStream.ConstructBitmap(Stream stream, Int32 sideSize)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.PreviewHandler</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.Handle">
+            <summary>Sets the stub of PreviewHandler.get_Handle()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.HandleGet">
+            <summary>Sets the stub of PreviewHandler.get_Handle()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.HandleInitializeException(System.Exception)">
+            <summary>Sets the stub of PreviewHandler.HandleInitializeException(Exception caughtException)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.HandleInitializeExceptionException">
+            <summary>Sets the stub of PreviewHandler.HandleInitializeException(Exception caughtException)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.Initialize">
+            <summary>Sets the stub of PreviewHandler.Initialize()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.Initialize01">
+            <summary>Sets the stub of PreviewHandler.Initialize()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.InitializeStub">
+            <summary>Initializes a new instance of type StubPreviewHandler</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.SetBackground(System.Int32)">
+            <summary>Sets the stub of PreviewHandler.SetBackground(Int32 argb)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.SetBackgroundInt32">
+            <summary>Sets the stub of PreviewHandler.SetBackground(Int32 argb)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.SetFocus">
+            <summary>Sets the stub of PreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.SetFocus01">
+            <summary>Sets the stub of PreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.SetFont(Microsoft.WindowsAPICodePack.ShellExtensions.Interop.LogFont)">
+            <summary>Sets the stub of PreviewHandler.SetFont(LogFont font)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.SetFontLogFont">
+            <summary>Sets the stub of PreviewHandler.SetFont(LogFont font)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.SetForeground(System.Int32)">
+            <summary>Sets the stub of PreviewHandler.SetForeground(Int32 argb)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.SetForegroundInt32">
+            <summary>Sets the stub of PreviewHandler.SetForeground(Int32 argb)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.SetParentHandle(System.IntPtr)">
+            <summary>Sets the stub of PreviewHandler.SetParentHandle(IntPtr handle)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.SetParentHandleIntPtr">
+            <summary>Sets the stub of PreviewHandler.SetParentHandle(IntPtr handle)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.Uninitialize">
+            <summary>Sets the stub of PreviewHandler.Uninitialize()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.Uninitialize01">
+            <summary>Sets the stub of PreviewHandler.Uninitialize()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.UpdateBounds(Microsoft.WindowsAPICodePack.Shell.NativeRect)">
+            <summary>Sets the stub of PreviewHandler.UpdateBounds(NativeRect bounds)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubPreviewHandler.UpdateBoundsNativeRect">
+            <summary>Sets the stub of PreviewHandler.UpdateBounds(NativeRect bounds)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubThumbnailProvider">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.ThumbnailProvider</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubThumbnailProvider.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubThumbnailProvider.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubThumbnailProvider.Dispose(System.Boolean)">
+            <summary>Sets the stub of ThumbnailProvider.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubThumbnailProvider.DisposeBoolean">
+            <summary>Sets the stub of ThumbnailProvider.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubThumbnailProvider.GetThumbnailAlphaType">
+            <summary>Sets the stub of ThumbnailProvider.GetThumbnailAlphaType()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubThumbnailProvider.GetThumbnailAlphaType01">
+            <summary>Sets the stub of ThumbnailProvider.GetThumbnailAlphaType()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubThumbnailProvider.InitializeStub">
+            <summary>Initializes a new instance of type StubThumbnailProvider</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubThumbnailProvider.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubThumbnailProvider.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.WinFormsPreviewHandler</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.Dispose(System.Boolean)">
+            <summary>Sets the stub of WinFormsPreviewHandler.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.DisposeBoolean">
+            <summary>Sets the stub of WinFormsPreviewHandler.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.Handle">
+            <summary>Sets the stub of WinFormsPreviewHandler.get_Handle()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.HandleGet">
+            <summary>Sets the stub of WinFormsPreviewHandler.get_Handle()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.HandleInitializeException(System.Exception)">
+            <summary>Sets the stub of WinFormsPreviewHandler.HandleInitializeException(Exception caughtException)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.HandleInitializeExceptionException">
+            <summary>Sets the stub of WinFormsPreviewHandler.HandleInitializeException(Exception caughtException)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.Initialize">
+            <summary>Sets the stub of PreviewHandler.Initialize()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.Initialize01">
+            <summary>Sets the stub of PreviewHandler.Initialize()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.InitializeStub">
+            <summary>Initializes a new instance of type StubWinFormsPreviewHandler</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.SetBackground(System.Int32)">
+            <summary>Sets the stub of WinFormsPreviewHandler.SetBackground(Int32 argb)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.SetBackgroundInt32">
+            <summary>Sets the stub of WinFormsPreviewHandler.SetBackground(Int32 argb)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.SetFocus">
+            <summary>Sets the stub of WinFormsPreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.SetFocus01">
+            <summary>Sets the stub of WinFormsPreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.SetFont(Microsoft.WindowsAPICodePack.ShellExtensions.Interop.LogFont)">
+            <summary>Sets the stub of WinFormsPreviewHandler.SetFont(LogFont font)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.SetFontLogFont">
+            <summary>Sets the stub of WinFormsPreviewHandler.SetFont(LogFont font)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.SetForeground(System.Int32)">
+            <summary>Sets the stub of WinFormsPreviewHandler.SetForeground(Int32 argb)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.SetForegroundInt32">
+            <summary>Sets the stub of WinFormsPreviewHandler.SetForeground(Int32 argb)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.SetParentHandle(System.IntPtr)">
+            <summary>Sets the stub of WinFormsPreviewHandler.SetParentHandle(IntPtr handle)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.SetParentHandleIntPtr">
+            <summary>Sets the stub of WinFormsPreviewHandler.SetParentHandle(IntPtr handle)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.Uninitialize">
+            <summary>Sets the stub of PreviewHandler.Uninitialize()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.Uninitialize01">
+            <summary>Sets the stub of PreviewHandler.Uninitialize()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.UpdateBounds(Microsoft.WindowsAPICodePack.Shell.NativeRect)">
+            <summary>Sets the stub of WinFormsPreviewHandler.UpdateBounds(NativeRect bounds)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWinFormsPreviewHandler.UpdateBoundsNativeRect">
+            <summary>Sets the stub of WinFormsPreviewHandler.UpdateBounds(NativeRect bounds)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.WpfPreviewHandler</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.Dispose(System.Boolean)">
+            <summary>Sets the stub of WpfPreviewHandler.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.DisposeBoolean">
+            <summary>Sets the stub of WpfPreviewHandler.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.Handle">
+            <summary>Sets the stub of WpfPreviewHandler.get_Handle()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.HandleGet">
+            <summary>Sets the stub of WpfPreviewHandler.get_Handle()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.HandleInitializeException(System.Exception)">
+            <summary>Sets the stub of WpfPreviewHandler.HandleInitializeException(Exception caughtException)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.HandleInitializeExceptionException">
+            <summary>Sets the stub of WpfPreviewHandler.HandleInitializeException(Exception caughtException)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.Initialize">
+            <summary>Sets the stub of WpfPreviewHandler.Initialize()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.Initialize01">
+            <summary>Sets the stub of WpfPreviewHandler.Initialize()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.InitializeStub">
+            <summary>Initializes a new instance of type StubWpfPreviewHandler</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.SetBackground(System.Int32)">
+            <summary>Sets the stub of WpfPreviewHandler.SetBackground(Int32 argb)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.SetBackgroundInt32">
+            <summary>Sets the stub of WpfPreviewHandler.SetBackground(Int32 argb)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.SetFocus">
+            <summary>Sets the stub of WpfPreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.SetFocus01">
+            <summary>Sets the stub of WpfPreviewHandler.SetFocus()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.SetFont(Microsoft.WindowsAPICodePack.ShellExtensions.Interop.LogFont)">
+            <summary>Sets the stub of WpfPreviewHandler.SetFont(LogFont font)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.SetFontLogFont">
+            <summary>Sets the stub of WpfPreviewHandler.SetFont(LogFont font)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.SetForeground(System.Int32)">
+            <summary>Sets the stub of WpfPreviewHandler.SetForeground(Int32 argb)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.SetForegroundInt32">
+            <summary>Sets the stub of WpfPreviewHandler.SetForeground(Int32 argb)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.SetParentHandle(System.IntPtr)">
+            <summary>Sets the stub of WpfPreviewHandler.SetParentHandle(IntPtr handle)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.SetParentHandleIntPtr">
+            <summary>Sets the stub of WpfPreviewHandler.SetParentHandle(IntPtr handle)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.Uninitialize">
+            <summary>Sets the stub of PreviewHandler.Uninitialize()</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.Uninitialize01">
+            <summary>Sets the stub of PreviewHandler.Uninitialize()</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.UpdateBounds(Microsoft.WindowsAPICodePack.Shell.NativeRect)">
+            <summary>Sets the stub of WpfPreviewHandler.UpdateBounds(NativeRect bounds)</summary>
+        </member>
+        <member name="F:Microsoft.WindowsAPICodePack.ShellExtensions.Fakes.StubWpfPreviewHandler.UpdateBoundsNativeRect">
+            <summary>Sets the stub of WpfPreviewHandler.UpdateBounds(NativeRect bounds)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont">
+            <summary>Shim type of Microsoft.WindowsAPICodePack.ShellExtensions.Interop.LogFont</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.#ctor(Microsoft.WindowsAPICodePack.ShellExtensions.Interop.LogFont)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.CharacterSetGet">
+            <summary>Sets the shim of LogFont.get_CharacterSet()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.CharacterSetSetByte">
+            <summary>Sets the shim of LogFont.set_CharacterSet(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.ClipPrecisionGet">
+            <summary>Sets the shim of LogFont.get_ClipPrecision()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.ClipPrecisionSetByte">
+            <summary>Sets the shim of LogFont.set_ClipPrecision(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.EscapementGet">
+            <summary>Sets the shim of LogFont.get_Escapement()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.EscapementSetInt32">
+            <summary>Sets the shim of LogFont.set_Escapement(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.FaceNameGet">
+            <summary>Sets the shim of LogFont.get_FaceName()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.FaceNameSetString">
+            <summary>Sets the shim of LogFont.set_FaceName(String value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.HeightGet">
+            <summary>Sets the shim of LogFont.get_Height()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.HeightSetInt32">
+            <summary>Sets the shim of LogFont.set_Height(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.ItalicGet">
+            <summary>Sets the shim of LogFont.get_Italic()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.ItalicSetByte">
+            <summary>Sets the shim of LogFont.set_Italic(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.OrientationGet">
+            <summary>Sets the shim of LogFont.get_Orientation()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.OrientationSetInt32">
+            <summary>Sets the shim of LogFont.set_Orientation(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.OutPrecisionGet">
+            <summary>Sets the shim of LogFont.get_OutPrecision()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.OutPrecisionSetByte">
+            <summary>Sets the shim of LogFont.set_OutPrecision(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.PitchAndFamilyGet">
+            <summary>Sets the shim of LogFont.get_PitchAndFamily()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.PitchAndFamilySetByte">
+            <summary>Sets the shim of LogFont.set_PitchAndFamily(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.QualityGet">
+            <summary>Sets the shim of LogFont.get_Quality()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.QualitySetByte">
+            <summary>Sets the shim of LogFont.set_Quality(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.StrikeoutGet">
+            <summary>Sets the shim of LogFont.get_Strikeout()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.StrikeoutSetByte">
+            <summary>Sets the shim of LogFont.set_Strikeout(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.UnderlineGet">
+            <summary>Sets the shim of LogFont.get_Underline()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.UnderlineSetByte">
+            <summary>Sets the shim of LogFont.set_Underline(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.WeightGet">
+            <summary>Sets the shim of LogFont.get_Weight()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.WeightSetInt32">
+            <summary>Sets the shim of LogFont.set_Weight(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.WidthGet">
+            <summary>Sets the shim of LogFont.get_Width()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.AllInstances.WidthSetInt32">
+            <summary>Sets the shim of LogFont.set_Width(Int32 value)</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.CharacterSetGet">
+            <summary>Sets the shim of LogFont.get_CharacterSet()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.CharacterSetSetByte">
+            <summary>Sets the shim of LogFont.set_CharacterSet(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.ClipPrecisionGet">
+            <summary>Sets the shim of LogFont.get_ClipPrecision()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.ClipPrecisionSetByte">
+            <summary>Sets the shim of LogFont.set_ClipPrecision(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.Constructor">
+            <summary>Sets the shim of LogFont.LogFont()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.EscapementGet">
+            <summary>Sets the shim of LogFont.get_Escapement()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.EscapementSetInt32">
+            <summary>Sets the shim of LogFont.set_Escapement(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.FaceNameGet">
+            <summary>Sets the shim of LogFont.get_FaceName()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.FaceNameSetString">
+            <summary>Sets the shim of LogFont.set_FaceName(String value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.HeightGet">
+            <summary>Sets the shim of LogFont.get_Height()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.HeightSetInt32">
+            <summary>Sets the shim of LogFont.set_Height(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.ItalicGet">
+            <summary>Sets the shim of LogFont.get_Italic()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.ItalicSetByte">
+            <summary>Sets the shim of LogFont.set_Italic(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.OrientationGet">
+            <summary>Sets the shim of LogFont.get_Orientation()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.OrientationSetInt32">
+            <summary>Sets the shim of LogFont.set_Orientation(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.OutPrecisionGet">
+            <summary>Sets the shim of LogFont.get_OutPrecision()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.OutPrecisionSetByte">
+            <summary>Sets the shim of LogFont.set_OutPrecision(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.PitchAndFamilyGet">
+            <summary>Sets the shim of LogFont.get_PitchAndFamily()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.PitchAndFamilySetByte">
+            <summary>Sets the shim of LogFont.set_PitchAndFamily(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.QualityGet">
+            <summary>Sets the shim of LogFont.get_Quality()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.QualitySetByte">
+            <summary>Sets the shim of LogFont.set_Quality(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.StrikeoutGet">
+            <summary>Sets the shim of LogFont.get_Strikeout()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.StrikeoutSetByte">
+            <summary>Sets the shim of LogFont.set_Strikeout(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.UnderlineGet">
+            <summary>Sets the shim of LogFont.get_Underline()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.UnderlineSetByte">
+            <summary>Sets the shim of LogFont.set_Underline(Byte value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.WeightGet">
+            <summary>Sets the shim of LogFont.get_Weight()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.WeightSetInt32">
+            <summary>Sets the shim of LogFont.set_Weight(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.WidthGet">
+            <summary>Sets the shim of LogFont.get_Width()</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.ShimLogFont.WidthSetInt32">
+            <summary>Sets the shim of LogFont.set_Width(Int32 value)</summary>
+        </member>
+        <member name="T:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.StubLogFont">
+            <summary>Stub type of Microsoft.WindowsAPICodePack.ShellExtensions.Interop.LogFont</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.StubLogFont.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.StubLogFont.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.StubLogFont.InitializeStub">
+            <summary>Initializes a new instance of type StubLogFont</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.StubLogFont.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Microsoft.WindowsAPICodePack.ShellExtensions.Interop.Fakes.StubLogFont.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>
