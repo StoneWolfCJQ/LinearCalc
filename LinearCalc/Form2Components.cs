@@ -279,6 +279,7 @@ namespace LinearCalc
             }
             catch(Exception ex)
             {
+                if (outDataFormatList.AeroTech == outDataFormat) return;
                 MessageBox.Show("读取文件错误：" + this.fileList.TopItem.Text + ".txt" + "\n" + ex.Message, "错误",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);                
             }
