@@ -120,6 +120,7 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BallonTip.cs" />
+    <Compile Include="CalUtil\CalUtils.cs" />
     <Compile Include="Form3Components.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +153,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SourceManufactor\API.cs" />
+    <Compile Include="SourceManufactor\RENISHAW.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -231,6 +234,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ConvertWizard\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
