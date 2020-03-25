@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Utilities;
+using System.Linq;
 
 namespace LinearCalc
 {
@@ -244,7 +245,9 @@ namespace LinearCalc
 
         private void ChangeVarName()
         {
-            if (DataFormator.AeroTech == outDataFormat)
+            string ext = Path.GetExtension(fileList.TopItem.Text);
+            if ((DataFormator.AeroTech == outDataFormat)|| 
+                !ext.Equals(".txt",StringComparison.CurrentCultureIgnoreCase))
                 return;
 
             String tempString;
@@ -291,25 +294,27 @@ namespace LinearCalc
         }
         private void GetDataAndSaveFile()
         {
-            double[,] dataSource;
-            double[] result;
-            GetData(out dataSource);
+            double[][] dataSource = GetData();
             if (null == dataSource)
             {
                 return;
             }
-            CalcMean(dataSource, out result);
+            double[] result = Sum(dataSource);
             SaveFile(result);
         }
 
-        private void GetData(out double[,] dataSource)
+        private double[][] GetData()
         {
             int rows = -1;
-            int i = 0, j = 0;
-            dataSource = new double[1, 1];
+            int i = 0;
             string fileString;
             double[] data;
             String filePath;
+            double offset, ratio;
+            double[][] dataSource = new double[fileList.Items.Count][];
+            double r;
+
+            UNIT unit;            
 
             foreach (ListViewItem tempItem in fileList.Items)
             {
@@ -323,19 +328,26 @@ namespace LinearCalc
                 {
                     MessageBox.Show("打开文件错误：" + tempItem.Text + "\n" + ex.Message, "错误",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    dataSource = null;
                     tempItem.BackColor = Color.Red;
-                    return;
+                    return null;
                 }
 
                 try
                 {                    
                     if (ext.Equals(".txt", StringComparison.CurrentCultureIgnoreCase))
                     {
+                        r = 1;
                         data = FormatorManager.ReadFormatedData(DataFormator.ACS, fileString);
                     }
                     else
                     {
+                        switch (outDataFormat)
+                        {
+                            case DataFormator.ACS: unit = UNIT.mm; break;
+                            case DataFormator.AeroTech: unit = UNIT.um; break;
+                            default: throw new NotImplementedException();
+                        }
+                        r = (double)unit / (double)UNIT.mm;
                         data = ManuManager.GetDataByExtWithDot(ext, fileString, UNIT.mm);
                     }
                 }
@@ -343,23 +355,16 @@ namespace LinearCalc
                 {
                     MessageBox.Show("文件格式错误：" + tempItem.Text + "\n" + ex.Message, "错误",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    dataSource = null;
                     tempItem.BackColor = Color.Red;
-                    return;
+                    return null;
                 }
 
-                if (tempItem.SubItems[3].Text == "Yes")
-                {
-                    List<double> tl = new List<double>(data);
-                    tl.Reverse();
-                    data = tl.ToArray();
-                }
+                
 
-
+                //Check if length is same
                 if (-1 == rows)
-                {
+                {                    
                     rows = data.Length;
-                    dataSource = new double[rows + 2, fileList.Items.Count];
                 }
                 else
                 {
@@ -367,62 +372,52 @@ namespace LinearCalc
                     {
                         MessageBox.Show("数据维度不相同：" + filePath, "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         tempItem.BackColor = Color.Red;
-                        dataSource = null;
-                        return;
+                        return null;
                     }
                 }
 
-                foreach (double d in data)
+                //Flip
+                if (tempItem.SubItems[3].Text == "Yes")
                 {
-                    dataSource[j, i] = d;
-                    j++;
+                    List<double> ldata = new List<double>(data);
+                    ldata.Reverse();
+                    data = ldata.ToArray();
                 }
 
+                //Ratio and offset
                 try
                 {
-                    dataSource[j, i] = double.Parse(tempItem.SubItems[2].Text);
+                    ratio = double.Parse(tempItem.SubItems[2].Text);
+                    offset = double.Parse(tempItem.SubItems[4].Text);
                 }
                 catch
                 {
-                    MessageBox.Show("读取数据错误：" + filePath, "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("权重或偏移值错误", "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tempItem.BackColor = Color.Red;
-                    dataSource = null;
-                    return;
+                    return null;
                 }
-                j++;
 
-                try
-                {
-                    dataSource[j, i] = double.Parse(tempItem.SubItems[4].Text);
-                }
-                catch
-                {
-                    MessageBox.Show("读取数据错误：" + filePath, "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    tempItem.BackColor = Color.Red;
-                    dataSource = null;
-                    return;
-                }
-                j = 0;
+                dataSource[i] = data.Select(d => (d + offset) * ratio * r).ToArray();
                 i++;
             }
+
+            return dataSource;
         }
 
-        private void CalcMean(double[,] dataSource, out double[] result)
+        private double[] Sum(double[][] dataSource)
         {
-            int i = 0, j = 0;
-            int rows = dataSource.GetLength(0) - 2;
-            int columns = dataSource.GetLength(1);
-            result = new double[rows];
+            int rn = dataSource[0].Length;
+            double[] result = new double[rn];
 
-            for (; i < rows; i++)
+            foreach (double[] d in dataSource)
             {
-                for (j = 0; j < columns; j++)
+                for (int i = 0; i < rn; i++)
                 {
-                    result[i] += (dataSource[i, j] + dataSource[dataSource.GetLength(0) - 1, j]) 
-                        * dataSource[dataSource.GetLength(0) - 2, j];
+                    result[i] += d[i];
                 }
-                j = 0;
             }
+
+            return result;
         }
 
         private void SaveFile(double[] result)
@@ -498,13 +493,13 @@ namespace LinearCalc
             tempItem = fileList.SelectedItems[0];
             try
             {
-                System.Diagnostics.Process.Start(tempItem.SubItems[1].Text + '\\' + tempItem.Text + ".txt");
+                System.Diagnostics.Process.Start(tempItem.SubItems[1].Text + '\\' 
+                    + tempItem.Text);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("打开文件错误：" + tempItem.SubItems[1].Text + '\\' + tempItem.Text
-                    + ".txt" + ex.Message, "错误",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("打开文件错误：" + tempItem.SubItems[1].Text + '\\' 
+                    + tempItem.Text + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

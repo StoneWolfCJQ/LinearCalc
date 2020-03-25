@@ -23,10 +23,8 @@ D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\L
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Debug\LinearCalc.OptionsForm.resources
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Debug\LinearCalc.Properties.Resources.resources
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Debug\LinearCalc.csproj.GenerateResource.cache
-D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Debug\LinearCalc.csproj.CoreCompileInputs.cache
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Debug\LinearCalc.exe
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Debug\LinearCalc.pdb
-D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Debug\LinearCalc.csprojAssemblyReference.cache
 D:\Stone\05-程序\LinearCalc\LinearCalc\bin\Debug\LinearCalc.exe.config
 D:\Stone\05-程序\LinearCalc\LinearCalc\bin\Debug\LinearCalc.exe
 D:\Stone\05-程序\LinearCalc\LinearCalc\bin\Debug\LinearCalc.pdb
@@ -41,3 +39,5 @@ D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Debug\LinearCalc.Properties.Resourc
 D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Debug\LinearCalc.csproj.GenerateResource.Cache
 D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Debug\LinearCalc.exe
 D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Debug\LinearCalc.pdb
+D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Debug\LinearCalc.csprojResolveAssemblyReference.cache
+D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Debug\LinearCalc.ConvertAssist.resources

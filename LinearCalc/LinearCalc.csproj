@@ -121,6 +121,15 @@
     </Compile>
     <Compile Include="BallonTip.cs" />
     <Compile Include="CalUtil\CalUtils.cs" />
+    <Compile Include="ConvertAssist\ConvertAssistComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertAssist\ConvertAssist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertAssist\ConvertAssist.Designer.cs">
+      <DependentUpon>ConvertAssist.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExportFormtor\AreoTech.cs" />
     <Compile Include="ExportFormtor\ACS.cs" />
     <Compile Include="ExportFormtor\FormatorTemplate.cs" />
@@ -179,6 +188,9 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConvertAssist\ConvertAssist.resx">
+      <DependentUpon>ConvertAssist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -203,6 +215,7 @@
     <None Include="app.manifest" />
     <None Include="LinearCalc_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ConvertAssist.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -242,8 +255,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ConvertWizard\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

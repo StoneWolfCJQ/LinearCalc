@@ -51,6 +51,7 @@
             this.fileFlipCheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.fileOffsetNumeric = new System.Windows.Forms.NumericUpDown();
+            this.convertAssistButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileWeightNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileOffsetNumeric)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +71,7 @@
             this.fileList.HideSelection = false;
             this.fileList.Location = new System.Drawing.Point(11, 12);
             this.fileList.Name = "fileList";
-            this.fileList.Size = new System.Drawing.Size(597, 365);
+            this.fileList.Size = new System.Drawing.Size(597, 402);
             this.fileList.TabIndex = 0;
             this.fileList.UseCompatibleStateImageBehavior = false;
             this.fileList.View = System.Windows.Forms.View.Details;
@@ -103,7 +104,7 @@
             // 
             this.addFilesButton.AutoSize = true;
             this.addFilesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.addFilesButton.Location = new System.Drawing.Point(614, 15);
+            this.addFilesButton.Location = new System.Drawing.Point(618, 12);
             this.addFilesButton.Name = "addFilesButton";
             this.addFilesButton.Size = new System.Drawing.Size(91, 35);
             this.addFilesButton.TabIndex = 1;
@@ -114,7 +115,7 @@
             // deleteFileButton
             // 
             this.deleteFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.deleteFileButton.Location = new System.Drawing.Point(614, 64);
+            this.deleteFileButton.Location = new System.Drawing.Point(618, 59);
             this.deleteFileButton.Name = "deleteFileButton";
             this.deleteFileButton.Size = new System.Drawing.Size(91, 35);
             this.deleteFileButton.TabIndex = 2;
@@ -125,7 +126,7 @@
             // clearFileButton
             // 
             this.clearFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.clearFileButton.Location = new System.Drawing.Point(614, 115);
+            this.clearFileButton.Location = new System.Drawing.Point(618, 105);
             this.clearFileButton.Name = "clearFileButton";
             this.clearFileButton.Size = new System.Drawing.Size(91, 35);
             this.clearFileButton.TabIndex = 3;
@@ -136,7 +137,7 @@
             // genFileButton
             // 
             this.genFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.genFileButton.Location = new System.Drawing.Point(618, 309);
+            this.genFileButton.Location = new System.Drawing.Point(618, 345);
             this.genFileButton.Name = "genFileButton";
             this.genFileButton.Size = new System.Drawing.Size(91, 35);
             this.genFileButton.TabIndex = 6;
@@ -148,7 +149,7 @@
             // 
             this.varNameLabel.AutoSize = true;
             this.varNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.varNameLabel.Location = new System.Drawing.Point(615, 256);
+            this.varNameLabel.Location = new System.Drawing.Point(615, 292);
             this.varNameLabel.Name = "varNameLabel";
             this.varNameLabel.Size = new System.Drawing.Size(53, 18);
             this.varNameLabel.TabIndex = 9;
@@ -157,7 +158,7 @@
             // varNameBox
             // 
             this.varNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.varNameBox.Location = new System.Drawing.Point(618, 278);
+            this.varNameBox.Location = new System.Drawing.Point(618, 314);
             this.varNameBox.Name = "varNameBox";
             this.varNameBox.Size = new System.Drawing.Size(87, 22);
             this.varNameBox.TabIndex = 5;
@@ -180,7 +181,7 @@
             // 
             this.openSavedFolderButton.BackgroundImage = global::LinearCalc.Properties.Resources.openFolderIcon;
             this.openSavedFolderButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.openSavedFolderButton.Location = new System.Drawing.Point(672, 350);
+            this.openSavedFolderButton.Location = new System.Drawing.Point(672, 386);
             this.openSavedFolderButton.Name = "openSavedFolderButton";
             this.openSavedFolderButton.Size = new System.Drawing.Size(33, 28);
             this.openSavedFolderButton.TabIndex = 8;
@@ -191,7 +192,7 @@
             // 
             this.openSavedFileButton.BackgroundImage = global::LinearCalc.Properties.Resources.openFileIcon;
             this.openSavedFileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.openSavedFileButton.Location = new System.Drawing.Point(620, 350);
+            this.openSavedFileButton.Location = new System.Drawing.Point(620, 386);
             this.openSavedFileButton.Name = "openSavedFileButton";
             this.openSavedFileButton.Size = new System.Drawing.Size(34, 28);
             this.openSavedFileButton.TabIndex = 7;
@@ -202,7 +203,7 @@
             // 
             this.fileWeightLabel.AutoSize = true;
             this.fileWeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.fileWeightLabel.Location = new System.Drawing.Point(617, 209);
+            this.fileWeightLabel.Location = new System.Drawing.Point(617, 245);
             this.fileWeightLabel.Name = "fileWeightLabel";
             this.fileWeightLabel.Size = new System.Drawing.Size(38, 18);
             this.fileWeightLabel.TabIndex = 10;
@@ -217,7 +218,7 @@
             0,
             0,
             65536});
-            this.fileWeightNumeric.Location = new System.Drawing.Point(620, 231);
+            this.fileWeightNumeric.Location = new System.Drawing.Point(620, 267);
             this.fileWeightNumeric.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -241,7 +242,7 @@
             // fileFlipCheckBox
             // 
             this.fileFlipCheckBox.AutoSize = true;
-            this.fileFlipCheckBox.Location = new System.Drawing.Point(620, 151);
+            this.fileFlipCheckBox.Location = new System.Drawing.Point(620, 187);
             this.fileFlipCheckBox.Name = "fileFlipCheckBox";
             this.fileFlipCheckBox.Size = new System.Drawing.Size(58, 21);
             this.fileFlipCheckBox.TabIndex = 12;
@@ -253,7 +254,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(617, 167);
+            this.label1.Location = new System.Drawing.Point(617, 203);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 18);
             this.label1.TabIndex = 13;
@@ -268,7 +269,7 @@
             0,
             0,
             131072});
-            this.fileOffsetNumeric.Location = new System.Drawing.Point(620, 185);
+            this.fileOffsetNumeric.Location = new System.Drawing.Point(620, 221);
             this.fileOffsetNumeric.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -289,13 +290,25 @@
             65536});
             this.fileOffsetNumeric.ValueChanged += new System.EventHandler(this.offsetBox_ValueChanged);
             // 
+            // convertAssistButton
+            // 
+            this.convertAssistButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.convertAssistButton.Location = new System.Drawing.Point(618, 150);
+            this.convertAssistButton.Name = "convertAssistButton";
+            this.convertAssistButton.Size = new System.Drawing.Size(91, 35);
+            this.convertAssistButton.TabIndex = 15;
+            this.convertAssistButton.Text = "助手";
+            this.convertAssistButton.UseVisualStyleBackColor = true;
+            this.convertAssistButton.Click += new System.EventHandler(this.convertAssistButton_Click);
+            // 
             // Form2
             // 
             this.AcceptButton = this.genFileButton;
             this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(712, 389);
+            this.ClientSize = new System.Drawing.Size(712, 426);
+            this.Controls.Add(this.convertAssistButton);
             this.Controls.Add(this.fileOffsetNumeric);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fileFlipCheckBox);
@@ -347,5 +360,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown fileOffsetNumeric;
         private System.Windows.Forms.ColumnHeader fileOffset;
+        private System.Windows.Forms.Button convertAssistButton;
     }
 }

@@ -255,5 +255,12 @@ namespace LinearCalc
 
             }
         }
+
+        private void convertAssistButton_Click(object sender, EventArgs e)
+        {
+            Thread t = new Thread(()=>Application.Run(new ConvertAssist()));
+            t.IsBackground = true;
+            t.Start();
+        }
     }
 }
