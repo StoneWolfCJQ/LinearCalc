@@ -166,7 +166,8 @@
             // addFileDialog
             // 
             this.addFileDialog.DefaultExt = "txt";
-            this.addFileDialog.Filter = "TXT files(*.txt)|*.txt";
+            this.addFileDialog.Filter = "All valid files (*.rtl;*.pos;*.txt)|*.rtl;*.pos;*.txt|RTL files (*.rtl)|*.rtl|POS" +
+    " files (*.pos)|*.pos|TXT files (*.txt)|*.txt";
             this.addFileDialog.Multiselect = true;
             this.addFileDialog.RestoreDirectory = true;
             // 
@@ -242,7 +243,7 @@
             this.fileFlipCheckBox.AutoSize = true;
             this.fileFlipCheckBox.Location = new System.Drawing.Point(620, 151);
             this.fileFlipCheckBox.Name = "fileFlipCheckBox";
-            this.fileFlipCheckBox.Size = new System.Drawing.Size(50, 17);
+            this.fileFlipCheckBox.Size = new System.Drawing.Size(58, 21);
             this.fileFlipCheckBox.TabIndex = 12;
             this.fileFlipCheckBox.Text = "翻转";
             this.fileFlipCheckBox.UseVisualStyleBackColor = true;

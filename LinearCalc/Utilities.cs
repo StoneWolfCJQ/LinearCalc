@@ -12,8 +12,6 @@ namespace Utilities
 {
     public enum manufactoryList { RENISHAW, API};
 
-    public enum outDataFormatList { ACS, AeroTech};
-
     public enum infoText
     {
         NONE,

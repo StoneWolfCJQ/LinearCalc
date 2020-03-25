@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Utilities;
+using System.Text.RegularExpressions;
 
 namespace LinearCalc
 {
@@ -19,7 +20,7 @@ namespace LinearCalc
         public Form2()
         {
             System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(Form2));           
+                new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             InitializeComponent();
             InitialCustomComponent();
         }
@@ -30,11 +31,11 @@ namespace LinearCalc
             String tempExt;
             bool isFile;
             bool hasTxtFile = false;
-            int i = 0;            
+            int i = 0;
 
             enterFormats = e.Data.GetData(DataFormats.FileDrop) as String[];
-            this.dropFileIndex = new bool[enterFormats.Length];
-            this.dropFolder = false;
+            dropFileIndex = new bool[enterFormats.Length];
+            dropFolder = false;
 
             foreach (String fileDropName in enterFormats)
             {
@@ -52,27 +53,28 @@ namespace LinearCalc
                 if (isFile)
                 {
                     tempExt = Path.GetExtension(fileDropName);
-                    if (tempExt.Equals(".txt", StringComparison.OrdinalIgnoreCase))
+                    string reg = @"^(?i)(\.(txt|rtl|pos))$";
+                    if (Regex.IsMatch(tempExt, reg))
                     {
                         hasTxtFile = true;
-                        this.dropFileIndex[i] = true;
+                        dropFileIndex[i] = true;
                     }
                     else
                     {
-                        this.dropFileIndex[i] = false;
+                        dropFileIndex[i] = false;
                     }
                 }
                 else
                 {
-                   if (enterFormats.Length == 1)
+                    if (enterFormats.Length == 1)
                     {
-                        this.dropFolder = true;
+                        dropFolder = true;
                     }
                 }
                 i++;
-            }     
-            
-            if (hasTxtFile || this.dropFolder)
+            }
+
+            if (hasTxtFile || dropFolder)
             {
                 e.Effect = DragDropEffects.Link;
             }
@@ -85,12 +87,12 @@ namespace LinearCalc
         private void FileList_DragDrop(object sender, DragEventArgs e)
         {
             String[] enterFormats;
-            int i = 0, j = 0;            
+            int i = 0, j = 0;
             bool emptyTop;
-            ListViewItem tempTop = this.fileList.TopItem;            
+            ListViewItem tempTop = fileList.TopItem;
             String tempPath;
-            int fileCount = this.dropFileIndex.Count(s => s == true);
-            this.openFileList = new String[fileCount];
+            int fileCount = dropFileIndex.Count(s => s == true);
+            openFileList = new String[fileCount];
 
             enterFormats = e.Data.GetData(DataFormats.FileDrop) as String[];
             tempPath = enterFormats[0];
@@ -103,19 +105,19 @@ namespace LinearCalc
                 emptyTop = true;
             }
 
-            if (this.dropFolder)
-            {               
-                this.addFileDialog.InitialDirectory = tempPath;
+            if (dropFolder)
+            {
+                addFileDialog.InitialDirectory = tempPath;
                 OpenFileDialogProcess(emptyTop);
             }
-            
+
             else
-            {                
+            {
                 foreach (String fileDropName in enterFormats)
                 {
-                    if (this.dropFileIndex[i])
+                    if (dropFileIndex[i])
                     {
-                        this.openFileList[j] = fileDropName;
+                        openFileList[j] = fileDropName;
                         j++;
                     }
                     i++;
@@ -126,12 +128,12 @@ namespace LinearCalc
 
         private void FormSize_Change(object sender, EventArgs e)
         {
-            this.fileList.Size = this.Size - this.offset[0];
+            fileList.Size = Size - offset[0];
         }
 
         private void genFileButton_Click(object sender, EventArgs e)
         {
-            if (this.fileList.ContainsFocus)
+            if (fileList.ContainsFocus)
             {
                 OpenSelectedItem();
                 return;
@@ -146,7 +148,7 @@ namespace LinearCalc
 
         private void addFilesButton_Click(object sender, EventArgs e)
         {
-            OpenFolder();      
+            OpenFolder();
         }
 
         private void deleteFileButton_Click(object sender, EventArgs e)
@@ -161,13 +163,13 @@ namespace LinearCalc
 
         private void fileList_ItemSelectChanged(object sender, EventArgs e)
         {
-            if (this.fileList.SelectedItems.Count == 1)
+            if (fileList.SelectedItems.Count == 1)
             {
-                this.fileWeightNumeric.Text = this.fileList.SelectedItems[0].SubItems[2].Text;
-                this.fileFlipCheckBox.Checked = this.fileList.SelectedItems[0].SubItems[3].Text 
+                fileWeightNumeric.Text = fileList.SelectedItems[0].SubItems[2].Text;
+                fileFlipCheckBox.Checked = fileList.SelectedItems[0].SubItems[3].Text
                     == "Yes" ? true : false;
                 fileOffsetNumeric.Text = fileList.SelectedItems[0].SubItems[4].Text;
-            }      
+            }
         }
 
         private void openSavedFileButton_Click(object sender, EventArgs e)
@@ -179,45 +181,45 @@ namespace LinearCalc
         {
             try
             {
-                System.Diagnostics.Process.Start(Path.GetDirectoryName(saved ? this.savedFilePath : this.defaultPath + '\\'));
+                System.Diagnostics.Process.Start(Path.GetDirectoryName(saved ? savedFilePath : defaultPath + '\\'));
             }
             catch (Exception ex)
             {
-                MessageBox.Show("打开文件夹错误：" + Path.GetDirectoryName(saved ? this.savedFilePath : this.defaultPath) +
+                MessageBox.Show("打开文件夹错误：" + Path.GetDirectoryName(saved ? savedFilePath : defaultPath) +
                     "\n" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void varNameBox_TextChanged(object sender, EventArgs e)
         {
-            bool changeColor = !this.varNameBoxAutoChange;
-            if (UtilityFunctions.CheckVariableName(this.varNameBox, this.varNameBox.Text, false, changeColor))
+            bool changeColor = !varNameBoxAutoChange;
+            if (UtilityFunctions.CheckVariableName(varNameBox, varNameBox.Text, false, changeColor))
             {
-                this.varName = this.varNameBox.Text;
-                this.genFileButton.Enabled = true;
+                varName = varNameBox.Text;
+                genFileButton.Enabled = true;
             }
             else
             {
-                this.genFileButton.Enabled = false;
+                genFileButton.Enabled = false;
             }
-            this.varNameBoxAutoChange = false;
+            varNameBoxAutoChange = false;
         }
 
         private void fileWeightNumeric_ValueChanged(object sender, EventArgs e)
         {
-            ListView.SelectedListViewItemCollection tempItems = this.fileList.SelectedItems;
+            ListView.SelectedListViewItemCollection tempItems = fileList.SelectedItems;
 
             foreach (ListViewItem tempItem in tempItems)
-            {                
+            {
                 try
                 {
-                    tempItem.SubItems[2].Text = this.fileWeightNumeric.Value.ToString();
+                    tempItem.SubItems[2].Text = fileWeightNumeric.Value.ToString();
                 }
                 catch
                 {
 
                 }
-                
+
             }
         }
 
@@ -233,13 +235,13 @@ namespace LinearCalc
 
         private void offsetBox_ValueChanged(object sender, EventArgs e)
         {
-            ListView.SelectedListViewItemCollection tempItems = this.fileList.SelectedItems;
+            ListView.SelectedListViewItemCollection tempItems = fileList.SelectedItems;
 
             foreach (ListViewItem tempItem in tempItems)
             {
                 try
                 {
-                    string s = this.fileOffsetNumeric.Value.ToString().TrimEnd('0');
+                    string s = fileOffsetNumeric.Value.ToString().TrimEnd('0');
                     if (s.EndsWith("."))
                     {
                         s += '0';

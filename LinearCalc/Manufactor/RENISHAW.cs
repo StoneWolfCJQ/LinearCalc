@@ -8,17 +8,15 @@ using System.Text.RegularExpressions;
 
 namespace LinearCalc
 {
-    public class RENISHAW
+    public class RENISHAW : ManuTemplate
     {
         string posMatchReg = @"(?<=Targets :)(\d|\D)+(?=Flags:)";
         string dataMatchReg = @"(?<=Run Target Data:)(\d|\D)+(?=ENVIRONMENT::)";
 
-        protected char[] emptyChr = "\r\n\t\b ".ToCharArray();
-        protected int measureTimes = 4;
+        public override string FileExtWithDot { get { return ".rtl"; } }
+        protected override UNIT FileDataUnit { get { return UNIT.um; } }
 
-        public string fileExtWithDot = ".rtl";
-
-        public double[] GetPos(string fileString)
+        public override double[] GetPosMM(string fileString)
         {
             Match matchStr = Regex.Match(fileString, posMatchReg);
             if (matchStr.Success)
@@ -31,24 +29,34 @@ namespace LinearCalc
             throw new Exception("数据格式错误");
         }
 
-        public double[] GetResult(string fileString)
+        public override double[] GetResult(string fileString, UNIT unit)
         {
-            double[] rawData = GetRawData(fileString);
+            double[] rawData = GetRawDataUM(fileString);
             int l = rawData.Length / measureTimes;
             double[] data = new double[l];
+            int targetUnit = (int)unit;
+            int sourceUnit = (int)FileDataUnit;
+            double ratio = (targetUnit * 1.0 / sourceUnit);
             for (int i=0;i< l; i++)
             {
                 data[i] = 0;
                 for (int j = 0; j < measureTimes; j++)
                 {
-                    data[i] += -0.001 * data[j * l + i] / measureTimes;
+                    if (j % 2 == 0)
+                    {
+                        data[i] += -1 * ratio * rawData[j * l + i] / measureTimes;
+                    }
+                    else
+                    {
+                        data[i] += -1 * ratio * rawData[(j + 1) * l - i - 1] / measureTimes;
+                    }
                 }
             }
 
             return data;
         }
 
-        double[] GetRawData(string fileString)
+        double[] GetRawDataUM(string fileString)
         {
             Match matchStr = Regex.Match(fileString, dataMatchReg);
             if (matchStr.Success)

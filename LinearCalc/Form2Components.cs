@@ -12,23 +12,23 @@ namespace LinearCalc
         #region Init
         private void InitialCustomComponent()
         {
-            this.FormBorderStyle = FormBorderStyle.Fixed3D;
-            this.fileList.Scrollable = false;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            fileList.Scrollable = false;
             FileListFill();
-            this.fileList.LabelEdit = false;
-            this.offset[0] = this.Size - this.fileList.Size;
-            this.SizeChanged += new EventHandler(this.FormSize_Change);
-            this.openSavedFileButton.Enabled = false;
-            this.fileList.MouseDoubleClick += new MouseEventHandler(fileList_MouseDoubleClick);
-            this.fileList.ItemSelectionChanged+=new ListViewItemSelectionChangedEventHandler(fileList_ItemSelectChanged);
-            this.fileList.DragEnter += FileList_DragEnter;
-            this.fileList.DragDrop += FileList_DragDrop;
-            this.fileFlipCheckBox.Click += FileFlipCheckBox_Click;
-            this.KeyDown += Form2_KeyDown;
+            fileList.LabelEdit = false;
+            offset[0] = Size - fileList.Size;
+            SizeChanged += new EventHandler(FormSize_Change);
+            openSavedFileButton.Enabled = false;
+            fileList.MouseDoubleClick += new MouseEventHandler(fileList_MouseDoubleClick);
+            fileList.ItemSelectionChanged += new ListViewItemSelectionChangedEventHandler(fileList_ItemSelectChanged);
+            fileList.DragEnter += FileList_DragEnter;
+            fileList.DragDrop += FileList_DragDrop;
+            fileFlipCheckBox.Click += FileFlipCheckBox_Click;
+            KeyDown += Form2_KeyDown;
             FunctionAdder();
-            this.Activate();
+            Activate();
         }
-                
+
         #endregion
 
         #region HotKey
@@ -37,7 +37,7 @@ namespace LinearCalc
             String pressedKeyS = e.KeyCode.ToString();
             Char pressedKey = pressedKeyS[0];
             if (e.Control)
-            {   
+            {
                 if (pressedKeyS.Length == 1)
                 {
                     HotKeyHandle(pressedKey);
@@ -46,7 +46,7 @@ namespace LinearCalc
                 {
                     pressedKey = 'G';
                     HotKeyHandle(pressedKey);
-                }                
+                }
             }
 
             if (Keys.Escape.ToString() == pressedKeyS)
@@ -58,7 +58,7 @@ namespace LinearCalc
 
         private void FunctionAdder()
         {
-            this.functionList.AddRange(new List<voidFunction>
+            functionList.AddRange(new List<voidFunction>
             {
                 OpenFile,
                 GenerateFile,
@@ -92,11 +92,11 @@ namespace LinearCalc
             {
                 try
                 {
-                    System.Diagnostics.Process.Start(this.savedFilePath);
+                    System.Diagnostics.Process.Start(savedFilePath);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("打开文件错误：" + this.savedFilePath + ex.Message, "错误",
+                    MessageBox.Show("打开文件错误：" + savedFilePath + ex.Message, "错误",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -109,20 +109,20 @@ namespace LinearCalc
         private void OpenFolder()
         {
             bool emptyTop;
-            ListViewItem tempTop = this.fileList.TopItem;
+            ListViewItem tempTop = fileList.TopItem;
             if (null != tempTop)
             {
                 emptyTop = false;
-                this.defaultPath = this.fileList.Items[this.fileList.Items.Count - 1].SubItems[1].Text;
-                this.defaultFileName = this.fileList.Items[this.fileList.Items.Count - 1].Text;
-                this.addFileDialog.InitialDirectory = this.defaultPath;
-                this.addFileDialog.FileName = this.defaultFileName;
+                defaultPath = fileList.Items[fileList.Items.Count - 1].SubItems[1].Text;
+                defaultFileName = Path.GetFileNameWithoutExtension(fileList.Items[fileList.Items.Count - 1].Text);
+                addFileDialog.InitialDirectory = defaultPath;
+                addFileDialog.FileName = defaultFileName;
             }
             else
             {
                 emptyTop = true;
-                this.addFileDialog.InitialDirectory = this.defaultPath;
-                this.addFileDialog.FileName = this.defaultFileName;
+                addFileDialog.InitialDirectory = defaultPath;
+                addFileDialog.FileName = defaultFileName;
             }
 
             OpenFileDialogProcess(emptyTop);
@@ -130,12 +130,12 @@ namespace LinearCalc
 
         private void GenerateFile()
         {
-            if (this.fileList.Items.Count < 1)
+            if (fileList.Items.Count < 1)
             {
                 OpenFolder();
             }
 
-            if (this.fileList.Items.Count < 1)
+            if (fileList.Items.Count < 1)
             {
                 return;
             }
@@ -149,7 +149,7 @@ namespace LinearCalc
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
             if (DialogResult.OK == result)
             {
-                this.Close();
+                Close();
             }
         }
         private void None()
@@ -169,13 +169,13 @@ namespace LinearCalc
 
         private void ChangeCheck()
         {
-            ListView.SelectedListViewItemCollection tempItems = this.fileList.SelectedItems;
+            ListView.SelectedListViewItemCollection tempItems = fileList.SelectedItems;
 
             foreach (ListViewItem tempItem in tempItems)
             {
                 try
                 {
-                    tempItem.SubItems[3].Text = this.fileFlipCheckBox.Checked ? "Yes" : "No";
+                    tempItem.SubItems[3].Text = fileFlipCheckBox.Checked ? "Yes" : "No";
                 }
                 catch
                 {
@@ -193,102 +193,101 @@ namespace LinearCalc
 
         private void OpenFileDialogProcess(bool emptyTop)
         {
-            if (this.addFileDialog.ShowDialog() == DialogResult.OK)
-            {                
-                this.openFileList = this.addFileDialog.FileNames;
+            if (addFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                openFileList = addFileDialog.FileNames;
                 AddItem(emptyTop);
             }
         }
 
         private void AddItem(bool emptyTop)
         {
-            this.fileList.Scrollable = true;
+            fileList.Scrollable = true;
             ListViewItem tempItem;
-            foreach (String line in this.openFileList)
+            foreach (String line in openFileList)
             {
                 if (ExistFile(line))
                 {
                     continue;
                 }
-                tempItem = new ListViewItem(Path.GetFileNameWithoutExtension(line));
+                tempItem = new ListViewItem(Path.GetFileName(line));
                 tempItem.SubItems.Add(Path.GetDirectoryName(line));
                 tempItem.SubItems.Add("1.0");
                 tempItem.SubItems.Add("No");
                 tempItem.SubItems.Add("0.0");
-                this.fileList.Items.Add(tempItem);
+                fileList.Items.Add(tempItem);
                 if (emptyTop)
                 {
-                    this.defaultPath = this.fileList.Items[this.fileList.Items.Count - 1].SubItems[1].Text;
-                    this.defaultFileName = this.fileList.Items[this.fileList.Items.Count - 1].Text;
+                    defaultPath = fileList.Items[fileList.Items.Count - 1].SubItems[1].Text;
+                    defaultFileName = Path.GetFileNameWithoutExtension(fileList.Items[fileList.Items.Count - 1].Text);
                     ChangeVarName();
                     emptyTop = false;
                 }
             }
-            this.fileList.AutoResizeColumn(0,ColumnHeaderAutoResizeStyle.ColumnContent);
-            this.fileList.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.ColumnContent);
-            this.fileList.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.HeaderSize);
-            this.fileList.AutoResizeColumn(3, ColumnHeaderAutoResizeStyle.HeaderSize);
+            fileList.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.ColumnContent);
+            fileList.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.ColumnContent);
+            fileList.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.HeaderSize);
+            fileList.AutoResizeColumn(3, ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void FileGenButtonUpdate()
         {
-            if (this.fileList.Items.Count >= 2)
+            if (fileList.Items.Count >= 2)
             {
-                this.genFileButton.Enabled = true;
+                genFileButton.Enabled = true;
             }
             else
             {
-                this.genFileButton.Enabled = false;
+                genFileButton.Enabled = false;
             }
         }
 
         private void ChangeVarName()
         {
+            if (DataFormator.AeroTech == outDataFormat)
+                return;
+
             String tempString;
             String tempFilePath;
             StreamReader tempStreamReader;
             int rule = 0;
 
-            tempFilePath = this.fileList.TopItem.SubItems[1].Text + 
-                '\\' + this.fileList.TopItem.Text + ".txt";
+            tempFilePath = fileList.TopItem.SubItems[1].Text +
+                '\\' + fileList.TopItem.Text;
             try
             {
                 tempStreamReader = new StreamReader(tempFilePath);
                 tempString = tempStreamReader.ReadLine();
                 tempStreamReader.Close();
-                this.varName = tempString.Substring(0, tempString.IndexOf('('));
-                if (this.varName.Contains(UtilityParameters.defaultPrefix))
+                varName = tempString.Substring(0, tempString.IndexOf('('));
+                if (varName.Contains(UtilityParameters.defaultPrefix))
                 {
-                    tempString = this.varName;                    
-                    UtilityFunctions.ChangeVarNameToValid(ref this.varName, rule);
-                    if (!tempString.Equals(this.varName))
+                    tempString = varName;
+                    UtilityFunctions.ChangeVarNameToValid(ref varName, rule);
+                    if (!tempString.Equals(varName))
                     {
-                        this.varNameBox.BackColor = Color.Yellow;
+                        varNameBox.BackColor = Color.Yellow;
                     }
                     else
                     {
-                        this.varNameBox.BackColor = Color.LightGreen;
+                        varNameBox.BackColor = Color.LightGreen;
                     }
-                    this.varNameBoxAutoChange = !this.varName.Equals(this.varNameBox.Text);
-                    this.varNameBox.Text = this.varName;                                                     
+                    varNameBoxAutoChange = !varName.Equals(varNameBox.Text);
+                    varNameBox.Text = varName;
                     return;
                 }
-               /* MessageBox.Show("变量名不正确：" + tempString.Substring(0, tempString.IndexOf('(')) + '@' + 
-                    this.fileList.TopItem.Text + ".txt", "错误",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);*/
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                if (outDataFormatList.AeroTech == outDataFormat) return;
-                MessageBox.Show("读取文件错误：" + this.fileList.TopItem.Text + ".txt" + "\n" + ex.Message, "错误",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);                
+                MessageBox.Show("读取文件错误：" + fileList.TopItem.Text + "\n" + ex.Message, "错误",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            this.varNameBox.BackColor = Color.Yellow;
-            this.varName = UtilityParameters.defaultPrefix;
-            this.varNameBox.Text = this.varName;
-            BalloonTip ballon = new BalloonTip("请手动输入变量名", this.varNameBox);
-            this.fileList.TopItem.BackColor = Color.Red;
-            this.genFileButton.Enabled = true;
+            varNameBox.BackColor = Color.Yellow;
+            varName = UtilityParameters.defaultPrefix;
+            varNameBox.Text = varName;
+            BalloonTip ballon = new BalloonTip("请手动输入变量名", varNameBox);
+            fileList.TopItem.BackColor = Color.Red;
+            genFileButton.Enabled = true;
         }
         private void GetDataAndSaveFile()
         {
@@ -308,22 +307,41 @@ namespace LinearCalc
             int rows = -1;
             int i = 0, j = 0;
             dataSource = new double[1, 1];
-            string tempString1;
-            String[] tempString;
+            string fileString;
+            double[] data;
             String filePath;
 
-            foreach (ListViewItem tempItem in this.fileList.Items)
+            foreach (ListViewItem tempItem in fileList.Items)
             {
-                filePath = tempItem.SubItems[1].Text + '\\' + tempItem.Text + ".txt";
+                filePath = tempItem.SubItems[1].Text + '\\' + tempItem.Text;
+                string ext = Path.GetExtension(filePath);
                 try
                 {
-                    tempString1 = File.ReadAllText(filePath);
-                    tempString = tempString1.Split(new[] { '\r', '\n', '\t' },
-                        StringSplitOptions.RemoveEmptyEntries);
+                    fileString = File.ReadAllText(filePath);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
+                {
+                    MessageBox.Show("打开文件错误：" + tempItem.Text + "\n" + ex.Message, "错误",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dataSource = null;
+                    tempItem.BackColor = Color.Red;
+                    return;
+                }
+
+                try
                 {                    
-                    MessageBox.Show("打开文件错误：" + tempItem.Text + ".txt" + "\n" + ex.Message, "错误",
+                    if (ext.Equals(".txt", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        data = FormatorManager.ReadFormatedData(DataFormator.ACS, fileString);
+                    }
+                    else
+                    {
+                        data = ManuManager.GetDataByExtWithDot(ext, fileString, UNIT.mm);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("文件格式错误：" + tempItem.Text + "\n" + ex.Message, "错误",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     dataSource = null;
                     tempItem.BackColor = Color.Red;
@@ -332,20 +350,20 @@ namespace LinearCalc
 
                 if (tempItem.SubItems[3].Text == "Yes")
                 {
-                    List<String> tl = new List<string>(tempString);
+                    List<double> tl = new List<double>(data);
                     tl.Reverse();
-                    tempString = tl.ToArray();
+                    data = tl.ToArray();
                 }
-               
+
 
                 if (-1 == rows)
                 {
-                    rows = tempString.Length;
-                    dataSource = new double[rows + 2, this.fileList.Items.Count];
+                    rows = data.Length;
+                    dataSource = new double[rows + 2, fileList.Items.Count];
                 }
                 else
                 {
-                    if (tempString.Length != rows)
+                    if (data.Length != rows)
                     {
                         MessageBox.Show("数据维度不相同：" + filePath, "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         tempItem.BackColor = Color.Red;
@@ -353,33 +371,18 @@ namespace LinearCalc
                         return;
                     }
                 }
-                double result;
-                bool tryResult;
 
-                foreach (String line in tempString)
+                foreach (double d in data)
                 {
-                    int index = line.IndexOf('=');
-                    tryResult = double.TryParse(line.Substring(index + 1, line.Length - index - 1), out result);
-                    if (tryResult)
-                    {
-                        dataSource[j, i] = result;
-                    }
-                    else
-                    {                       
-                        MessageBox.Show("数据有错误：" + filePath, "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        tempItem.BackColor = Color.Red;
-                        dataSource = null;
-                        return;
-                    }                    
+                    dataSource[j, i] = d;
                     j++;
                 }
 
-                tryResult = double.TryParse(tempItem.SubItems[2].Text, out result);
-                if (tryResult)
+                try
                 {
-                    dataSource[j, i] = result;
+                    dataSource[j, i] = double.Parse(tempItem.SubItems[2].Text);
                 }
-                else
+                catch
                 {
                     MessageBox.Show("读取数据错误：" + filePath, "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tempItem.BackColor = Color.Red;
@@ -388,12 +391,11 @@ namespace LinearCalc
                 }
                 j++;
 
-                tryResult = double.TryParse(tempItem.SubItems[4].Text, out result);
-                if (tryResult)
+                try
                 {
-                    dataSource[j, i] = result;
+                    dataSource[j, i] = double.Parse(tempItem.SubItems[4].Text);
                 }
-                else
+                catch
                 {
                     MessageBox.Show("读取数据错误：" + filePath, "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tempItem.BackColor = Color.Red;
@@ -416,15 +418,16 @@ namespace LinearCalc
             {
                 for (j = 0; j < columns; j++)
                 {
-                    result[i] += (dataSource[i, j] + dataSource[dataSource.GetLength(0) - 1, j]) * dataSource[dataSource.GetLength(0) - 2, j];
+                    result[i] += (dataSource[i, j] + dataSource[dataSource.GetLength(0) - 1, j]) 
+                        * dataSource[dataSource.GetLength(0) - 2, j];
                 }
-                j = 0;                
+                j = 0;
             }
         }
 
         private void SaveFile(double[] result)
         {
-            String tempPath = this.defaultPath + '\\' + this.defaultFileName + ".txt";
+            String tempPath = defaultPath + '\\' + defaultFileName + ".txt";
             int n = result.Length;
             int colNum;
             try
@@ -441,71 +444,40 @@ namespace LinearCalc
                 outDataColNum = 7;
             }
 
-            if (outDataFormat == outDataFormatList.AeroTech)
+            if (outDataFormat == DataFormator.AeroTech)
             {
                 n = (int)Math.Ceiling((double)result.Length / colNum);
             }
-            String[] tempString = new String[n];
-            int i = 0;
 
-            this.saveFileDialog.InitialDirectory = this.defaultPath;
-            this.saveFileDialog.FileName = this.defaultFileName + "_Converted";
+            saveFileDialog.InitialDirectory = defaultPath;
+            saveFileDialog.FileName = defaultFileName + "_Converted";
 
-            if (this.saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                tempPath = this.saveFileDialog.FileName;
-                foreach (String line in tempString)
-                {
-                    tempString[i] = OutDataFormator(i, result);
-                    i++;
-                }                
+                tempPath = saveFileDialog.FileName;
+                String[] tempString = FormatorManager.FormatData(outDataFormat, result, varName, "", colNum);
 
                 try
                 {
                     File.WriteAllLines(tempPath, tempString);
-                    this.savedFilePath = tempPath;
-                    this.saved = true;
-                    this.openSavedFileButton.Enabled = true;
+                    savedFilePath = tempPath;
+                    saved = true;
+                    openSavedFileButton.Enabled = true;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("保存文件错误：" + this.defaultFileName + ".txt\n" +
+                    MessageBox.Show("保存文件错误：" + defaultFileName + ".txt\n" +
                         ex.Message, "保存错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }            
-        }
-
-        string OutDataFormator(int lineNum, double[] result)
-        {
-            switch (outDataFormat)
-            {
-                case outDataFormatList.ACS:
-                    return this.varName + '(' +
-                        lineNum + ")=" + result[lineNum].ToString();
-                case outDataFormatList.AeroTech:
-                    return AeroTechDataPrint(lineNum,result);
-                default: throw new NotImplementedException();
             }
-        }
-
-        string AeroTechDataPrint(int lineNum, double[] result)
-        {
-            int colNum;
-            colNum = Convert.ToInt16(outDataColNum);
-            string s = "";
-            for (int i = lineNum * colNum; i < result.Length && i < lineNum * colNum + colNum; i++)
-            {
-                s += String.Format("{0:0.#####}\t", result[i] );
-            }
-            return s.TrimEnd();
-        }
+        }       
 
         private bool ExistFile(String line)
         {
             String tempFileName = Path.GetDirectoryName(line) + '\\' + Path.GetFileNameWithoutExtension(line);
-            foreach (ListViewItem tempItem in this.fileList.Items)
+            foreach (ListViewItem tempItem in fileList.Items)
             {
-                if (tempFileName.Equals(tempItem.SubItems[1].Text+'\\'+tempItem.Text))
+                if (tempFileName.Equals(tempItem.SubItems[1].Text + '\\' + tempItem.Text))
                 {
                     return true;
                 }
@@ -517,13 +489,13 @@ namespace LinearCalc
         {
             ListViewItem tempItem;
 
-            if (this.fileList.SelectedItems.Count == 0)
+            if (fileList.SelectedItems.Count == 0)
             {
                 OpenFolder();
                 return;
             }
 
-            tempItem = this.fileList.SelectedItems[0];
+            tempItem = fileList.SelectedItems[0];
             try
             {
                 System.Diagnostics.Process.Start(tempItem.SubItems[1].Text + '\\' + tempItem.Text + ".txt");
@@ -538,7 +510,7 @@ namespace LinearCalc
 
         private void DeleteItems()
         {
-            ListView.SelectedListViewItemCollection tempItem = this.fileList.SelectedItems;
+            ListView.SelectedListViewItemCollection tempItem = fileList.SelectedItems;
             int index;
             foreach (ListViewItem selectedItem in tempItem)
             {
@@ -546,22 +518,22 @@ namespace LinearCalc
                 selectedItem.Remove();
             }
 
-            ListViewItem tempTop = this.fileList.TopItem;
+            ListViewItem tempTop = fileList.TopItem;
             if (null != tempTop)
             {
                 ChangeVarName();
             }
             else
             {
-                this.fileList.Scrollable = false;
+                fileList.Scrollable = false;
                 FileListFill();
             }
         }
 
         private void ClearList()
         {
-            this.fileList.Items.Clear();
-            this.fileList.Scrollable = false;
+            fileList.Items.Clear();
+            fileList.Scrollable = false;
             FileListFill();
         }
     }
@@ -580,13 +552,13 @@ namespace LinearCalc
         private bool[] dropFileIndex;
         private bool dropFolder;
 
-        public outDataFormatList outDataFormat;
+        public DataFormator outDataFormat;
         public decimal outDataColNum;
 
         private delegate void voidFunction();
         List<voidFunction> functionList = new List<voidFunction>();
         int ColumnCount
-        { get {return fileList.Columns.Count; } }
+        { get { return fileList.Columns.Count; } }
 
         int AverageWidth
         { get { return fileList.Width / ColumnCount; } }

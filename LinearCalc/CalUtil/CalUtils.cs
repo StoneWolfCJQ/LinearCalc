@@ -8,7 +8,7 @@ namespace LinearCalc
 {
     static class CalUtils
     {
-        public static double CalInterpolPos(double[] posArray, double[] calData, double pos, bool safe = true)
+        public static double CalInterpolPos(double[] posArray, double[] calData, double pos)
         {
             if (posArray.Length != calData.Length)
             {
@@ -32,24 +32,12 @@ namespace LinearCalc
                 {
                     y1 = calData[i];
                     y2 = calData[i + 1];
-                    y = CalInterpol(x1, x2, x, y1, y2);
+                    a = (x - x1) / (x2 - x1);
+                    y = (y2 - y1) * a + y1;
                     return y;
                 }
             }
-
-            if (safe)
-            {
-                throw new Exception("位置超出给定上下限");
-            }
-
-            if (pos-posArray[posArray.Length-1])
-        }
-
-        static double CalInterpol(double x1, double x2, double x, double y1, double y2)
-        {
-            double a = (x - x1) / (x2 - x1);
-            double y = (y2 - y1) * a + y1;
-            return y;
+            throw new Exception("位置超出给定上下限");
         }
     }
 }
