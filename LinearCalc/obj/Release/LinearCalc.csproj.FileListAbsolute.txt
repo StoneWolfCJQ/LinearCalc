@@ -53,3 +53,5 @@ D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.pdb
 D:\Stone\05-程序\LinearCalc\Bin\LinearCalc.exe.config
 D:\Stone\05-程序\LinearCalc\Bin\LinearCalc.exe
 D:\Stone\05-程序\LinearCalc\Bin\LinearCalc.pdb
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.ConvertAssist.resources
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.DataDisplay.resources

@@ -201,21 +201,32 @@ namespace LinearCalc
             }
         }
 
-        private void AddItem(bool emptyTop)
+        private void AddItem(bool emptyTop, bool externalAdd = false, string[] fileDirList = null,
+            double weight = 1.0, bool flip = false, double offset = 0.00000)
         {
             fileList.Scrollable = true;
-            ListViewItem tempItem;
-            foreach (String line in openFileList)
+            ListViewItem tempItem = new ListViewItem();
+            if (fileDirList == null)
             {
-                if (ExistFile(line))
+                fileDirList = openFileList;
+            }
+            foreach (String line in fileDirList)
+            {
+                if (ExistFile(line,ref tempItem))
                 {
+                    if (externalAdd)
+                    {
+                        tempItem.SubItems[2].Text = weight.ToString();
+                        tempItem.SubItems[3].Text = flip ? "Yes" : "No";
+                        tempItem.SubItems[4].Text = offset.ToString();
+                    }
                     continue;
                 }
                 tempItem = new ListViewItem(Path.GetFileName(line));
                 tempItem.SubItems.Add(Path.GetDirectoryName(line));
-                tempItem.SubItems.Add("1.0");
-                tempItem.SubItems.Add("No");
-                tempItem.SubItems.Add("0.0");
+                tempItem.SubItems.Add(weight.ToString());
+                tempItem.SubItems.Add(flip ? "Yes" : "No");
+                tempItem.SubItems.Add(offset.ToString("F5"));
                 fileList.Items.Add(tempItem);
                 if (emptyTop)
                 {
@@ -224,11 +235,20 @@ namespace LinearCalc
                     ChangeVarName();
                     emptyTop = false;
                 }
+                else
+                {
+                    defaultFileName = Path.GetFileNameWithoutExtension(fileList.Items[0].Text);
+                }
             }
             fileList.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.ColumnContent);
             fileList.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.ColumnContent);
             fileList.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.HeaderSize);
             fileList.AutoResizeColumn(3, ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        public void ExternelAddItem(string[] fileDirList, double weight, bool flip, double offset)
+        {
+            Invoke(new Action(()=> { AddItem(false, true, fileDirList, weight, flip, offset); }));
         }
 
         private void FileGenButtonUpdate()
@@ -467,13 +487,14 @@ namespace LinearCalc
             }
         }       
 
-        private bool ExistFile(String line)
+        private bool ExistFile(String line, ref ListViewItem item)
         {
-            String tempFileName = Path.GetDirectoryName(line) + '\\' + Path.GetFileNameWithoutExtension(line);
+            String tempFileName = line;
             foreach (ListViewItem tempItem in fileList.Items)
             {
                 if (tempFileName.Equals(tempItem.SubItems[1].Text + '\\' + tempItem.Text))
                 {
+                    item = tempItem;
                     return true;
                 }
             }

@@ -7,20 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace LinearCalc
 {
-    public partial class ConvertAssist : Form
+    public partial class ConvertAssist : Form, INotifyPropertyChanged
     {
-        public ConvertAssist()
+        public event PropertyChangedEventHandler PropertyChanged;
+        #region Initial
+        public ConvertAssist(string path, Form2 _parentForm)
         {
             InitializeComponent();
-            InitializeCustom();
+            InitializeData(path);
+            InitializeControl();
+            parentForm = _parentForm;
         }
 
-        void InitializeCustom()
+        void InitializeControl()
         {
             InitializeCB();
+            InitializePath();
+            InitializeTB();
+            InitializeOthers();
+        }
+
+        void InitializeData(string path)
+        {
+            //Path
+            if (Directory.Exists(path))
+            {
+                SourcePath = path;
+                TargetPath = path;
+            }
+            else
+            {
+                SourcePath = Program.currentPath;
+                TargetPath = Program.currentPath;
+            }
+
+            openSourceDialog.InitialDirectory = SourcePath;
+            openTargetDialog.InitialDirectory = TargetPath;
         }
 
         void InitializeCB()
@@ -38,6 +64,7 @@ namespace LinearCalc
                 new CBDataSource(1,"+"),
                 new CBDataSource(-1,"-"),
             };
+            SetCBSource(sourceSignCB, new List<CBDataSource>(sources), "SourceSign");
             SetCBSource(targetSignCB, new List<CBDataSource>(sources), "TargetSign");
         }
 
@@ -50,10 +77,119 @@ namespace LinearCalc
                 true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        void InitializePath()
         {
-            TargetDirection = 1;
-            //sourceDirectionCB.SelectedValue = -1;
+            sourcePathLabel.DataBindings.Add("Text", this, "SourcePath", 
+                true, DataSourceUpdateMode.OnPropertyChanged);
+            targetPathLabel.DataBindings.Add("Text", this, "TargetPath",
+                true, DataSourceUpdateMode.OnPropertyChanged);
+        }
+
+        void InitializeTB()
+        {
+            sourceStartTB.DataBindings.Add("Text", this, "SourceStart", 
+                true, DataSourceUpdateMode.OnPropertyChanged).FormatString = "F2";
+            sourceEndTB.DataBindings.Add("Text", this, "SourceEnd",
+                true, DataSourceUpdateMode.OnPropertyChanged).FormatString = "F2";
+            targetReferenceTB.DataBindings.Add("Text", this, "TargetReference",
+                true, DataSourceUpdateMode.OnPropertyChanged);
+            calOffsetTB.DataBindings.Add("Text", this, "CalOffset",
+                true, DataSourceUpdateMode.OnPropertyChanged).FormatString= "F6";
+            calWeightTB.DataBindings.Add("Text", this, "CalWeight",
+                true, DataSourceUpdateMode.OnPropertyChanged);
+        }
+
+        void InitializeOthers()
+        {
+            targetCheckBox.DataBindings.Add("Checked", this, "TargetChecked",
+                false, DataSourceUpdateMode.OnPropertyChanged);
+
+            targetSelectButton.DataBindings.Add("Visible", this, "TargetChecked",
+                false, DataSourceUpdateMode.OnPropertyChanged);
+
+            targetPathLabel.DataBindings.Add("Visible", this, "TargetChecked",
+                false, DataSourceUpdateMode.OnPropertyChanged);
+
+            targetFileOpenButton.DataBindings.Add("Visible", this, "TargetChecked",
+                false, DataSourceUpdateMode.OnPropertyChanged);
+
+            targetDataOpenButton.DataBindings.Add("Visible", this, "TargetChecked",
+                false, DataSourceUpdateMode.OnPropertyChanged);
+
+            flipCheckBox.DataBindings.Add("Checked", this, "Flip",
+                false, DataSourceUpdateMode.OnPropertyChanged);
+        }
+        #endregion
+
+        #region Event
+        private void sourceSelectButton_Click(object sender, EventArgs e)
+        {
+            OpenSourceFileAndGetData();
+        }
+        #endregion
+
+        private void targetSelectButton_Click(object sender, EventArgs e)
+        {
+            OpenTargetFileAndGetData();
+        }
+
+        private void CalButton_Click(object sender, EventArgs e)
+        {
+            CalData();
+        }
+
+        private void sourceFileOpenButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(sourcePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("打开文件错误：" + sourcePath + ex.Message, "错误",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void targetFileOpenButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(targetPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("打开文件错误：" + targetPath + ex.Message, "错误",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void sourceDataOpenButton_Click(object sender, EventArgs e)
+        {
+            if (OpenSourceFileAndGetData(false))
+            {
+                DataDisplay dd = new DataDisplay(new double[][] { sourcePos, rawData });
+                dd.Show();
+            }
+        }
+
+        private void targetDataOpenButton_Click(object sender, EventArgs e)
+        {
+            if (OpenTargetFileAndGetData(false))
+            {
+                DataDisplay dd = new DataDisplay(new double[][] { rawData });
+                dd.Show();
+            }
+        }
+
+        private void applyButton_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            string p = TargetChecked ? TargetPath : SourcePath;
+            if (OpenFile(p, ref s))
+            {
+                parentForm.ExternelAddItem(new[] { p }, CalWeight, Flip, Math.Round(CalOffset, 6));
+            }
         }
     }
 

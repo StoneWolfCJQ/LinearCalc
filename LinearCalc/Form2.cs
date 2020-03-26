@@ -258,7 +258,8 @@ namespace LinearCalc
 
         private void convertAssistButton_Click(object sender, EventArgs e)
         {
-            Thread t = new Thread(()=>Application.Run(new ConvertAssist()));
+            Thread t = new Thread(()=>Application.Run(new ConvertAssist(savedFilePath, this)));
+            t.SetApartmentState(ApartmentState.STA);
             t.IsBackground = true;
             t.Start();
         }

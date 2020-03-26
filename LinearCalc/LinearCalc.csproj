@@ -130,6 +130,12 @@
     <Compile Include="ConvertAssist\ConvertAssist.Designer.cs">
       <DependentUpon>ConvertAssist.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConvertAssist\DataDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertAssist\DataDisplay.Designer.cs">
+      <DependentUpon>DataDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExportFormtor\AreoTech.cs" />
     <Compile Include="ExportFormtor\ACS.cs" />
     <Compile Include="ExportFormtor\FormatorTemplate.cs" />
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConvertAssist\ConvertAssist.resx">
       <DependentUpon>ConvertAssist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConvertAssist\DataDisplay.resx">
+      <DependentUpon>DataDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
