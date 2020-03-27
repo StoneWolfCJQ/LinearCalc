@@ -68,6 +68,12 @@
             this.sourceDataOpenButton = new System.Windows.Forms.Button();
             this.targetDataOpenButton = new System.Windows.Forms.Button();
             this.applyButton = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.targetEndTB = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.targetStartTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // sourceSelectButton
@@ -278,7 +284,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(24, 300);
+            this.label15.Location = new System.Drawing.Point(24, 298);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(36, 17);
             this.label15.TabIndex = 29;
@@ -286,16 +292,16 @@
             // 
             // calOffsetTB
             // 
-            this.calOffsetTB.Location = new System.Drawing.Point(66, 297);
+            this.calOffsetTB.Location = new System.Drawing.Point(66, 295);
             this.calOffsetTB.Name = "calOffsetTB";
             this.calOffsetTB.ReadOnly = true;
-            this.calOffsetTB.Size = new System.Drawing.Size(150, 22);
+            this.calOffsetTB.Size = new System.Drawing.Size(110, 22);
             this.calOffsetTB.TabIndex = 28;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(222, 298);
+            this.label16.Location = new System.Drawing.Point(191, 298);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(36, 17);
             this.label16.TabIndex = 31;
@@ -303,7 +309,7 @@
             // 
             // calWeightTB
             // 
-            this.calWeightTB.Location = new System.Drawing.Point(264, 295);
+            this.calWeightTB.Location = new System.Drawing.Point(233, 295);
             this.calWeightTB.Name = "calWeightTB";
             this.calWeightTB.ReadOnly = true;
             this.calWeightTB.Size = new System.Drawing.Size(75, 22);
@@ -313,7 +319,7 @@
             // 
             this.CalButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalButton.Location = new System.Drawing.Point(421, 332);
+            this.CalButton.Location = new System.Drawing.Point(421, 356);
             this.CalButton.Name = "CalButton";
             this.CalButton.Size = new System.Drawing.Size(91, 39);
             this.CalButton.TabIndex = 32;
@@ -383,7 +389,7 @@
             // 
             this.flipCheckBox.AutoSize = true;
             this.flipCheckBox.Enabled = false;
-            this.flipCheckBox.Location = new System.Drawing.Point(370, 294);
+            this.flipCheckBox.Location = new System.Drawing.Point(339, 296);
             this.flipCheckBox.Name = "flipCheckBox";
             this.flipCheckBox.Size = new System.Drawing.Size(58, 21);
             this.flipCheckBox.TabIndex = 38;
@@ -414,7 +420,7 @@
             // 
             this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.applyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.applyButton.Location = new System.Drawing.Point(521, 332);
+            this.applyButton.Location = new System.Drawing.Point(521, 356);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(91, 39);
             this.applyButton.TabIndex = 41;
@@ -422,11 +428,69 @@
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(314, 326);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(30, 17);
+            this.label17.TabIndex = 47;
+            this.label17.Text = "mm";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(192, 326);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(36, 17);
+            this.label18.TabIndex = 46;
+            this.label18.Text = "终点";
+            // 
+            // targetEndTB
+            // 
+            this.targetEndTB.Location = new System.Drawing.Point(233, 323);
+            this.targetEndTB.Name = "targetEndTB";
+            this.targetEndTB.ReadOnly = true;
+            this.targetEndTB.Size = new System.Drawing.Size(75, 22);
+            this.targetEndTB.TabIndex = 45;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(146, 326);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(30, 17);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "mm";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(24, 326);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(36, 17);
+            this.label20.TabIndex = 43;
+            this.label20.Text = "起点";
+            // 
+            // targetStartTB
+            // 
+            this.targetStartTB.Location = new System.Drawing.Point(65, 323);
+            this.targetStartTB.Name = "targetStartTB";
+            this.targetStartTB.ReadOnly = true;
+            this.targetStartTB.Size = new System.Drawing.Size(75, 22);
+            this.targetStartTB.TabIndex = 42;
+            // 
             // ConvertAssist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 383);
+            this.ClientSize = new System.Drawing.Size(624, 407);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.targetEndTB);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.targetStartTB);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.targetDataOpenButton);
             this.Controls.Add(this.sourceDataOpenButton);
@@ -514,5 +578,11 @@
         private System.Windows.Forms.Button sourceDataOpenButton;
         private System.Windows.Forms.Button targetDataOpenButton;
         private System.Windows.Forms.Button applyButton;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox targetEndTB;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox targetStartTB;
     }
 }

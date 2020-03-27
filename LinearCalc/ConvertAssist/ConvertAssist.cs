@@ -21,6 +21,13 @@ namespace LinearCalc
             InitializeData(path);
             InitializeControl();
             parentForm = _parentForm;
+            FormClosing += ConvertAssist_FormClosing;
+        }
+
+        private void ConvertAssist_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            targetReferenceTB.Focus();
+            targetReferenceTB.Text = "0";
         }
 
         void InitializeControl()
@@ -91,12 +98,27 @@ namespace LinearCalc
                 true, DataSourceUpdateMode.OnPropertyChanged).FormatString = "F2";
             sourceEndTB.DataBindings.Add("Text", this, "SourceEnd",
                 true, DataSourceUpdateMode.OnPropertyChanged).FormatString = "F2";
+            targetStartTB.DataBindings.Add("Text", this, "TargetStart",
+                true, DataSourceUpdateMode.OnPropertyChanged).FormatString = "F2";
+            targetEndTB.DataBindings.Add("Text", this, "TargetEnd",
+                true, DataSourceUpdateMode.OnPropertyChanged).FormatString = "F2";
             targetReferenceTB.DataBindings.Add("Text", this, "TargetReference",
                 true, DataSourceUpdateMode.OnPropertyChanged);
+            targetReferenceTB.Validating += TargetReferenceTB_Validating;
             calOffsetTB.DataBindings.Add("Text", this, "CalOffset",
                 true, DataSourceUpdateMode.OnPropertyChanged).FormatString= "F6";
             calWeightTB.DataBindings.Add("Text", this, "CalWeight",
                 true, DataSourceUpdateMode.OnPropertyChanged);
+        }
+
+        private void TargetReferenceTB_Validating(object sender,
+            System.ComponentModel.CancelEventArgs e)
+        {
+            if (!IsInt(targetReferenceTB.Text))
+            {
+                BalloonTip b = new BalloonTip("必须是整数", targetReferenceTB);
+                e.Cancel = true;
+            }
         }
 
         void InitializeOthers()
@@ -166,7 +188,7 @@ namespace LinearCalc
 
         private void sourceDataOpenButton_Click(object sender, EventArgs e)
         {
-            if (OpenSourceFileAndGetData(false))
+            if (OpenSourceFileAndGetData(false, false))
             {
                 DataDisplay dd = new DataDisplay(new double[][] { sourcePos, rawData });
                 dd.Show();

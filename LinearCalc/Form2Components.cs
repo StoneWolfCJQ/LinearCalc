@@ -332,9 +332,7 @@ namespace LinearCalc
             String filePath;
             double offset, ratio;
             double[][] dataSource = new double[fileList.Items.Count][];
-            double r;
-
-            UNIT unit;            
+            double r;          
 
             foreach (ListViewItem tempItem in fileList.Items)
             {
@@ -361,13 +359,6 @@ namespace LinearCalc
                     }
                     else
                     {
-                        switch (outDataFormat)
-                        {
-                            case DataFormator.ACS: unit = UNIT.mm; break;
-                            case DataFormator.AeroTech: unit = UNIT.um; break;
-                            default: throw new NotImplementedException();
-                        }
-                        r = (double)unit / (double)UNIT.mm;
                         data = ManuManager.GetDataByExtWithDot(ext, fileString, UNIT.mm);
                     }
                 }
@@ -417,7 +408,7 @@ namespace LinearCalc
                     return null;
                 }
 
-                dataSource[i] = data.Select(d => (d + offset) * ratio * r).ToArray();
+                dataSource[i] = data.Select(d => (d + offset) * ratio).ToArray();
                 i++;
             }
 

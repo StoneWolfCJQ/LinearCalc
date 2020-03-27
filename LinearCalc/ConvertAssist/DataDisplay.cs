@@ -28,14 +28,14 @@ namespace LinearCalc
                 temp[i][0] = i;
                 for (int j = 1; j <= data.Length; j++)
                 {
-                    temp[i][j] = Math.Round(data[j - 1][i], 5);
+                    temp[i][j] = data[j - 1][i];
                 }
             }
 
             DataTable dt = new DataTable();
             dt.Columns.AddRange((from d in data
                                  select new DataColumn("", typeof(double))).ToArray());
-            dt.Columns.Add(new DataColumn("", typeof(double)));
+            dt.Columns.Add(new DataColumn("", typeof(double)));            
             foreach (double[] d in temp)
             {
                 DataRow r = dt.NewRow();
@@ -43,6 +43,10 @@ namespace LinearCalc
                 dt.Rows.Add(r);
             }
             dataDGV.DataSource = dt;
+            if (dt.Columns.Count == 3)
+            {
+                dataDGV.Columns[2].DefaultCellStyle.Format = "F6";
+            }
         }
     }
 }
