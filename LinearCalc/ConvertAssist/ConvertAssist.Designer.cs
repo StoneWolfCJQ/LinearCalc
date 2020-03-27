@@ -162,7 +162,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(230, 234);
+            this.label10.Location = new System.Drawing.Point(230, 235);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 17);
             this.label10.TabIndex = 18;
@@ -171,7 +171,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(24, 234);
+            this.label11.Location = new System.Drawing.Point(24, 235);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 17);
             this.label11.TabIndex = 17;
@@ -179,7 +179,7 @@
             // 
             // targetReferenceTB
             // 
-            this.targetReferenceTB.Location = new System.Drawing.Point(149, 231);
+            this.targetReferenceTB.Location = new System.Drawing.Point(149, 232);
             this.targetReferenceTB.Name = "targetReferenceTB";
             this.targetReferenceTB.Size = new System.Drawing.Size(75, 22);
             this.targetReferenceTB.TabIndex = 16;
@@ -188,7 +188,7 @@
             // 
             this.targetDirectionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.targetDirectionCB.FormattingEnabled = true;
-            this.targetDirectionCB.Location = new System.Drawing.Point(307, 230);
+            this.targetDirectionCB.Location = new System.Drawing.Point(388, 231);
             this.targetDirectionCB.Name = "targetDirectionCB";
             this.targetDirectionCB.Size = new System.Drawing.Size(62, 24);
             this.targetDirectionCB.TabIndex = 20;
@@ -196,7 +196,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(264, 234);
+            this.label12.Location = new System.Drawing.Point(345, 235);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(36, 17);
             this.label12.TabIndex = 19;
@@ -258,7 +258,7 @@
             // 
             this.targetSignCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.targetSignCB.FormattingEnabled = true;
-            this.targetSignCB.Location = new System.Drawing.Point(432, 230);
+            this.targetSignCB.Location = new System.Drawing.Point(519, 231);
             this.targetSignCB.Name = "targetSignCB";
             this.targetSignCB.Size = new System.Drawing.Size(62, 24);
             this.targetSignCB.TabIndex = 26;
@@ -266,7 +266,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(389, 234);
+            this.label13.Location = new System.Drawing.Point(470, 235);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(36, 17);
             this.label13.TabIndex = 25;
@@ -359,7 +359,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(476, 165);
+            this.label2.Location = new System.Drawing.Point(470, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 17);
             this.label2.TabIndex = 34;
