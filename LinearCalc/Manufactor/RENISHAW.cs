@@ -44,11 +44,11 @@ namespace LinearCalc
                 {
                     if (j % 2 == 0)
                     {
-                        data[i] += -1 * ratio * rawData[j * l + i] / measureTimes;
+                        data[i] += ratio * rawData[j * l + i] / measureTimes;
                     }
                     else
                     {
-                        data[i] += -1 * ratio * rawData[(j + 1) * l - i - 1] / measureTimes;
+                        data[i] += ratio * rawData[(j + 1) * l - i - 1] / measureTimes;
                     }
                 }
             }

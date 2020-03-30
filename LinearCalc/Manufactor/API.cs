@@ -25,7 +25,7 @@ namespace LinearCalc
             int targetUnit = (int)unit;
             int sourceUnit = (int)FileDataUnit;
             double ratio = (targetUnit * 1.0 / sourceUnit);
-            return GetRawData(fileString, 1).Select(s=> -1.0 * ratio * s).ToArray ();
+            return GetRawData(fileString, 1).Select(s=> 1.0 * ratio * s).ToArray ();
         }
 
         double[] GetRawData(string fileString, int index)

@@ -17,7 +17,7 @@ namespace LinearCalc
             string suffix = (string)exParams[1];
             for (int i = 0; i < data.Length; i++) 
             {
-                s.Add(prefix + suffix + '(' + i + ")=" + data[i].ToString());
+                s.Add(prefix + suffix + '(' + i + ")=" + (-data[i]).ToString("F6"));
             }
             return s.ToArray();
         }
