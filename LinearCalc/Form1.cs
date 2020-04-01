@@ -220,7 +220,7 @@ namespace LinearCalc
 
         private void saveFilePathButton_Click(object sender, EventArgs e)
         {
-            SaveFile();
+            SelectSavePath();
         }
 
         private void fileGenerateButton_Click(object sender, EventArgs e)
@@ -468,12 +468,12 @@ namespace LinearCalc
 
         private void menuODFACS_Click(object sender, EventArgs e)
         {
-            ChangeOutDataFormat(outDataFormatList.ACS);
+            ChangeOutDataFormat(DataFormator.ACS);
         }
 
         private void menuODFAeroTech_Click(object sender, EventArgs e)
         {
-            ChangeOutDataFormat(outDataFormatList.AeroTech);
+            ChangeOutDataFormat(DataFormator.AeroTech);
         }
 
         private void OutDataColNum_ValueChanged(object sender, EventArgs e)

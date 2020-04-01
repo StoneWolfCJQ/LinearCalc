@@ -15,28 +15,23 @@ namespace LinearCalc
         #region Init      
         private void InitializeCustomComponent()
         {
-            this.DragDrop += new DragEventHandler(this.Form1_DragDrop);
-            this.DragEnter += new DragEventHandler(this.Form1_DragEnter);
-            this.extDropList.SelectedIndexChanged += new EventHandler(this.extDropList_SelectedIndexChanged);
-            this.suffixTextBox.KeyPress += SuffixTextBox_KeyPress;
-            this.savePathText.MouseHover += new EventHandler(this.savePathText_MouseHover);
-            this.openPathText.MouseHover += new EventHandler(this.openPathText_MouseHover);
-            this.menuChildFolder.Select += new EventHandler(this.menuChildFolder_Select);
-            this.menuRootFile.Popup += new EventHandler(this.menuRootFile_Popup);
+            DragDrop += new DragEventHandler(Form1_DragDrop);
+            DragEnter += new DragEventHandler(Form1_DragEnter);
+            extDropList.SelectedIndexChanged += new EventHandler(extDropList_SelectedIndexChanged);
+            suffixTextBox.KeyPress += SuffixTextBox_KeyPress;
+            savePathText.MouseHover += new EventHandler(savePathText_MouseHover);
+            openPathText.MouseHover += new EventHandler(openPathText_MouseHover);
+            menuChildFolder.Select += new EventHandler(menuChildFolder_Select);
+            menuRootFile.Popup += new EventHandler(menuRootFile_Popup);
             GetOrSetReg();
-            this.infoTextLabel.Text = "";
-            this.KeyPreview = true;
-            this.KeyDown += Form1_KeyDown;
-            this.extDropList.SelectedIndex = (int)manufactoryList.RENISHAW;
-            //this.Text += UtilityParameters.version;
-            this.openFileNameBox.KeyPress += OpenFileNameBox_KeyPress;
-            this.saveFileNameBox.KeyPress += SaveFileNameBox_KeyPress;
+            infoTextLabel.Text = "";
+            KeyPreview = true;
+            extDropList.SelectedIndex = (int)manufactoryList.RENISHAW;
+            openFileNameBox.KeyPress += OpenFileNameBox_KeyPress;
+            saveFileNameBox.KeyPress += SaveFileNameBox_KeyPress;
 
-            //this.openFileNameBox.AutoCompleteCustomSource = this.openFileAutoCompleteList;
-
-            FunctionAdder();
             MasterSLP();
-            StartArgHandler();                      
+            StartArgHandler();
         }
 
         #endregion
@@ -74,15 +69,15 @@ namespace LinearCalc
 
                 if (-1 != index)
                 {
-                    this.openFileReturn = true;
-                    this.usrInputOpenFileName = false;
+                    openFileReturn = true;
+                    usrInputOpenFileName = false;
 
-                    this.openFileExt = Path.GetExtension(fileName);
-                    this.manufactory = (manufactoryList)index;
+                    openFileExt = Path.GetExtension(fileName);
+                    manufactory = (manufactoryList)index;
 
-                    this.openFileName = Path.GetFileNameWithoutExtension(fileName);
-                    this.openFileExt = Path.GetExtension(fileName);
-                    this.openFullPath = Path.GetDirectoryName(fileName);
+                    openFileName = Path.GetFileNameWithoutExtension(fileName);
+                    openFileExt = Path.GetExtension(fileName);
+                    openFullPath = Path.GetDirectoryName(fileName);
 
                     FileStreamHandler();
                 }
@@ -90,10 +85,10 @@ namespace LinearCalc
             else
             {
                 Program.currentPath = fileName;
-                this.openFullPath = fileName;
-                if (this.autoSaveFileName)
+                openFullPath = fileName;
+                if (autoSaveFileName)
                 {
-                    this.saveFullPath = this.openFullPath;
+                    saveFullPath = openFullPath;
                 }
                 MasterSLP();
             }
@@ -105,80 +100,42 @@ namespace LinearCalc
             UtilityFunctions.GetReg(out keyValue);
             if (("" == keyValue) || (null == keyValue))
             {
-                this.openFullPath = Program.currentPath;
-                this.saveFullPath = Program.currentPath;
+                openFullPath = Program.currentPath;
+                saveFullPath = Program.currentPath;
                 UtilityFunctions.SetReg(Program.currentPath);
             }
             else
-            {                
-                this.openFullPath = keyValue;
-                this.saveFullPath = keyValue;
-                Program.currentPath = this.openFullPath;
+            {
+                openFullPath = keyValue;
+                saveFullPath = keyValue;
+                Program.currentPath = openFullPath;
             }
         }
         #endregion
 
-        #region HotKey
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control)
-            {
-                String pressedKeyS = e.KeyCode.ToString();
-                if (pressedKeyS.Length == 1)
-                {
-                    Char pressedKey = pressedKeyS[0];
-                    HotKeyHandle(pressedKey);
-                }
-            }
-        }
-
-        private void FunctionAdder()
-        {
-            functionList.AddRange(new List<voidFunction>{ OpenFile,
-                SaveFile,
-                OpenFolder,
-                MergeTool,
-                ScriptFileTool,
-                GenerateFile,
-                OptionsPage,
-                HelpPage,
-                AboutPage,
-                Quit });
-        }
-
-        private void HotKeyHandle(char keyChar)
-        {
-            int index;
-            hotKeyMessage message;
-            UtilityFunctions.HotKeyMessage(keyChar, out message);
-            index = (int)message;
-
-            if (hotKeyMessage.NONE != message)
-            {
-                functionList[index]();
-            }
-        }
+        #region EventHandler
 
         private void OpenFile()
         {
-            this.openFileDialog.FileName = this.openFileName;
-            this.openFileDialog.InitialDirectory = this.openFullPath;
-            if (this.openFileDialog.ShowDialog() == DialogResult.OK)
+            openFileDialog.FileName = openFileName;
+            openFileDialog.InitialDirectory = openFullPath;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                this.openFileReturn = true;
-                this.usrInputOpenFileName = false;
-                this.openStream = this.openFileDialog.OpenFile();
-                if (null != this.openStream)
+                openFileReturn = true;
+                usrInputOpenFileName = false;
+                openStream = openFileDialog.OpenFile();
+                if (null != openStream)
                 {
-                    this.openFileStream = this.openStream as FileStream;
-                    using (this.openFileStream)
+                    openFileStream = openStream as FileStream;
+                    using (openFileStream)
                     {
-                        this.openFileName = Path.GetFileNameWithoutExtension(this.openFileStream.Name);
-                        this.openFileExt = Path.GetExtension(this.openFileStream.Name);
-                        this.openFullPath = Path.GetDirectoryName(this.openFileStream.Name);
+                        openFileName = Path.GetFileNameWithoutExtension(openFileStream.Name);
+                        openFileExt = Path.GetExtension(openFileStream.Name);
+                        openFullPath = Path.GetDirectoryName(openFileStream.Name);
+                        UtilityFunctions.SetReg(openFullPath);
                     }
-                    this.openStream.Close();
-                    this.openFileAutoCompleteList.Add(this.openFileName);
+                    openStream.Close();
+                    openFileAutoCompleteList.Add(openFileName);
                     FileStreamHandler();
                 }
                 else
@@ -190,20 +147,20 @@ namespace LinearCalc
             return;
         }
 
-        private void SaveFile()
+        private void SelectSavePath()
         {
-            this.saveDiagResult = false;
-            this.saveFileDialog.FileName = this.saveFileName;
-            this.saveFileDialog.InitialDirectory = this.saveFullPath;
-            if (this.saveFileDialog.ShowDialog() == DialogResult.OK)
+            saveDiagResult = false;
+            saveFileDialog.FileName = saveFileName;
+            saveFileDialog.InitialDirectory = saveFullPath;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                this.saveDiagResult = true;
-                this.saveFileReturn = true;
-                this.usrInputSaveFileName = false;
-                this.saveFileName = Path.GetFileNameWithoutExtension(this.saveFileDialog.FileName);
-                this.saveFullPath = Path.GetDirectoryName(this.saveFileDialog.FileName);
+                saveDiagResult = true;
+                saveFileReturn = true;
+                usrInputSaveFileName = false;
+                saveFileName = Path.GetFileNameWithoutExtension(saveFileDialog.FileName);
+                saveFullPath = Path.GetDirectoryName(saveFileDialog.FileName);
 
-                this.saveFileNameBox.Text = this.saveFileName;
+                saveFileNameBox.Text = saveFileName;
 
                 SPSimplify();
             }
@@ -219,10 +176,11 @@ namespace LinearCalc
             if (openFlg.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 Program.currentPath = openFlg.FileName;
-                this.openFullPath = Program.currentPath;
-                this.saveFullPath = Program.currentPath;
-                this.openPathText.Text = Program.currentPath;
-                this.savePathText.Text = Program.currentPath;
+                openFullPath = Program.currentPath;
+                saveFullPath = Program.currentPath;
+                openPathText.Text = Program.currentPath;
+                savePathText.Text = Program.currentPath;
+                UtilityFunctions.SetReg(Program.currentPath);
 
                 MasterSLP();
             }
@@ -250,11 +208,11 @@ namespace LinearCalc
 
         private void OptionsPage()
         {
-            OptionsForm OptionsForm1 = new OptionsForm(this.autoOpen, this.autoOverWrite, this.prefix);
+            OptionsForm OptionsForm1 = new OptionsForm(autoOpen, autoOverWrite, prefix);
             OptionsForm1.ShowDialog();
-            this.autoOpen = OptionsForm1.autoOpen;
-            this.autoOverWrite = OptionsForm1.autoOverwrite;
-            this.prefix = OptionsForm1.prefix;
+            autoOpen = OptionsForm1.autoOpen;
+            autoOverWrite = OptionsForm1.autoOverwrite;
+            prefix = OptionsForm1.prefix;
         }
 
         private void HelpPage()
@@ -270,60 +228,62 @@ namespace LinearCalc
 
         private void Quit()
         {
-            DialogResult result = MessageBox.Show("是否退出软件", "提示", 
+            DialogResult result = MessageBox.Show("是否退出软件", "提示",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
             if (DialogResult.OK == result)
             {
-                this.Close();
-            }            
+                Close();
+            }
         }
-#endregion
+        #endregion
 
         #region FilePathSim
         private void MasterSLP()
         {
-            //this.openPathText.Visible = false;
-            //this.savePathText.Visible = false;
+            //openPathText.Visible = false;
+            //savePathText.Visible = false;
 
-            this.openPathText.Text = this.openFullPath;
-            this.savePathText.Text = this.saveFullPath;
+            openPathText.Text = openFullPath;
+            savePathText.Text = saveFullPath;
 
-            SimplifyLongPath(ref this.openPathText);
-            SimplifyLongPath(ref this.savePathText);
+            SimplifyLongPath(ref openPathText);
+            SimplifyLongPath(ref savePathText);
 
-            this.openPathText.Location = new System.Drawing.Point(this.openFileNameBox.Location.X - 
-                this.openPathText.Size.Width, this.openPathText.Location.Y);
-            this.savePathText.Location = new System.Drawing.Point(this.saveFileNameBox.Location.X - 
-                this.savePathText.Size.Width, this.savePathText.Location.Y);
+            openPathText.Location = new System.Drawing.Point(openFileNameBox.Location.X -
+                openPathText.Size.Width, openPathText.Location.Y);
+            savePathText.Location = new System.Drawing.Point(saveFileNameBox.Location.X -
+                savePathText.Size.Width, savePathText.Location.Y);
 
-            this.openFileSPath = this.openPathText.Text;
-            this.saveFileSPath = this.savePathText.Text;
+            openFileSPath = openPathText.Text;
+            saveFileSPath = savePathText.Text;
 
-            this.openPathText.Visible = true;
-            this.savePathText.Visible = true;
+            openPathText.Visible = true;
+            savePathText.Visible = true;
         }
 
         private void SPSimplify()
         {
-            //this.savePathText.Visible = false;
+            //savePathText.Visible = false;
 
-            this.savePathText.Text = this.saveFullPath;
+            savePathText.Text = saveFullPath;
 
-            SimplifyLongPath(ref this.savePathText);
+            SimplifyLongPath(ref savePathText);
 
-            this.savePathText.Location = new System.Drawing.Point(this.saveFileNameBox.Location.X - this.savePathText.Size.Width, this.savePathText.Location.Y);
+            savePathText.Location = new System.Drawing.Point(saveFileNameBox.Location.X - savePathText.Size.Width, 
+                savePathText.Location.Y);
 
-            this.saveFileSPath = this.savePathText.Text;
+            saveFileSPath = savePathText.Text;
 
-            this.savePathText.Visible = true;
+            savePathText.Visible = true;
         }
 
         private void SimplifyLongPath(ref Label textLabel, int startIndex = 0,
            bool isFirstIndex = false, bool isTrimed = false)
         {
             char[] temp = textLabel.Text.ToCharArray();
-            textLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            while (textLabel.Size.Width <= (int)UtilityParameters.MAX_PATH_WIDTH * UtilityParameters.MAX_PATH_WIDTH_RATIO)
+            textLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, 
+                System.Drawing.GraphicsUnit.Point, 134);
+            while (textLabel.Size.Width <= UtilityParameters.MAX_PATH_WIDTH * UtilityParameters.MAX_PATH_WIDTH_RATIO)
             {
                 if (textLabel.Size.Width <= UtilityParameters.MAX_PATH_WIDTH)
                 {
@@ -335,7 +295,8 @@ namespace LinearCalc
                 }
                 else
                 {
-                    textLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", textLabel.Font.Size - 0.005F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+                    textLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", textLabel.Font.Size - 0.005F,
+                        System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
                 }
             }
 
@@ -404,7 +365,8 @@ namespace LinearCalc
 
             try
             {
-                pathText = pathText.Remove(firstRIndex + 1, 0 == startIndex ? lastRIndex - firstRIndex - 1 : lastRIndex - firstRIndex);
+                pathText = pathText.Remove(firstRIndex + 1, 0 == startIndex ? 
+                    lastRIndex - firstRIndex - 1 : lastRIndex - firstRIndex);
             }
             catch (Exception ex)
             {
@@ -425,7 +387,8 @@ namespace LinearCalc
             }
             else
             {
-                SimplifyLongPath(ref textLabel, isFirstIndex ? firstRIndex - 5 : firstRIndex + 5, isFirstIndex ? false : true);
+                SimplifyLongPath(ref textLabel, isFirstIndex ? firstRIndex - 5 : 
+                    firstRIndex + 5, isFirstIndex ? false : true);
             }
 
             return;
@@ -437,192 +400,50 @@ namespace LinearCalc
             String tempPath;
             Program.currentPath = @"C\USERS\Desktop";// Directory.GetCurrentDirectory();
             tempPath = Program.currentPath;
-            this.openFullPath = tempPath;
-            this.saveFullPath = tempPath;
-            this.openFileName = "";
-            this.saveFileName = "";
-            this.openFileExt = ".rtl";
-            this.manufactory = manufactoryList.RENISHAW;
+            openFullPath = tempPath;
+            saveFullPath = tempPath;
+            openFileName = "";
+            saveFileName = "";
+            openFileExt = ".rtl";
+            manufactory = manufactoryList.RENISHAW;
             MessageBox.Show("文件名或路径名非法！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void ReadFileAndGetData()
-        {
-            this.manufactory = (manufactoryList)Array.FindIndex(UtilityParameters.manuExtList,
-                            s => s.Equals(this.openFileExt));
+        {            
+            string fileString = "";
             try
             {
-                this.openFileContent = File.ReadAllLines(this.openFullPath +'\\' +this.openFileName+ this.openFileExt,
+                fileString = File.ReadAllText(openFullPath + '\\' + openFileName + openFileExt,
                     Encoding.Default);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("打开文件错误：" + this.openFileName + this.openFileExt +"\n"+ ex.Message, "错误",
+                MessageBox.Show("打开文件错误：" + openFileName + openFileExt + "\n" + ex.Message, "错误",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 SetInfoText(infoText.FILE_OPEN_ERROR);
                 return;
             }
-            
-            if (!FindTargetText())
-            {
-                return;
-            }
 
-            if (!GetData())
+            try
             {
+                calcData = ManuManager.GetDataByExtWithDot(openFileExt, fileString, UNIT.mm);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("文件格式错误：" + openFileName + openFileExt + "\n" + ex.Message, "错误",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                SetInfoText(infoText.DATA_FORMAT_ERROR);
                 return;
             }
 
             Save2File();
-            this.openFileAutoCompleteList.Add(this.openFileName);
-        }
-
-        private bool FindTargetText()
-        {
-            foreach (String line in this.openFileContent)
-            {
-                this.targetLineNum++;
-                if (line.Equals(UtilityParameters.targetStringList[(int)this.manufactory]))
-                {
-                    return true;
-                }               
-            }
-
-            this.targetLineNum = 0;
-            SetInfoText(infoText.FILE_CONTENT_ERROR);
-            
-            return false;
-        }
-
-        private bool GetData()
-        {
-            bool noErrorRead = true;
-            switch (this.manufactory)
-            {
-                case manufactoryList.RENISHAW: RenDataCalc(out noErrorRead); break;
-                case manufactoryList.API: APIDataCalc(out noErrorRead); break;
-                default: break;
-            };
-
-            return noErrorRead;
-        }
-
-        private void RenDataCalc(out bool noErrorRead)
-        {
-            noErrorRead = true;
-            int tempLineNum = 0;
-            int tempDataIndex;
-            int masterIndex;
-            int maxNum = 0;
-            double tempFloat;
-            double[,] reniMeasureData = new double[200, 4];
-            
-            foreach (String line in this.openFileContent)
-            {
-                tempLineNum++;
-                if (tempLineNum > this.targetLineNum)
-                {          
-                    if (line.Equals(""))
-                    {
-                        break;
-                    }
-
-                    noErrorRead &= int.TryParse(line.Substring(0, 1), out masterIndex);
-                    noErrorRead &= int.TryParse(line.Substring(4, 3), out tempDataIndex);
-                    noErrorRead &= double.TryParse(line.Substring(7, line.Length - 8), out tempFloat);     
-
-                    if (!noErrorRead)
-                    {
-                        SetInfoText(infoText.FILE_FORMAT_ERROR);
-                        return;
-                    }
-
-                    if (maxNum < tempDataIndex)
-                    {
-                        maxNum = tempDataIndex;
-                    }
-
-                    if ((maxNum > 200) || (masterIndex > 4))
-                    {
-                        SetInfoText(infoText.DATA_OVERSIZE_ERROR);
-                        noErrorRead = false;
-                        return;
-                    }
-
-                    if ((tempFloat > 1e4) || (tempFloat < -1e4))
-                    {
-                        SetInfoText(infoText.DATA_FORMAT_ERROR);
-                        noErrorRead = false;
-                        return;
-                    }
-                    reniMeasureData[tempDataIndex - 1,masterIndex - 1] = tempFloat;
-                }
-            }
-
-            this.maxDataNum = maxNum;
-            this.targetLineNum = 0;
-
-            while (0 < maxNum)
-            {
-                this.calcData[maxNum - 1] = -0.001 * ((reniMeasureData[maxNum - 1, 0] + reniMeasureData[maxNum - 1, 1] +
-                                            reniMeasureData[maxNum - 1, 2] + reniMeasureData[maxNum - 1, 3]) / 4);
-                maxNum--;
-            }
-
-            return;
-        }
-
-        private void APIDataCalc(out bool noErrorRead)
-        {
-            noErrorRead = true;
-            char[] indexChar = { ' ', '\t' };
-            double tempDouble;
-            double[] tempDoubleArray = new double[200];
-            int maxNum = 0;
-            int tempLineNum = 0;
-            int charIndex = -1;
-
-            foreach (String line in this.openFileContent)
-            {                
-                tempLineNum++;
-                if (tempLineNum > this.targetLineNum)
-                {                    
-                    if (line.Equals(""))
-                    {
-                        break;
-                    }
-
-                    maxNum++;
-                    charIndex = line.LastIndexOfAny(indexChar);
-                    if (-1==charIndex)
-                    {
-                        SetInfoText(infoText.DATA_FORMAT_ERROR);
-                        noErrorRead = false;
-                        return;
-                    }
-
-                    noErrorRead &= double.TryParse(line.Substring(charIndex), out tempDouble);
-                    tempDoubleArray[maxNum - 1] = -tempDouble;      
-                    
-                    if (maxNum > 200)
-                    {
-                        SetInfoText(infoText.DATA_OVERSIZE_ERROR);
-                        noErrorRead = false;
-                        return;
-                    }
-                }
-            }
-
-            this.maxDataNum = maxNum;
-            this.targetLineNum = 0;
-            tempDoubleArray.CopyTo(this.calcData, 0);
-            return;          
-        }
+            openFileAutoCompleteList.Add(openFileName);
+        }       
 
         private void Save2File()
         {
-            int i = 0;
-            int n = maxDataNum;
+            int n = calcData.Length;
             int colNum;
             try
             {
@@ -638,63 +459,54 @@ namespace LinearCalc
                 OutDataColNum.Value = 7;
             }
 
-            if (outDataFormat == outDataFormatList.AeroTech)
-            {
-                n = (int)Math.Ceiling((double)maxDataNum/colNum);
-            }
-            String[] writeString = new String[n];
             String tempSavePath;
-            this.suffix = this.suffixTextBox.Text;         
-            
-            if (String.Empty == this.saveFileNameBox.Text)
+            suffix = suffixTextBox.Text;
+
+            if (String.Empty == saveFileNameBox.Text)
             {
-                SaveFile();
-                if (!this.saveDiagResult)
+                SelectSavePath();
+                if (!saveDiagResult)
                 {
                     return;
                 }
-                if (1 == this.autoAppRule)
+                if (1 == autoAppRule)
                 {
-                    this.suffixTextBox.Text = this.saveFileName;
+                    suffixTextBox.Text = saveFileName;
                     ChangeSuffixBoxTextToValid();
-                }                
+                }
             }
 
-            tempSavePath = this.saveFullPath + '\\' + this.saveFileName + ".txt";
+            tempSavePath = saveFullPath + '\\' + saveFileName + ".txt";
 
-            while (File.Exists(tempSavePath) && (!autoOverWrite) && (this.usrInputSaveFileName))
+            while (File.Exists(tempSavePath) && (!autoOverWrite) && (usrInputSaveFileName))
             {
-                DialogResult result = MessageBox.Show(this.saveFileName+".txt文件已存在，是否覆盖？", "提示", MessageBoxButtons.YesNoCancel,
+                DialogResult result = MessageBox.Show(saveFileName + ".txt文件已存在，是否覆盖？", "提示", MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Information, MessageBoxDefaultButton.Button3);
                 if (DialogResult.Yes == result)
-                {                    
+                {
                     break;
                 }
                 else if (DialogResult.No == result)
                 {
-                    SaveFile();
-                    if (!this.saveDiagResult)
+                    SelectSavePath();
+                    if (!saveDiagResult)
                     {
                         return;
                     }
-                    if (1 == this.autoAppRule)
+                    if (1 == autoAppRule)
                     {
-                        this.suffixTextBox.Text = this.saveFileName;
+                        suffixTextBox.Text = saveFileName;
                         ChangeSuffixBoxTextToValid();
-                    }                    
-                    tempSavePath = this.saveFullPath + '\\' + this.saveFileName + ".txt";
+                    }
+                    tempSavePath = saveFullPath + '\\' + saveFileName + ".txt";
                 }
                 else
                 {
                     return;
-                }                            
+                }
             }
-            this.usrInputSaveFileName = true;
-            foreach (String line in writeString)
-            {
-                writeString[i] = OutDataFormator(i);
-                i++;
-            }
+            usrInputSaveFileName = true;
+            string[] writeString = FormatorManager.FormatData(outDataFormat, calcData, prefix, suffix, colNum);
 
             try
             {
@@ -702,120 +514,97 @@ namespace LinearCalc
             }
             catch (Exception ex)
             {
-                MessageBox.Show("保存文件错误："+this.saveFileName+".txt\n"+ex.Message, "保存错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("保存文件错误：" + saveFileName + ".txt\n" + ex.Message, "保存错误", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 SetInfoText(infoText.FILE_SAVE_ERROR);
                 return;
             }
 
             SetInfoText(infoText.FILE_SAVE_COMPLETE);
-            this.saved = true;
-            this.savedFilePath = tempSavePath;
+            saved = true;
+            savedFilePath = tempSavePath;
 
-            if (this.autoOpen)
+            if (autoOpen)
             {
                 try
                 {
                     System.Diagnostics.Process.Start(tempSavePath);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("打开文件错误：" + this.saveFileName + ".txt\n" + ex.Message, "错误",
+                    MessageBox.Show("打开文件错误：" + saveFileName + ".txt\n" + ex.Message, "错误",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             return;
         }
-        
-        string OutDataFormator(int lineNum)
-        {
-            switch (outDataFormat)
-            {
-                case outDataFormatList.ACS:
-                    return this.prefix + this.suffix + '(' + 
-                        lineNum + ")=" + this.calcData[lineNum].ToString();
-                case outDataFormatList.AeroTech:
-                    return AeroTechDataPrint(lineNum);
-                default:throw new NotImplementedException();
-            }
-        }
-
-        string AeroTechDataPrint(int lineNum)
-        {
-            int colNum;
-            colNum = Convert.ToInt16(OutDataColNum.Value);
-            string s="";
-            for (int i = lineNum * colNum; i < maxDataNum && i< lineNum * colNum + colNum; i++)
-            {
-                s += String.Format("{0:0.#####}\t",calcData[i]*1000);
-            }
-             return s.TrimEnd();
-        }
 
         private void SetInfoText(infoText info)
         {
-            this.infoTextLabel.Visible = false;
-            this.infoTextLabel.ForeColor = System.Drawing.Color.Red;
+            infoTextLabel.Visible = false;
+            infoTextLabel.ForeColor = System.Drawing.Color.Red;
             switch (info)
             {
                 case infoText.FILE_FORMAT_ERROR:
                     MessageBox.Show("文件格式错误！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.infoTextLabel.Text = "文件格式有错误！";
+                    infoTextLabel.Text = "文件格式有错误！";
                     break;
                 case infoText.FILE_CONTENT_ERROR:
                     MessageBox.Show("文件内容错误！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.infoTextLabel.Text = "文件内容有错误！";
+                    infoTextLabel.Text = "文件内容有错误！";
                     break;
                 case infoText.DATA_OVERSIZE_ERROR:
                     MessageBox.Show("文件数据太多！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.infoTextLabel.Text = "文件数据太多！";
+                    infoTextLabel.Text = "文件数据太多！";
                     break;
                 case infoText.DATA_FORMAT_ERROR:
                     MessageBox.Show("文件数据错误！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.infoTextLabel.Text = "数据不全，无法生成！";
+                    infoTextLabel.Text = "数据不全，无法生成！";
                     break;
                 case infoText.FILE_SAVE_ERROR:
-                    this.infoTextLabel.Text = "无法保存txt文件";
+                    infoTextLabel.Text = "无法保存txt文件";
                     break;
                 case infoText.FILE_OPEN_ERROR:
-                    this.infoTextLabel.Text = "无法打开干涉仪文件";
+                    infoTextLabel.Text = "无法打开干涉仪文件";
                     break;
                 case infoText.FILE_SAVE_COMPLETE:
                     System.Media.SystemSounds.Asterisk.Play();
-                    this.infoTextLabel.Text = "生成完毕！";
-                    this.infoTextLabel.ForeColor = System.Drawing.Color.Green;
+                    infoTextLabel.Text = "生成完毕！";
+                    infoTextLabel.ForeColor = System.Drawing.Color.Green;
                     break;
                 default:
-                    this.infoTextLabel.Text = "";
+                    infoTextLabel.Text = "";
                     break;
             }
-            this.infoTextLabel.Location = new System.Drawing.Point(this.fileGenerateButton.Location.X - this.infoTextLabel.Width, this.infoTextLabel.Location.Y);
-            this.infoTextLabel.Visible = true;
+            infoTextLabel.Location = new System.Drawing.Point(fileGenerateButton.Location.X - infoTextLabel.Width,
+                infoTextLabel.Location.Y);
+            infoTextLabel.Visible = true;
             return;
         }
 
         private void FileStreamHandler()
         {
-            if (this.autoSaveFileName)
+            if (autoSaveFileName)
             {
-                this.saveFileName = this.openFileName;
-                this.saveFullPath = this.openFullPath;
+                saveFileName = openFileName;
+                saveFullPath = openFullPath;
             }
 
-            Program.currentPath = this.openFullPath;
-            this.manufactory = (manufactoryList)Array.FindIndex(UtilityParameters.manuExtList,
-                s => s.Equals(this.openFileExt));
+            Program.currentPath = openFullPath;
+            manufactory = (manufactoryList)Array.FindIndex(UtilityParameters.manuExtList,
+                s => s.Equals(openFileExt));
 
-            this.openFileNameBox.Text = this.openFileName;
-            this.extDropList.SelectedIndex = (int)this.manufactory;
+            openFileNameBox.Text = openFileName;
+            extDropList.SelectedIndex = (int)manufactory;
 
-            if (this.autoSaveFileName)
+            if (autoSaveFileName)
             {
-                this.saveFileNameBox.Text = this.saveFileName;
+                saveFileNameBox.Text = saveFileName;
             }
 
             MasterSLP();
 
-            if (this.quickGen && this.fileGenerateButton.Enabled)
+            if (quickGen && fileGenerateButton.Enabled)
             {
                 ReadFileAndGetData();
             }
@@ -825,76 +614,76 @@ namespace LinearCalc
         {
             if (control.Text.LastIndexOfAny(Path.GetInvalidFileNameChars()) != -1)
             {
-                this.fileGenEnByte &= 0xFE;
+                fileGenEnByte &= 0xFE;
                 control.BackColor = System.Drawing.Color.Red;
                 BalloonTip ballon = new BalloonTip("文件名不能包含有\n" + UtilityParameters.invalidFileName, control);
-                this.fileGenerateButton.Enabled = (0xFF == this.fileGenEnByte);
+                fileGenerateButton.Enabled = (0xFF == fileGenEnByte);
                 return false;
             }
             else
             {
-                this.fileGenEnByte |= 0x01;
+                fileGenEnByte |= 0x01;
                 control.BackColor = System.Drawing.SystemColors.Window;
-                this.fileGenerateButton.Enabled = (0xFF == this.fileGenEnByte);
+                fileGenerateButton.Enabled = (0xFF == fileGenEnByte);
                 return true;
-            }            
-        }        
+            }
+        }
 
         private void CheckSuffixValid(Control control)
         {
-            String tempVarName = this.prefix + control.Text;
-            if (UtilityFunctions.CheckVariableName(control, tempVarName,true,true))
+            String tempVarName = prefix + control.Text;
+            if (UtilityFunctions.CheckVariableName(control, tempVarName, true, true))
             {
-                if (this.autoApp)
+                if (autoApp)
                 {
-                    this.suffixTextBox.BackColor = System.Drawing.SystemColors.Control;
-                }                
-                this.fileGenEnByte |= 0x02;
-                this.suffix = control.Text;
+                    suffixTextBox.BackColor = System.Drawing.SystemColors.Control;
+                }
+                fileGenEnByte |= 0x02;
+                suffix = control.Text;
             }
             else
             {
-                this.fileGenEnByte &= 0xFD;
+                fileGenEnByte &= 0xFD;
             }
-            this.fileGenerateButton.Enabled = (0xFF == this.fileGenEnByte);
+            fileGenerateButton.Enabled = (0xFF == fileGenEnByte);
         }
 
         private void ChangeSuffixBoxTextToValid()
         {
             int rule = 0;
 
-            if (this.autoApp)
+            if (autoApp)
             {
-                this.suffixTextBox.BackColor = System.Drawing.SystemColors.Control;
+                suffixTextBox.BackColor = System.Drawing.SystemColors.Control;
             }
 
-            UtilityFunctions.ChangeVarNameToValid(this.suffixTextBox, rule, this.prefix, true);
+            UtilityFunctions.ChangeVarNameToValid(suffixTextBox, rule, prefix, true);
 
-            this.suffix = this.suffixTextBox.Text;
+            suffix = suffixTextBox.Text;
         }
 
         private bool CheckFileNameEmpty()
         {
-            if ((String.Empty != this.openFileNameBox.Text) && (String.Empty != this.saveFileNameBox.Text))
+            if ((String.Empty != openFileNameBox.Text) && (String.Empty != saveFileNameBox.Text))
             {
                 return false;
             }
             else
             {
-                if (String.Empty == this.openFileNameBox.Text)
+                if (String.Empty == openFileNameBox.Text)
                 {
-                    bool tempGen = this.quickGen;
-                    this.quickGen = true;
+                    bool tempGen = quickGen;
+                    quickGen = true;
                     OpenFile();
-                    this.quickGen = tempGen;
-                    /*this.openFileNameBox.BackColor = System.Drawing.Color.Yellow;
-                    BalloonTip ballon = new BalloonTip("请输入文件名", this.openFileNameBox);*/
+                    quickGen = tempGen;
+                    /*openFileNameBox.BackColor = System.Drawing.Color.Yellow;
+                    BalloonTip ballon = new BalloonTip("请输入文件名", openFileNameBox);*/
                 }
-                else if (String.Empty == this.saveFileNameBox.Text)
+                else if (String.Empty == saveFileNameBox.Text)
                 {
                     ReadFileAndGetData();
-                    /*this.saveFileNameBox.BackColor = System.Drawing.Color.Yellow;
-                    BalloonTip ballon = new BalloonTip("请输入文件名", this.saveFileNameBox);*/
+                    /*saveFileNameBox.BackColor = System.Drawing.Color.Yellow;
+                    BalloonTip ballon = new BalloonTip("请输入文件名", saveFileNameBox);*/
                 }
                 return true;
             }
@@ -902,14 +691,14 @@ namespace LinearCalc
 
         private void MergeFormRun()
         {
-            this.TopMost = false;
+            TopMost = false;
 
             if (!Program.mergeThreadStart)
             {
-                this.onTopInt++;
+                onTopInt++;
                 mergeForm.outDataColNum = OutDataColNum.Value;
                 mergeForm.outDataFormat = outDataFormat;
-                mergeForm.SetDefault(this.saveFullPath, this.saveFileName);
+                mergeForm.SetDefault(saveFullPath, saveFileName);
                 Program.mergeThreadStart = true;
                 Thread mergeDataThread = new Thread(MergeDataThread);
                 mergeDataThread.IsBackground = true;
@@ -924,13 +713,13 @@ namespace LinearCalc
             }
         }
 
-        void ChangeOutDataFormat(outDataFormatList odf)
+        void ChangeOutDataFormat(DataFormator odf)
         {
             foreach (MenuItem m in menuOutDataFormat.MenuItems)
             {
                 string s1 = odf.ToString();
-                string s2= m.Text.Substring(0, m.Text.IndexOf('('));
-                if (string.Compare(s1,s2) == 0)
+                string s2 = m.Text.Substring(0, m.Text.IndexOf('('));
+                if (string.Compare(s1, s2) == 0)
                 {
                     m.Checked = true;
                 }
@@ -940,7 +729,7 @@ namespace LinearCalc
                 }
             }
             outDataFormat = odf;
-            if (odf == outDataFormatList.AeroTech)
+            if (odf == DataFormator.AeroTech)
             {
                 OutDataColNumLabel.Visible = true;
                 OutDataColNum.Visible = true;
@@ -956,11 +745,11 @@ namespace LinearCalc
 
         private void ScriptFormRun(task taskNum)
         {
-            this.TopMost = false;
+            TopMost = false;
 
             if (!Program.scriptThreadStart)
             {
-                this.onTopInt++;
+                onTopInt++;
                 scriptForm = new Form3();
                 scriptForm.SetTask(taskNum);
                 Program.scriptThreadStart = true;
@@ -985,10 +774,10 @@ namespace LinearCalc
         {
             Application.Run(scriptForm);
             Program.scriptThreadStart = false;
-            this.onTopInt--;
-            if (0 == this.onTopInt)
+            onTopInt--;
+            if (0 == onTopInt)
             {
-                this.Invoke((MethodInvoker)delegate () { this.TopMost=true; });
+                Invoke((MethodInvoker)delegate () { TopMost = true; });
             }
         }
 
@@ -997,10 +786,10 @@ namespace LinearCalc
         {
             Application.Run(mergeForm);
             Program.mergeThreadStart = false;
-            this.onTopInt--;
-            if (0 == this.onTopInt)
+            onTopInt--;
+            if (0 == onTopInt)
             {
-                this.Invoke((MethodInvoker)delegate () { this.TopMost = true; });
+                Invoke((MethodInvoker)delegate () { TopMost = true; });
             }
             mergeForm = new Form2();
         }
@@ -1016,11 +805,9 @@ namespace LinearCalc
         private String openFileName, saveFileName;
         private String openFileExt = ".rtl";
         private String openFileSPath, saveFileSPath;
-        private Stream openStream, saveStream;
-        private FileStream openFileStream, saveFileStream;
+        private Stream openStream;
+        private FileStream openFileStream;
         private String openFullPath, saveFullPath;
-        private String[] openFileContent;
-        private String[] saveFileContent;
         private int onTopInt = 0;
 
         private bool quickGen = true;
@@ -1035,22 +822,20 @@ namespace LinearCalc
         private String suffix;
         private String prefix = UtilityParameters.defaultPrefix;
 
-        private int targetLineNum = 0;
-        private int maxDataNum;
-        private double[] calcData=new double[200];
+        private double[] calcData = new double[200];
         private bool saveDiagResult = false;
 
         private Form2 mergeForm = new Form2();
         private Form3 scriptForm;
 
         private AutoCompleteStringCollection openFileAutoCompleteList = new AutoCompleteStringCollection();
-        private AutoCompleteStringCollection saveFileAutoCompleteList = new AutoCompleteStringCollection();        
+        private AutoCompleteStringCollection saveFileAutoCompleteList = new AutoCompleteStringCollection();
 
         delegate void voidFunction();
         List<voidFunction> functionList = new List<voidFunction>();
         manufactoryList manufactory = manufactoryList.RENISHAW;
-        outDataFormatList outDataFormat = outDataFormatList.ACS;
-        
+        DataFormator outDataFormat = DataFormator.ACS;
+
     }
     #endregion
 }

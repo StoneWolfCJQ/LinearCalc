@@ -24,10 +24,28 @@ D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\EXE\C#\LinearCa
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\EXE\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.csproj.GenerateResource.Cache
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\EXE\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.exe
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\EXE\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.pdb
+D:\Stone\05-程序\LinearCalc\Bin\LinearCalc.exe.config
+D:\Stone\05-程序\LinearCalc\Bin\LinearCalc.exe
+D:\Stone\05-程序\LinearCalc\Bin\LinearCalc.pdb
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.AboutForm.resources
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.ConvertAssist.resources
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.DataDisplay.resources
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.Form1.resources
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.Form2.resources
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.Form3.resources
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.ManualForm.resources
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.OptionsForm.resources
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.Properties.Resources.resources
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.csproj.GenerateResource.Cache
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.exe
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.pdb
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\Bin\LinearCalc.exe.config
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\Bin\LinearCalc.exe
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\Bin\LinearCalc.pdb
+D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.csprojResolveAssemblyReference.cache
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.AboutForm.resources
+D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.ConvertAssist.resources
+D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.DataDisplay.resources
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.Form1.resources
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.Form2.resources
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.Form3.resources
@@ -37,5 +55,4 @@ D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\L
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.csproj.GenerateResource.Cache
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.exe
 D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.pdb
-D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.csprojAssemblyReference.cache
-D:\Stone Wolf\Work\德龙\07-程序\01-干涉仪\01-快速计算\C#\LinearCalc\LinearCalc\obj\Release\LinearCalc.csproj.CoreCompileInputs.cache
+D:\Stone\05-程序\LinearCalc\LinearCalc\obj\Release\LinearCalc.csprojResolveAssemblyReference.cache

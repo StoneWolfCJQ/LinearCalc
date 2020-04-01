@@ -120,6 +120,26 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BallonTip.cs" />
+    <Compile Include="CalUtil\CalUtils.cs" />
+    <Compile Include="ConvertAssist\ConvertAssistComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertAssist\ConvertAssist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertAssist\ConvertAssist.Designer.cs">
+      <DependentUpon>ConvertAssist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertAssist\DataDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertAssist\DataDisplay.Designer.cs">
+      <DependentUpon>DataDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportFormtor\AreoTech.cs" />
+    <Compile Include="ExportFormtor\ACS.cs" />
+    <Compile Include="ExportFormtor\FormatorTemplate.cs" />
+    <Compile Include="ExportFormtor\FormatorManager.cs" />
     <Compile Include="Form3Components.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +172,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Manufactor\API.cs" />
+    <Compile Include="Manufactor\ManuManager.cs" />
+    <Compile Include="Manufactor\ManuTemplate.cs" />
+    <Compile Include="Manufactor\RENISHAW.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -170,8 +194,15 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConvertAssist\ConvertAssist.resx">
+      <DependentUpon>ConvertAssist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConvertAssist\DataDisplay.resx">
+      <DependentUpon>DataDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -193,6 +224,7 @@
     <None Include="app.manifest" />
     <None Include="LinearCalc_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ConvertAssist.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -232,5 +264,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
