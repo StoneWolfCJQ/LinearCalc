@@ -11,7 +11,7 @@ namespace LinearCalc
     public class RENISHAW : ManuTemplate
     {
         string posMatchReg = @"(?<=Targets :)(\d|\D)+(?=Flags:)";
-        string dataMatchReg = @"(?<=Run Target Data:)(\d|\D)+(?=ENVIRONMENT::)";
+        string dataMatchReg = @"(?<=Run Target Data:)(\d|\D)+?(?=E)";
 
         public override string FileExtWithDot { get { return ".rtl"; } }
         protected override UNIT FileDataUnit { get { return UNIT.um; } }
