@@ -15,9 +15,9 @@ namespace LinearCalc
     {
         protected internal bool autoOpen;
         protected internal bool autoOverwrite;
-        protected internal String prefix = UtilityParameters.defaultPrefix;
+        protected internal string prefix = UtilityParameters.defaultPrefix;
         public OptionsForm(bool inputAutoOpen = true, bool inputAutoOverwrite = true, 
-            String prefix = UtilityParameters.defaultPrefix)
+            string prefix = UtilityParameters.defaultPrefix)
         {
             this.autoOpen = inputAutoOpen;
             this.autoOverwrite = inputAutoOverwrite;

@@ -10,8 +10,8 @@ namespace LinearCalc
 {
     static class Program
     {
-        static public String currentPath;
-        static public String[] startArg;
+        static public string currentPath;
+        static public string[] startArg;
         static public bool mergeThreadStart = false;
         static public bool scriptThreadStart = false;
 

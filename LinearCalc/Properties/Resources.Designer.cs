@@ -19,7 +19,7 @@ namespace LinearCalc.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,17 +61,21 @@ namespace LinearCalc.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFLAGS(0).#DEFCON=1
+        ///   Looks up a localized string similar to !---------------------Compensating Script
+        ///!!---------------Some Definitions
+        ///GLOBAL INT compStartPos, compStep
         ///
-        ///!-------------Data Here--------------!
-        ///!ErrorCompDataX1(0)=0.0000
-        ///!.....
-        ///!ErrorCompDataX1(N)=0.0000
-        ///!------------------------------------!
-        ///
-        ///MFLAGS(0).#DEFCON=0
-        ///CONNECT RPOS(0)=APOS(0)+MAP(APOS(0),ErrorCompDataX1,30,20)
-        ///DEPENDS 0,0  .
+        ///!!---------------WorkPanel X
+        ///compStartPos = 10                  !&lt;----------
+        ///compStep = 25                      !&lt;----------
+        ///MFLAGS(0).#DEFCON=1
+        ///!Need to change
+        ///GLOBAL REAL ErrorCompDataX(61)     !&lt;----------
+        ///!Need to change
+        ///!!!--------Data Here
+        ///ErrorCompDataX(0)=0.0              !&lt;----------
+        ///!!!.....                                       |
+        ///ErrorCompDataX(60)=0.0             !&lt;------- [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Comp {
             get {
@@ -169,46 +173,29 @@ namespace LinearCalc.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to !home process
+        ///   Looks up a localized string similar to !---------------------Home Script
         ///real dfSpeed
         ///int nAxis
         ///real safepos
+        ///int onLimit
         ///
-        ///!------------Set Here------------!
+        ///!---------------------Custom Functions Here
         ///
-        ///!-----No Index Home LL-----!
-        ///!10
-        ///nAxis=10
-        ///dfSpeed=20
-        ///safepos=8
-        ///call AxisSet
-        ///call AxisHome
-        ///!call GosafePos
+        ///!---------------------Homing Process
+        ///!!---------------Some Encoders Are Absolute
+        ///!!---------------Don&apos;t Go Home After First Home
+        ///!!---------------                  !&lt;----------
+        ///Main:
+        ///!!---------------Axis Description
+        ///!!!--------Linear Axis:
+        ///!!!--------Z Adjust:
         ///
-        ///!-----No Index Home RL-----!
-        ///!9
-        ///nAxis=9
-        ///dfSpeed=20
-        ///safepos=-8
-        ///call AxisSet
-        ///call AxisHomeN
-        ///!call GosafePos
-        ///
-        ///!-----Index Home LL-----!
-        ///！1
-        ///nAxis=1
-        ///dfSpeed=30
-        ///safepos=10
-        ///call AxisSet
-        ///call AxisHomeIndex
-        ///call GosafePos
-        ///
-        ///!-----Index Home RL-----!
-        ///！0
+        ///!--------------Axis Set And Process
+        ///!----Axis Home No Index
         ///nAxis=0
-        ///dfSpeed=30
-        ///safepos=-10
-        ///call  [rest of string was truncated]&quot;;.
+        ///dfSpeed=10
+        ///call AxisSet
+        ///call Le [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Zero {
             get {

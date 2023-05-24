@@ -10,7 +10,7 @@ namespace LinearCalc
     {
         public override DataFormator formator { get { return DataFormator.ACS; } }
 
-        public override string[] FormatData(double[] data, params object[] exParams)
+        public override string[] FormatData(double[] data, double[] pos, params object[] exParams)
         {
             List<string> s = new List<string>();
             string prefix = (string)exParams[0];

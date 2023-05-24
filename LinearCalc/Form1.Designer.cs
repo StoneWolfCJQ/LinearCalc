@@ -15,7 +15,7 @@ namespace LinearCalc
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            UtilityFunctions.SetReg(this.openFullPath);
+            UtilityFunctions.SetLastPath(this.openFullPath);
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -84,6 +84,7 @@ namespace LinearCalc
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.OutDataColNumLabel = new System.Windows.Forms.Label();
             this.OutDataColNum = new System.Windows.Forms.NumericUpDown();
+            this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OutDataColNum)).BeginInit();
             this.SuspendLayout();
@@ -278,7 +279,8 @@ namespace LinearCalc
             this.menuOutDataFormat.Index = 5;
             this.menuOutDataFormat.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuODFACS,
-            this.menuODFAeroTech});
+            this.menuODFAeroTech,
+            this.menuItem1});
             this.menuOutDataFormat.Text = "输出格式(&O)";
             // 
             // menuODFACS
@@ -452,7 +454,7 @@ namespace LinearCalc
             this.menuTipVirtualLabel.AutoSize = true;
             this.menuTipVirtualLabel.Location = new System.Drawing.Point(14, 242);
             this.menuTipVirtualLabel.Name = "menuTipVirtualLabel";
-            this.menuTipVirtualLabel.Size = new System.Drawing.Size(103, 13);
+            this.menuTipVirtualLabel.Size = new System.Drawing.Size(138, 17);
             this.menuTipVirtualLabel.TabIndex = 15;
             this.menuTipVirtualLabel.Text = "menuTipVirtualLabel";
             this.menuTipVirtualLabel.Visible = false;
@@ -552,6 +554,13 @@ namespace LinearCalc
             this.OutDataColNum.Visible = false;
             this.OutDataColNum.ValueChanged += new System.EventHandler(this.OutDataColNum_ValueChanged);
             // 
+            // menuItem1
+            // 
+            this.menuItem1.Index = 2;
+            this.menuItem1.Shortcut = System.Windows.Forms.Shortcut.Alt3;
+            this.menuItem1.Text = "Vulcan(&3)";
+            this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.fileGenerateButton;
@@ -649,6 +658,7 @@ namespace LinearCalc
         private System.Windows.Forms.MenuItem menuODFAeroTech;
         private System.Windows.Forms.Label OutDataColNumLabel;
         private System.Windows.Forms.NumericUpDown OutDataColNum;
+        private System.Windows.Forms.MenuItem menuItem1;
     }
 }
 

@@ -12,6 +12,7 @@ namespace LinearCalc
     {
         string posMatchReg = @"(?<=Targets :)(\d|\D)+(?=Flags:)";
         string dataMatchReg = @"(?<=Run Target Data:)(\d|\D)+?(?=E)";
+        string measureTimeMatchReg = @"(?<=Run-count:)\d+";
 
         public override string FileExtWithDot { get { return ".rtl"; } }
         protected override UNIT FileDataUnit { get { return UNIT.um; } }
@@ -31,6 +32,7 @@ namespace LinearCalc
 
         public override double[] GetResult(string fileString, UNIT unit)
         {
+            measureTimes = int.Parse(Regex.Match(fileString, measureTimeMatchReg).Value);
             double[] rawData = GetRawDataUM(fileString);
             int l = rawData.Length / measureTimes;
             double[] data = new double[l];

@@ -35,7 +35,7 @@ namespace LinearCalc
         #region HotKey
         private void Form2_KeyDown(object sender, KeyEventArgs e)
         {
-            String pressedKeyS = e.KeyCode.ToString();
+            string pressedKeyS = e.KeyCode.ToString();
             Char pressedKey = pressedKeyS[0];
             if (e.Control)
             {
@@ -186,7 +186,7 @@ namespace LinearCalc
             }
         }
 
-        public void SetDefault(String setPath, String fileName)
+        public void SetDefault(string setPath, string fileName)
         {
             defaultPath = setPath;
             defaultFileName = fileName;
@@ -210,7 +210,7 @@ namespace LinearCalc
             {
                 fileDirList = openFileList;
             }
-            foreach (String line in fileDirList)
+            foreach (string line in fileDirList)
             {
                 if (ExistFile(line,ref tempItem))
                 {
@@ -270,8 +270,8 @@ namespace LinearCalc
                 !ext.Equals(".txt",StringComparison.CurrentCultureIgnoreCase))
                 return;
 
-            String tempString;
-            String tempFilePath;
+            string tempString;
+            string tempFilePath;
             StreamReader tempStreamReader;
             int rule = 0;
 
@@ -314,24 +314,25 @@ namespace LinearCalc
         }
         private void GetDataAndSaveFile()
         {
-            double[][] dataSource = GetData();
+            (double[][] dataSource, double[][] pos) = GetData();
             if (null == dataSource)
             {
                 return;
             }
             double[] result = Sum(dataSource);
-            SaveFile(result);
+            SaveFile(result, pos);
         }
 
-        private double[][] GetData()
+        private (double[][] data, double[][] pos) GetData()
         {
             int rows = -1;
             int i = 0;
             string fileString;
-            double[] data;
-            String filePath;
+            double[] data, p;
+            string filePath;
             double offset, ratio;
             double[][] dataSource = new double[fileList.Items.Count][];
+            double[][] pos = new double[fileList.Items.Count][];
             double r;          
 
             foreach (ListViewItem tempItem in fileList.Items)
@@ -347,7 +348,7 @@ namespace LinearCalc
                     MessageBox.Show("打开文件错误：" + tempItem.Text + "\n" + ex.Message, "错误",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tempItem.BackColor = Color.Red;
-                    return null;
+                    return (null, null);
                 }
 
                 try
@@ -356,10 +357,12 @@ namespace LinearCalc
                     {
                         r = 1;
                         data = FormatorManager.ReadFormatedData(DataFormator.ACS, fileString);
+                        p = null;
                     }
                     else
                     {
                         data = ManuManager.GetDataByExtWithDot(ext, fileString, UNIT.mm);
+                        p = ManuManager.GetPosMMByExtWithDot(ext, fileString);
                     }
                 }
                 catch (Exception ex)
@@ -367,7 +370,7 @@ namespace LinearCalc
                     MessageBox.Show("文件格式错误：" + tempItem.Text + "\n" + ex.Message, "错误",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tempItem.BackColor = Color.Red;
-                    return null;
+                    return (null, null);
                 }
 
                 
@@ -383,7 +386,7 @@ namespace LinearCalc
                     {
                         MessageBox.Show("数据维度不相同：" + filePath, "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         tempItem.BackColor = Color.Red;
-                        return null;
+                        return (null, null);
                     }
                 }
 
@@ -405,14 +408,15 @@ namespace LinearCalc
                 {
                     MessageBox.Show("权重或偏移值错误", "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tempItem.BackColor = Color.Red;
-                    return null;
+                    return (null, null);
                 }
 
                 dataSource[i] = data.Select(d => (d + offset) * ratio).ToArray();
+                pos[i] = p;
                 i++;
             }
 
-            return dataSource;
+            return (dataSource, pos);
         }
 
         private double[] Sum(double[][] dataSource)
@@ -431,10 +435,10 @@ namespace LinearCalc
             return result;
         }
 
-        private void SaveFile(double[] result)
+        private void SaveFile(double[] data, double[][] pos)
         {
-            String tempPath = defaultPath + '\\' + defaultFileName + ".txt";
-            int n = result.Length;
+            string tempPath = defaultPath + '\\' + defaultFileName + ".txt";
+            int n = data.Length;
             int colNum;
             try
             {
@@ -452,7 +456,7 @@ namespace LinearCalc
 
             if (outDataFormat == DataFormator.AeroTech)
             {
-                n = (int)Math.Ceiling((double)result.Length / colNum);
+                n = (int)Math.Ceiling((double)data.Length / colNum);
             }
 
             saveFileDialog.InitialDirectory = defaultPath;
@@ -461,7 +465,7 @@ namespace LinearCalc
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 tempPath = saveFileDialog.FileName;
-                String[] tempString = FormatorManager.FormatData(outDataFormat, result, varName, "", colNum);
+                string[] tempString = FormatorManager.FormatData(outDataFormat, data, pos[0],  varName, "", colNum);
 
                 try
                 {
@@ -478,9 +482,9 @@ namespace LinearCalc
             }
         }       
 
-        private bool ExistFile(String line, ref ListViewItem item)
+        private bool ExistFile(string line, ref ListViewItem item)
         {
-            String tempFileName = line;
+            string tempFileName = line;
             foreach (ListViewItem tempItem in fileList.Items)
             {
                 if (tempFileName.Equals(tempItem.SubItems[1].Text + '\\' + tempItem.Text))
@@ -549,12 +553,12 @@ namespace LinearCalc
     {
         private Size[] offset = new Size[2];
         private AutoCompleteStringCollection pathAutoComplete = new AutoCompleteStringCollection();
-        private String defaultPath;
-        private String defaultFileName;
-        private String[] openFileList;
-        private String varName;
+        private string defaultPath;
+        private string defaultFileName;
+        private string[] openFileList;
+        private string varName;
         private bool saved = false;
-        private String savedFilePath;
+        private string savedFilePath;
         private bool varNameBoxAutoChange = false;
         private bool[] dropFileIndex;
         private bool dropFolder;

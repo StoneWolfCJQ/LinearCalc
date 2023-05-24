@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>LinearCalc</RootNamespace>
     <AssemblyName>LinearCalc</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -32,6 +32,7 @@
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -136,6 +137,7 @@
     <Compile Include="ConvertAssist\DataDisplay.Designer.cs">
       <DependentUpon>DataDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExportFormtor\Vulcan.cs" />
     <Compile Include="ExportFormtor\AreoTech.cs" />
     <Compile Include="ExportFormtor\ACS.cs" />
     <Compile Include="ExportFormtor\FormatorTemplate.cs" />
@@ -167,15 +169,15 @@
     <Compile Include="OptionsForm.Designer.cs">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manufactor\API.cs" />
+    <Compile Include="Manufactor\ManuManager.cs" />
+    <Compile Include="Manufactor\ManuTemplate.cs" />
+    <Compile Include="Manufactor\RENISHAW.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Manufactor\API.cs" />
-    <Compile Include="Manufactor\ManuManager.cs" />
-    <Compile Include="Manufactor\ManuTemplate.cs" />
-    <Compile Include="Manufactor\RENISHAW.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

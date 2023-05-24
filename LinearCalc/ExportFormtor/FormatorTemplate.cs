@@ -11,7 +11,7 @@ namespace LinearCalc
         public virtual DataFormator formator { get; }
         protected char[] emptyChr = "\r\n\t\b ".ToCharArray();
 
-        public virtual string[] FormatData(double[] data, params object[] exParams) { throw new NotImplementedException(); }
+        public virtual string[] FormatData(double[] data, double[] pos, params object[] exParams) { throw new NotImplementedException(); }
 
         public virtual double[] ReadFormatedData(DataFormator formator, string fileString)
         {

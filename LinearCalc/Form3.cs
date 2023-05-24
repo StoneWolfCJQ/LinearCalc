@@ -39,7 +39,7 @@ namespace LinearCalc
         {
             if (e.Control)
             {
-                String keyString = e.KeyCode.ToString();
+                string keyString = e.KeyCode.ToString();
                 char keyChar = keyString[0];
                 if (keyString.Length == 1)
                 {

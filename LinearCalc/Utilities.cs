@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.CodeDom.Compiler;
 using Microsoft.Win32;
 using LinearCalc;
+using System.IO;
 
 namespace Utilities
 {
@@ -55,17 +56,36 @@ namespace Utilities
     {
         public const int MAX_PATH_WIDTH = 280;
         public const double MAX_PATH_WIDTH_RATIO = 1.05;
-        public static String[] manuExtList = new String[2] { ".rtl", ".pos"};
-        public static String[] targetStringList = new String[2] { "Run Target Data:", "Position   	Bidirectional Avg Error" };
-        public const String defaultPrefix = "ErrorCompData";
-        public const String invalidFileName = "\\/*:?\"<>|";
-        public const String version = "v1.0.0.0";
-        public const String hotKeyString = "OSFMJGPHBQ";
-        public static String[] scriptName = new String[3] { "回原点脚本", "干涉仪测量脚本", "干涉仪补偿脚本" };
+        public static string[] manuExtList = new string[2] { ".rtl", ".pos"};
+        public static string[] targetStringList = new string[2] { "Run Target Data:", "Position   	Bidirectional Avg Error" };
+        public const string defaultPrefix = "ErrorCompData";
+        public const string invalidFileName = "\\/*:?\"<>|";
+        public const string version = "v1.0.0.0";
+        public const string hotKeyString = "OSFMJGPHBQ";
+        public static string[] scriptName = new string[3] { "回原点脚本", "干涉仪测量脚本", "干涉仪补偿脚本" };
+        public static string lastPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\LinearCal\\last.txt";
     }
 
     static class UtilityFunctions
     {
+        public static void GetLastPath(out string keyValue)
+        {
+            try
+            {
+                keyValue = File.ReadAllText(UtilityParameters.lastPath);
+            }
+            catch
+            {
+                keyValue = "";
+            }
+        }
+
+        public static void SetLastPath(string paths)
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(UtilityParameters.lastPath));
+            File.WriteAllText(UtilityParameters.lastPath, paths);
+        }
+
         public static void HotKeyMessage(char keyChar, out hotKeyMessage message)
         {
             message = hotKeyMessage.NONE;
@@ -78,7 +98,7 @@ namespace Utilities
             }
         }
 
-        public static bool CheckVariableName(Control control, String input,
+        public static bool CheckVariableName(Control control, string input,
             bool emptyStringWarning = false, bool changeColor = false)
         {
             CodeDomProvider provider = CodeDomProvider.CreateProvider("C#");
@@ -92,7 +112,7 @@ namespace Utilities
             }
             else
             {                
-                if (String.Empty == input) 
+                if (string.Empty == input) 
                 {
                     if (emptyStringWarning)
                     {
@@ -117,7 +137,7 @@ namespace Utilities
             }
         }
 
-        public static bool CheckVariableName(String input)
+        public static bool CheckVariableName(string input)
         {
             CodeDomProvider provider = CodeDomProvider.CreateProvider("C#");
             if (provider.IsValidIdentifier(input))
@@ -130,10 +150,10 @@ namespace Utilities
             }
         }
 
-        public static void SetReg(String keyValue)
+        public static void SetReg(string keyValue)
         {
-            const String keyName = "HKEY_LOCAL_MACHINE\\SOFTWARE\\LinearCalc";
-            const String valueName = "Path";
+            const string keyName = "HKEY_LOCAL_MACHINE\\SOFTWARE\\LinearCalc";
+            const string valueName = "Path";
             try
             {
                 Registry.SetValue(keyName, valueName, keyValue);
@@ -144,10 +164,10 @@ namespace Utilities
             }            
         }
 
-        public static void SetReg(String[] keyValue)
+        public static void SetReg(string[] keyValue)
         {
-            const String keyName = "HKEY_LOCAL_MACHINE\\SOFTWARE\\LinearCalc";
-            const String valueName = "RecentFolder";
+            const string keyName = "HKEY_LOCAL_MACHINE\\SOFTWARE\\LinearCalc";
+            const string valueName = "RecentFolder";
             try
             {
                 Registry.SetValue(keyName, valueName, keyValue);
@@ -158,14 +178,14 @@ namespace Utilities
             }
         }
 
-        public static void GetReg(out String keyValue)
+        public static void GetReg(out string keyValue)
         {
-            const String keyName = "HKEY_LOCAL_MACHINE\\SOFTWARE\\LinearCalc";
-            const String valueName = "Path";
+            const string keyName = "HKEY_LOCAL_MACHINE\\SOFTWARE\\LinearCalc";
+            const string valueName = "Path";
             keyValue = "";
             try
             {
-                keyValue = Registry.GetValue(keyName, valueName, "") as String;
+                keyValue = Registry.GetValue(keyName, valueName, "") as string;
             }
             catch (Exception ex)
             {
@@ -173,14 +193,14 @@ namespace Utilities
             }
         }
 
-        public static void GetReg(out String[] keyValue)
+        public static void GetReg(out string[] keyValue)
         {
-            const String keyName = "HKEY_LOCAL_MACHINE\\SOFTWARE\\LinearCalc";
-            const String valueName = "RecentFolder";
+            const string keyName = "HKEY_LOCAL_MACHINE\\SOFTWARE\\LinearCalc";
+            const string valueName = "RecentFolder";
             keyValue = null;
             try
             {
-                keyValue = Registry.GetValue(keyName, valueName, null ) as String[];
+                keyValue = Registry.GetValue(keyName, valueName, null ) as string[];
             }
             catch (Exception ex)
             {
@@ -189,10 +209,10 @@ namespace Utilities
         }
 
         public static void ChangeVarNameToValid(Control control, int rule,
-            String inputString = "", bool enablePrefix = false)
+            string inputString = "", bool enablePrefix = false)
         {            
-            String tempEmptyVarName = inputString;
-            String tempEmptyVarNameF = tempEmptyVarName;
+            string tempEmptyVarName = inputString;
+            string tempEmptyVarNameF = tempEmptyVarName;
             char replaceChar = ' ';
 
             foreach (char singleChar in control.Text)
@@ -228,11 +248,11 @@ namespace Utilities
             }
         }
 
-        public static void ChangeVarNameToValid(ref String text, int rule, 
-            String inputString = "", bool enablePrefix = false)
+        public static void ChangeVarNameToValid(ref string text, int rule, 
+            string inputString = "", bool enablePrefix = false)
         {
-            String tempEmptyVarName = inputString;
-            String tempEmptyVarNameF = tempEmptyVarName;
+            string tempEmptyVarName = inputString;
+            string tempEmptyVarNameF = tempEmptyVarName;
             char replaceChar = ' ';
 
             foreach (char singleChar in text)

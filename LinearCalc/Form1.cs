@@ -56,13 +56,13 @@ namespace LinearCalc
         #region FormDrag Event
         private void Form1_DragEnter(object sender, DragEventArgs e)
         {
-            String[] enterFormats;
-            String fileDropName;
-            String tempExt;
+            string[] enterFormats;
+            string fileDropName;
+            string tempExt;
             bool isFile;
             int tempManu = -1;
 
-            enterFormats = e.Data.GetData(DataFormats.FileDrop) as String[];
+            enterFormats = e.Data.GetData(DataFormats.FileDrop) as string[];
 
             if (enterFormats.Length == 1)
             {
@@ -105,11 +105,11 @@ namespace LinearCalc
 
         private void Form1_DragDrop(object sender, DragEventArgs e)
         {
-            String fileDropName;
+            string fileDropName;
             bool isFile;
             FileAttributes attr;
 
-            fileDropName = (e.Data.GetData(DataFormats.FileDrop) as String[])[0];
+            fileDropName = (e.Data.GetData(DataFormats.FileDrop) as string[])[0];
 
             try
             {
@@ -320,7 +320,7 @@ namespace LinearCalc
 
         private void extDropList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.openFileExt = this.extDropList.SelectedItem as String;
+            this.openFileExt = this.extDropList.SelectedItem as string;
         }
 
         private void menuChildOpenSavedFIle_Click(object sender, EventArgs e)
@@ -363,7 +363,7 @@ namespace LinearCalc
                 this.menuChildOpenSavedFIle.Enabled = true;
             }
 
-            if ((String.Empty == this.openFileName) || (null == this.openFileName))
+            if ((string.Empty == this.openFileName) || (null == this.openFileName))
             {
                 this.menuChildOpenFile.Enabled = false;
             }
@@ -479,6 +479,11 @@ namespace LinearCalc
         private void OutDataColNum_ValueChanged(object sender, EventArgs e)
         {
             mergeForm.outDataColNum = OutDataColNum.Value;
+        }
+
+        private void menuItem1_Click(object sender, EventArgs e)
+        {
+            ChangeOutDataFormat(DataFormator.Vulcan);
         }
     }    
 }

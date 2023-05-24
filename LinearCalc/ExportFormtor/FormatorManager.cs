@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinearCalc
 {
-    public enum DataFormator { ACS, AeroTech };
+    public enum DataFormator { ACS, AeroTech, Vulcan };
 
     static class FormatorManager
     {
@@ -14,11 +14,12 @@ namespace LinearCalc
         {
             new ACS(),
             new AreoTech(),
+            new Vulcan(),
         };
 
-        public static string[] FormatData(DataFormator formator, double[] data, params object[] exParams)
+        public static string[] FormatData(DataFormator formator, double[] data, double[] pos, params object[] exParams)
         {
-            string[] s = GetFormator(formator).FormatData(data, exParams);
+            string[] s = GetFormator(formator).FormatData(data, pos, exParams);
             return s;
         }
 

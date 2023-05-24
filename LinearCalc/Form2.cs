@@ -27,17 +27,17 @@ namespace LinearCalc
 
         private void FileList_DragEnter(object sender, DragEventArgs e)
         {
-            String[] enterFormats;
-            String tempExt;
+            string[] enterFormats;
+            string tempExt;
             bool isFile;
             bool hasTxtFile = false;
             int i = 0;
 
-            enterFormats = e.Data.GetData(DataFormats.FileDrop) as String[];
+            enterFormats = e.Data.GetData(DataFormats.FileDrop) as string[];
             dropFileIndex = new bool[enterFormats.Length];
             dropFolder = false;
 
-            foreach (String fileDropName in enterFormats)
+            foreach (string fileDropName in enterFormats)
             {
                 FileAttributes attr;
                 try
@@ -86,15 +86,15 @@ namespace LinearCalc
 
         private void FileList_DragDrop(object sender, DragEventArgs e)
         {
-            String[] enterFormats;
+            string[] enterFormats;
             int i = 0, j = 0;
             bool emptyTop;
             ListViewItem tempTop = fileList.TopItem;
-            String tempPath;
+            string tempPath;
             int fileCount = dropFileIndex.Count(s => s == true);
-            openFileList = new String[fileCount];
+            openFileList = new string[fileCount];
 
-            enterFormats = e.Data.GetData(DataFormats.FileDrop) as String[];
+            enterFormats = e.Data.GetData(DataFormats.FileDrop) as string[];
             tempPath = enterFormats[0];
             if (null != tempTop)
             {
@@ -113,7 +113,7 @@ namespace LinearCalc
 
             else
             {
-                foreach (String fileDropName in enterFormats)
+                foreach (string fileDropName in enterFormats)
                 {
                     if (dropFileIndex[i])
                     {

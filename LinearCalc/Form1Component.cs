@@ -23,7 +23,7 @@ namespace LinearCalc
             openPathText.MouseHover += new EventHandler(openPathText_MouseHover);
             menuChildFolder.Select += new EventHandler(menuChildFolder_Select);
             menuRootFile.Popup += new EventHandler(menuRootFile_Popup);
-            GetOrSetReg();
+            GetOrSetLastPath();
             infoTextLabel.Text = "";
             KeyPreview = true;
             extDropList.SelectedIndex = (int)manufactoryList.RENISHAW;
@@ -40,9 +40,9 @@ namespace LinearCalc
 
         private void StartArgHandler()
         {
-            String[] tempArg = Program.startArg;
-            String ext;
-            String fileName;
+            string[] tempArg = Program.startArg;
+            string ext;
+            string fileName;
             FileAttributes attr;
             bool isFile;
             int index = -1;
@@ -94,15 +94,15 @@ namespace LinearCalc
             }
         }
 
-        private void GetOrSetReg()
+        private void GetOrSetLastPath()
         {
-            String keyValue;
-            UtilityFunctions.GetReg(out keyValue);
+            string keyValue;
+            UtilityFunctions.GetLastPath(out keyValue);
             if (("" == keyValue) || (null == keyValue))
             {
                 openFullPath = Program.currentPath;
                 saveFullPath = Program.currentPath;
-                UtilityFunctions.SetReg(Program.currentPath);
+                UtilityFunctions.SetLastPath(Program.currentPath);
             }
             else
             {
@@ -132,7 +132,7 @@ namespace LinearCalc
                         openFileName = Path.GetFileNameWithoutExtension(openFileStream.Name);
                         openFileExt = Path.GetExtension(openFileStream.Name);
                         openFullPath = Path.GetDirectoryName(openFileStream.Name);
-                        UtilityFunctions.SetReg(openFullPath);
+                        UtilityFunctions.SetLastPath(openFullPath);
                     }
                     openStream.Close();
                     openFileAutoCompleteList.Add(openFileName);
@@ -180,7 +180,7 @@ namespace LinearCalc
                 saveFullPath = Program.currentPath;
                 openPathText.Text = Program.currentPath;
                 savePathText.Text = Program.currentPath;
-                UtilityFunctions.SetReg(Program.currentPath);
+                UtilityFunctions.SetLastPath(Program.currentPath);
 
                 MasterSLP();
             }
@@ -302,7 +302,7 @@ namespace LinearCalc
 
             int midPathLeng;
             int firstRIndex, lastRIndex;
-            String pathText;
+            string pathText;
 
             pathText = textLabel.Text;
             if (0 == startIndex)
@@ -397,7 +397,7 @@ namespace LinearCalc
 
         private void ResetDefault()
         {
-            String tempPath;
+            string tempPath;
             Program.currentPath = @"C\USERS\Desktop";// Directory.GetCurrentDirectory();
             tempPath = Program.currentPath;
             openFullPath = tempPath;
@@ -428,6 +428,7 @@ namespace LinearCalc
             try
             {
                 calcData = ManuManager.GetDataByExtWithDot(openFileExt, fileString, UNIT.mm);
+                posData = ManuManager.GetPosMMByExtWithDot(openFileExt, fileString);
             }
             catch (Exception ex)
             {
@@ -459,10 +460,10 @@ namespace LinearCalc
                 OutDataColNum.Value = 7;
             }
 
-            String tempSavePath;
+            string tempSavePath;
             suffix = suffixTextBox.Text;
 
-            if (String.Empty == saveFileNameBox.Text)
+            if (string.Empty == saveFileNameBox.Text)
             {
                 SelectSavePath();
                 if (!saveDiagResult)
@@ -506,7 +507,7 @@ namespace LinearCalc
                 }
             }
             usrInputSaveFileName = true;
-            string[] writeString = FormatorManager.FormatData(outDataFormat, calcData, prefix, suffix, colNum);
+            string[] writeString = FormatorManager.FormatData(outDataFormat, calcData, posData, prefix, suffix, colNum);
 
             try
             {
@@ -631,7 +632,7 @@ namespace LinearCalc
 
         private void CheckSuffixValid(Control control)
         {
-            String tempVarName = prefix + control.Text;
+            string tempVarName = prefix + control.Text;
             if (UtilityFunctions.CheckVariableName(control, tempVarName, true, true))
             {
                 if (autoApp)
@@ -664,13 +665,13 @@ namespace LinearCalc
 
         private bool CheckFileNameEmpty()
         {
-            if ((String.Empty != openFileNameBox.Text) && (String.Empty != saveFileNameBox.Text))
+            if ((string.Empty != openFileNameBox.Text) && (string.Empty != saveFileNameBox.Text))
             {
                 return false;
             }
             else
             {
-                if (String.Empty == openFileNameBox.Text)
+                if (string.Empty == openFileNameBox.Text)
                 {
                     bool tempGen = quickGen;
                     quickGen = true;
@@ -679,7 +680,7 @@ namespace LinearCalc
                     /*openFileNameBox.BackColor = System.Drawing.Color.Yellow;
                     BalloonTip ballon = new BalloonTip("请输入文件名", openFileNameBox);*/
                 }
-                else if (String.Empty == saveFileNameBox.Text)
+                else if (string.Empty == saveFileNameBox.Text)
                 {
                     ReadFileAndGetData();
                     /*saveFileNameBox.BackColor = System.Drawing.Color.Yellow;
@@ -802,12 +803,12 @@ namespace LinearCalc
         private bool saveFileReturn = false;
         private bool usrInputOpenFileName = false;
         private bool usrInputSaveFileName = false;
-        private String openFileName, saveFileName;
-        private String openFileExt = ".rtl";
-        private String openFileSPath, saveFileSPath;
+        private string openFileName, saveFileName;
+        private string openFileExt = ".rtl";
+        private string openFileSPath, saveFileSPath;
         private Stream openStream;
         private FileStream openFileStream;
-        private String openFullPath, saveFullPath;
+        private string openFullPath, saveFullPath;
         private int onTopInt = 0;
 
         private bool quickGen = true;
@@ -817,12 +818,13 @@ namespace LinearCalc
         private bool autoOverWrite = true;
         private bool autoSaveFileName = true;
         private bool saved = false;
-        private String savedFilePath;
+        private string savedFilePath;
         private byte fileGenEnByte = 0xFF;
-        private String suffix;
-        private String prefix = UtilityParameters.defaultPrefix;
+        private string suffix;
+        private string prefix = UtilityParameters.defaultPrefix;
 
         private double[] calcData = new double[200];
+        private double[] posData = new double[200];
         private bool saveDiagResult = false;
 
         private Form2 mergeForm = new Form2();

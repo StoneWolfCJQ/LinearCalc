@@ -10,7 +10,7 @@ namespace LinearCalc
     {
         public override DataFormator formator { get { return DataFormator.AeroTech; } }
 
-        public override string[] FormatData(double[] data, params object[] exParams)
+        public override string[] FormatData(double[] data, double[] pos, params object[] exParams)
         {
             int colNum = (int)exParams[2];
             int lineTotal= (int)Math.Ceiling(data.Length * 1.0 / colNum);
@@ -24,7 +24,7 @@ namespace LinearCalc
                     s[j] = "";
                 }
 
-                s[j] += String.Format("{0:0.#####}\t", data[i] * 1000);
+                s[j] += string.Format("{0:0.#####}\t", data[i] * 1000);
             }
 
             return s;

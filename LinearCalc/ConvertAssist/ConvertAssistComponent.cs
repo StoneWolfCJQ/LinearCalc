@@ -169,7 +169,7 @@ namespace LinearCalc
 
     public partial class ConvertAssist : Form
     {
-        private void NotifyPropertyChanged(String info)
+        private void NotifyPropertyChanged(string info)
         {
             if (PropertyChanged != null)
             {
