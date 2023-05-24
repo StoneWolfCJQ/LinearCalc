@@ -13,11 +13,9 @@ namespace LinearCalc
 
         public virtual string[] FormatData(double[] data, double[] pos, params object[] exParams) { throw new NotImplementedException(); }
 
-        public virtual double[] ReadFormatedData(DataFormator formator, string fileString)
+        public virtual (double[] data, double[] pos) ReadFormatedData(DataFormator formator, string fileString)
         {
-            double[] data = fileString.Split("\r\n".ToArray(), StringSplitOptions.RemoveEmptyEntries)
-                .Select(s => double.Parse(s.Substring(s.IndexOf('=') + 1))).ToArray();
-            return data;
+            throw new NotImplementedException();
         }
     }
 }

@@ -99,9 +99,10 @@ namespace LinearCalc
 
         bool GetTargetData(string fileString)
         {
+            double[] p;
             try
             {
-                rawData = FormatorManager.ReadFormatedData(DataFormator.ACS, fileString);
+                (rawData, p) = FormatorManager.ReadFormatedData(outDataFormat, fileString);
                 return true;
             }
             catch (Exception e)
@@ -327,5 +328,6 @@ namespace LinearCalc
         bool targetChecked;
         bool flip;
         Form2 parentForm;
+        public DataFormator outDataFormat;
     }
 }

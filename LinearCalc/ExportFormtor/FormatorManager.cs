@@ -23,10 +23,10 @@ namespace LinearCalc
             return s;
         }
 
-        public static double[] ReadFormatedData(DataFormator formator, string fileString)
+        public static (double[] data, double[] pos) ReadFormatedData(DataFormator formator, string fileString)
         {
-            double[] d = GetFormator(formator).ReadFormatedData(formator, fileString);
-            return d;
+            (double[] d, double[] p) = GetFormator(formator).ReadFormatedData(formator, fileString);
+            return (d, p);
         }
 
         static FormatorTemplate GetFormator(DataFormator formator)
