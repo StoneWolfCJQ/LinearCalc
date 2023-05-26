@@ -21,5 +21,14 @@ namespace LinearCalc
 
             return s;
         }
+
+        public override (double[] data, double[] pos) ReadFormatedData(DataFormator formator, string fileString)
+        {
+            var dp = fileString.Split("\r\n".ToArray(), StringSplitOptions.RemoveEmptyEntries)
+                .Select(s => new { data = double.Parse(s.Substring(s.IndexOf(',') + 1)), pos = double.Parse(s.Substring(0, s.IndexOf(','))) });
+            double[] data = dp.Select(d=>d.data).ToArray();
+            double[] p = dp.Select(d=>d.pos).ToArray();
+            return (data, p);
+        }
     }
 }

@@ -356,8 +356,7 @@ namespace LinearCalc
                     if (ext.Equals(".txt", StringComparison.CurrentCultureIgnoreCase))
                     {
                         r = 1;
-                        data = FormatorManager.ReadFormatedData(DataFormator.ACS, fileString);
-                        p = null;
+                        (data, p) = FormatorManager.ReadFormatedData(outDataFormat, fileString);
                     }
                     else
                     {
