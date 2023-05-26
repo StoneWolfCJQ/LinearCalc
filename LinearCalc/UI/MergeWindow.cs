@@ -14,13 +14,13 @@ using System.Text.RegularExpressions;
 
 namespace LinearCalc
 {
-    public partial class Form2 : Form
+    public partial class MergeWindow : Form
     {
 
-        public Form2()
+        public MergeWindow()
         {
             System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+                new System.ComponentModel.ComponentResourceManager(typeof(MergeWindow));
             InitializeComponent();
             InitialCustomComponent();
         }

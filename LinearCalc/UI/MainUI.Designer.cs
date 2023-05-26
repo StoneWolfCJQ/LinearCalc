@@ -2,7 +2,7 @@
 
 namespace LinearCalc
 {
-    partial class Form1
+    partial class MainUI
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace LinearCalc
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             this.openFileNameBox = new System.Windows.Forms.TextBox();
             this.saveFileNameBox = new System.Windows.Forms.TextBox();
             this.openfilepathbutton = new System.Windows.Forms.Button();
@@ -57,6 +57,7 @@ namespace LinearCalc
             this.menuOutDataFormat = new System.Windows.Forms.MenuItem();
             this.menuODFACS = new System.Windows.Forms.MenuItem();
             this.menuODFAeroTech = new System.Windows.Forms.MenuItem();
+            this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.menuRootTools = new System.Windows.Forms.MenuItem();
             this.menuChildMergeSaveData = new System.Windows.Forms.MenuItem();
             this.menuChldeGenScript = new System.Windows.Forms.MenuItem();
@@ -84,7 +85,6 @@ namespace LinearCalc
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.OutDataColNumLabel = new System.Windows.Forms.Label();
             this.OutDataColNum = new System.Windows.Forms.NumericUpDown();
-            this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OutDataColNum)).BeginInit();
             this.SuspendLayout();
@@ -297,6 +297,13 @@ namespace LinearCalc
             this.menuODFAeroTech.Shortcut = System.Windows.Forms.Shortcut.Alt2;
             this.menuODFAeroTech.Text = "AeroTech(&2)";
             this.menuODFAeroTech.Click += new System.EventHandler(this.menuODFAeroTech_Click);
+            // 
+            // menuItem1
+            // 
+            this.menuItem1.Index = 2;
+            this.menuItem1.Shortcut = System.Windows.Forms.Shortcut.Alt3;
+            this.menuItem1.Text = "Vulcan(&3)";
+            this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
             // 
             // menuRootTools
             // 
@@ -554,14 +561,7 @@ namespace LinearCalc
             this.OutDataColNum.Visible = false;
             this.OutDataColNum.ValueChanged += new System.EventHandler(this.OutDataColNum_ValueChanged);
             // 
-            // menuItem1
-            // 
-            this.menuItem1.Index = 2;
-            this.menuItem1.Shortcut = System.Windows.Forms.Shortcut.Alt3;
-            this.menuItem1.Text = "Vulcan(&3)";
-            this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
-            // 
-            // Form1
+            // MainUI
             // 
             this.AcceptButton = this.fileGenerateButton;
             this.AllowDrop = true;
@@ -592,10 +592,9 @@ namespace LinearCalc
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Menu = this.mainMenu;
-            this.Name = "Form1";
+            this.Name = "MainUI";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "干涉仪数据生成程序";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

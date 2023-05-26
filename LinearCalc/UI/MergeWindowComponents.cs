@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace LinearCalc
 {
-    partial class Form2
+    partial class MergeWindow
     {
         #region Init
         private void InitialCustomComponent()
@@ -266,7 +266,7 @@ namespace LinearCalc
         private void ChangeVarName()
         {
             string ext = Path.GetExtension(fileList.TopItem.Text);
-            if ((DataFormator.AeroTech == outDataFormat)|| 
+            if ((DataFormator.ACS != outDataFormat)|| 
                 !ext.Equals(".txt",StringComparison.CurrentCultureIgnoreCase))
                 return;
 
@@ -549,7 +549,7 @@ namespace LinearCalc
         }
     }
 
-    partial class Form2
+    partial class MergeWindow
     {
         private Size[] offset = new Size[2];
         private AutoCompleteStringCollection pathAutoComplete = new AutoCompleteStringCollection();

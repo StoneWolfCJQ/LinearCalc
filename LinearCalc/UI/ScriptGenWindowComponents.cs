@@ -14,7 +14,7 @@ using Utilities;
 
 namespace LinearCalc
 {
-    partial class Form3
+    partial class ScriptGenWindow
     {
         private void InitialCustomComponent()
         {
@@ -89,7 +89,7 @@ namespace LinearCalc
         }
     }
 
-    partial class Form3
+    partial class ScriptGenWindow
     {
         private task taskNum= task.MEASURE;
         private Size oriSize;

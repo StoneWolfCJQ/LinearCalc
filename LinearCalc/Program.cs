@@ -25,7 +25,7 @@ namespace LinearCalc
             currentPath = Directory.GetCurrentDirectory();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form mergeForm = new Form2();
+            Form mergeForm = new MergeWindow();
             Thread mainFormThread = new Thread(MainFormThread);
             
             mainFormThread.SetApartmentState(ApartmentState.STA);
@@ -39,7 +39,7 @@ namespace LinearCalc
         [STAThread]
         static void MainFormThread()
         {
-            Application.Run(new Form1());
+            Application.Run(new MainUI());
         }
 
        

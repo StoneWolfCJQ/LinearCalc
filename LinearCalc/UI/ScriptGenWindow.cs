@@ -11,9 +11,9 @@ using Utilities;
 
 namespace LinearCalc
 {
-    public partial class Form3 : Form
+    public partial class ScriptGenWindow : Form
     {
-        public Form3()
+        public ScriptGenWindow()
         {            
             InitializeComponent();
             InitialCustomComponent();

@@ -15,10 +15,10 @@ namespace LinearCalc
 {
     /**************************************/
     /*******Main Functions For Even*********/
-    public partial class Form1 : Form
+    public partial class MainUI : Form
     {
         #region Init
-        public Form1()
+        public MainUI()
         {
             AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
             InitializeComponent();

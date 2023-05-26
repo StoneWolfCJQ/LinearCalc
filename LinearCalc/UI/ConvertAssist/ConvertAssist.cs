@@ -15,7 +15,7 @@ namespace LinearCalc
     {
         public event PropertyChangedEventHandler PropertyChanged;
         #region Initial
-        public ConvertAssist(string path, Form2 _parentForm)
+        public ConvertAssist(string path, MergeWindow _parentForm)
         {
             InitializeComponent();
             InitializeData(path);

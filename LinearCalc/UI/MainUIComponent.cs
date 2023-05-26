@@ -10,7 +10,7 @@ using Utilities;
 
 namespace LinearCalc
 {
-    public partial class Form1
+    public partial class MainUI
     {
         #region Init      
         private void InitializeCustomComponent()
@@ -751,7 +751,7 @@ namespace LinearCalc
             if (!Program.scriptThreadStart)
             {
                 onTopInt++;
-                scriptForm = new Form3();
+                scriptForm = new ScriptGenWindow();
                 scriptForm.SetTask(taskNum);
                 Program.scriptThreadStart = true;
                 Thread scriptThread = new Thread(ScriptThread);
@@ -792,12 +792,12 @@ namespace LinearCalc
             {
                 Invoke((MethodInvoker)delegate () { TopMost = true; });
             }
-            mergeForm = new Form2();
+            mergeForm = new MergeWindow();
         }
     }
 
     #region Parameters
-    public partial class Form1
+    public partial class MainUI
     {
         private bool openFileReturn = false;
         private bool saveFileReturn = false;
@@ -827,8 +827,8 @@ namespace LinearCalc
         private double[] posData = new double[200];
         private bool saveDiagResult = false;
 
-        private Form2 mergeForm = new Form2();
-        private Form3 scriptForm;
+        private MergeWindow mergeForm = new MergeWindow();
+        private ScriptGenWindow scriptForm;
 
         private AutoCompleteStringCollection openFileAutoCompleteList = new AutoCompleteStringCollection();
         private AutoCompleteStringCollection saveFileAutoCompleteList = new AutoCompleteStringCollection();

@@ -114,27 +114,27 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutForm.cs">
+    <Compile Include="UI\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutForm.Designer.cs">
+    <Compile Include="UI\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BallonTip.cs" />
-    <Compile Include="CalUtil\CalUtils.cs" />
-    <Compile Include="ConvertAssist\ConvertAssistComponent.cs">
+    <Compile Include="Util\BallonTip.cs" />
+    <Compile Include="Util\CalUtils.cs" />
+    <Compile Include="UI\ConvertAssist\ConvertAssistComponent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConvertAssist\ConvertAssist.cs">
+    <Compile Include="UI\ConvertAssist\ConvertAssist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConvertAssist\ConvertAssist.Designer.cs">
+    <Compile Include="UI\ConvertAssist\ConvertAssist.Designer.cs">
       <DependentUpon>ConvertAssist.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConvertAssist\DataDisplay.cs">
+    <Compile Include="UI\ConvertAssist\DataDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConvertAssist\DataDisplay.Designer.cs">
+    <Compile Include="UI\ConvertAssist\DataDisplay.Designer.cs">
       <DependentUpon>DataDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="ExportFormtor\Vulcan.cs" />
@@ -142,31 +142,31 @@
     <Compile Include="ExportFormtor\ACS.cs" />
     <Compile Include="ExportFormtor\FormatorTemplate.cs" />
     <Compile Include="ExportFormtor\FormatorManager.cs" />
-    <Compile Include="Form3Components.cs">
+    <Compile Include="UI\ScriptGenWindowComponents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1Component.cs">
+    <Compile Include="UI\MainUIComponent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="UI\MergeWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="UI\MergeWindow.Designer.cs">
+      <DependentUpon>MergeWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2Components.cs">
+    <Compile Include="UI\MergeWindowComponents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="UI\ScriptGenWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="UI\ScriptGenWindow.Designer.cs">
+      <DependentUpon>ScriptGenWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="OptionsForm.cs">
+    <Compile Include="UI\OptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OptionsForm.Designer.cs">
+    <Compile Include="UI\OptionsForm.Designer.cs">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Manufactor\API.cs" />
@@ -178,44 +178,44 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utilities.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Util\Utilities.cs" />
+    <Compile Include="UI\MainUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UI\MainUI.Designer.cs">
+      <DependentUpon>MainUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManualForm.cs">
+    <Compile Include="UI\ManualForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManualForm.Designer.cs">
+    <Compile Include="UI\ManualForm.Designer.cs">
       <DependentUpon>ManualForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AboutForm.resx">
+    <EmbeddedResource Include="UI\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConvertAssist\ConvertAssist.resx">
+    <EmbeddedResource Include="UI\ConvertAssist\ConvertAssist.resx">
       <DependentUpon>ConvertAssist.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConvertAssist\DataDisplay.resx">
+    <EmbeddedResource Include="UI\ConvertAssist\DataDisplay.resx">
       <DependentUpon>DataDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="UI\MainUI.resx">
+      <DependentUpon>MainUI.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\MergeWindow.resx">
+      <DependentUpon>MergeWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="UI\ScriptGenWindow.resx">
+      <DependentUpon>ScriptGenWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManualForm.resx">
+    <EmbeddedResource Include="UI\ManualForm.resx">
       <DependentUpon>ManualForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OptionsForm.resx">
+    <EmbeddedResource Include="UI\OptionsForm.resx">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

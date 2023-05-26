@@ -326,6 +326,6 @@ namespace LinearCalc
         double[] rawData;
         bool targetChecked;
         bool flip;
-        Form2 parentForm;
+        MergeWindow parentForm;
     }
 }
